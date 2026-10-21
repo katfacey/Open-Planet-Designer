@@ -34,11 +34,6 @@ command += ['-filter_complex', '[0:v][1:v]concat=n=2:v=1:a=0,format=yuv420p[v]',
             '-movflags', '+faststart', str(movie)]
 subprocess.run(command, check=True)
 subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'warning', '-y', '-ss', '23', '-i', str(movie), '-frames:v', '1', '-update', '1', str(MEDIA / 'beta-demo-poster.jpg')], check=True)
-# A small animated preview gives GitHub's README a playable-looking entry point;
-# the linked H.264 file retains the requested full resolution and frame rate.
-subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'warning', '-y', '-ss', '1', '-i', str(movie),
-                '-filter_complex', 'fps=4,scale=480:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=96[p];[b][p]paletteuse=dither=bayer:bayer_scale=4',
-                '-loop', '0', str(MEDIA / 'beta-demo-preview.gif')], check=True)
 probe = json.loads(subprocess.check_output(['ffprobe', '-v', 'error', '-count_frames', '-select_streams', 'v:0',
         '-show_entries', 'stream=codec_name,width,height,r_frame_rate,avg_frame_rate,nb_read_frames,duration:format=duration,size',
         '-of', 'json', str(movie)], text=True))

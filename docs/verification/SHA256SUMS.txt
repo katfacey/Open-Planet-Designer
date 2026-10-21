@@ -1,0 +1,3 @@
+c70a1cd9d8a7ca15fab8795384a4c172bae3c7a3b37ce9c788a4f85b35ed223b  Open-Planet-Designer-1.3.0-beta.1.zip
+95f1f39d7ff737ad0a5ad8b560f17b4017fbb72aa67c2c4ad440c089a35b5d6e  Open-Planet-Designer-Beta-Demo.blend
+2b144f6d4ec5d3a31378e1b520b910ce3cbd8182100f00878ffa8b938483b828  open-planet-designer-beta-demo.mp4

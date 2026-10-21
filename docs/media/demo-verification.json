@@ -1,0 +1,30 @@
+{
+  "programs": [],
+  "stream_groups": [],
+  "streams": [
+    {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "duration": "25.000000",
+      "nb_read_frames": "600"
+    }
+  ],
+  "format": {
+    "duration": "25.000000",
+    "size": "6512660"
+  },
+  "rendering": {
+    "engine": "Eevee",
+    "samples": 24,
+    "title_seconds": 1,
+    "shots": [
+      "descent"
+    ],
+    "descent_seconds": 24,
+    "cached_route_geometry": true,
+    "audio": false
+  }
+}
