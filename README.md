@@ -47,3 +47,9 @@ Code: [GPL-3.0-or-later](LICENSE). Bundled source assets: CC0 or public domain, 
 **25 seconds, 1280 × 720 at 24 fps.** A one-second title card followed by a continuous 24-second descent from orbit into the grassland. Actual Eevee renders, with no cuts during the descent and no audio. Destination detail is prebuilt and held fixed for this bounded route; this is not a general terrain-streaming or animated-LOD qualification.
 
 [Play or download the beta demo](https://github.com/katfacey/Open-Planet-Designer/releases/download/v1.3.0-beta.1/open-planet-designer-beta-demo.mp4).
+
+
+
+
+https://github.com/user-attachments/assets/bdcb1475-ff9b-4f42-affd-67e9080836a2
+
