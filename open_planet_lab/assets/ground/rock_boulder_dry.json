@@ -1,0 +1,11 @@
+{
+  "asset": "rock_boulder_dry",
+  "source": "https://polyhaven.com/a/rock_boulder_dry",
+  "license": "CC0 1.0",
+  "license_url": "https://polyhaven.com/license",
+  "files": {
+    "color": "rock_boulder_dry_color.jpg",
+    "height": "rock_boulder_dry_height.png",
+    "roughness": "rock_boulder_dry_roughness.png"
+  }
+}

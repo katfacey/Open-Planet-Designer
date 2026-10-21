@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+dist/
+output/
+research/
+*.blend
+*.blend1
+*.zip
+open_planet_lab/assets/**/*.png
+open_planet_lab/assets/**/*.jpg
+open_planet_lab/assets/**/*.hdr

@@ -1,0 +1,32 @@
+{
+  "name": "rainier",
+  "source": "USGS 3DEP elevation ImageServer",
+  "source_url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer",
+  "request_url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer/exportImage?f=json&bbox=-13567769.796073496%2C5903002.739136859%2C-13538526.212088618%2C5932246.323121737&bboxSR=3857&imageSR=3857&size=4096%2C4096&format=tiff&pixelType=F32&interpolation=%2BRSP_BilinearInterpolation&adjustAspectRatio=false&noData=-999999",
+  "license": "Public domain (USGS 3DEP)",
+  "license_url": "https://data.usgs.gov/datacatalog/data/USGS%3A3a81321b-c153-416f-98b7-cc8e5f0e17c3",
+  "center_longitude": -121.75,
+  "center_latitude": 46.85,
+  "width_m": 20000.0,
+  "grid_spacing_m": 4.8828125,
+  "height_min_m": 740.3899536132812,
+  "height_max_m": 4392.361328125,
+  "resolution": [
+    4096,
+    4096
+  ],
+  "sha256": "7fd6374bd1df265d05b73fff65a2b7cc9bcdd3b9b9302acc3b9f4911dbc43b41",
+  "crs": 3857,
+  "source_extent": {
+    "xmin": -13567769.796073496,
+    "ymin": 5903002.739136859,
+    "xmax": -13538526.212088618,
+    "ymax": 5932246.323121737,
+    "spatialReference": {
+      "wkid": 102100,
+      "latestWkid": 3857
+    }
+  },
+  "retrieved": "2026-10-21",
+  "modifications": "Bounded projected export; physical horizontal scale corrected at center latitude; height preserved in meters as 16-bit linear encoding. Source mosaic resolution varies; export pixel spacing is not an accuracy claim."
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "asset": "forrest_ground_01",
+    "source": "https://polyhaven.com/a/forrest_ground_01",
+    "license": "CC0 1.0",
+    "license_url": "https://polyhaven.com/license",
+    "files": {
+      "color": "forrest_ground_01_color.jpg",
+      "height": "forrest_ground_01_height.png",
+      "roughness": "forrest_ground_01_roughness.png"
+    }
+  },
+  {
+    "asset": "brown_mud_leaves_01",
+    "source": "https://polyhaven.com/a/brown_mud_leaves_01",
+    "license": "CC0 1.0",
+    "license_url": "https://polyhaven.com/license",
+    "files": {
+      "color": "brown_mud_leaves_01_color.jpg",
+      "height": "brown_mud_leaves_01_height.png",
+      "roughness": "brown_mud_leaves_01_roughness.png"
+    }
+  },
+  {
+    "asset": "rock_boulder_dry",
+    "source": "https://polyhaven.com/a/rock_boulder_dry",
+    "license": "CC0 1.0",
+    "license_url": "https://polyhaven.com/license",
+    "files": {
+      "color": "rock_boulder_dry_color.jpg",
+      "height": "rock_boulder_dry_height.png",
+      "roughness": "rock_boulder_dry_roughness.png"
+    }
+  },
+  {
+    "asset": "leafy_grass",
+    "source": "https://polyhaven.com/a/leafy_grass",
+    "license": "CC0 1.0",
+    "license_url": "https://polyhaven.com/license",
+    "files": {
+      "color": "leafy_grass_color.jpg",
+      "height": "leafy_grass_height.png",
+      "roughness": "leafy_grass_roughness.png"
+    }
+  },
+  {
+    "asset": "kloofendal_48d_partly_cloudy_puresky",
+    "source": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
+    "license": "CC0 1.0",
+    "license_url": "https://polyhaven.com/license",
+    "file": {
+      "size": 5451493,
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+      "md5": "2eba3a4d7eeb23cbfbeca364c97e7980"
+    }
+  }
+]

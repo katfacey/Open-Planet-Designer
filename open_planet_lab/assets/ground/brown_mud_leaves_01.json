@@ -1,0 +1,11 @@
+{
+  "asset": "brown_mud_leaves_01",
+  "source": "https://polyhaven.com/a/brown_mud_leaves_01",
+  "license": "CC0 1.0",
+  "license_url": "https://polyhaven.com/license",
+  "files": {
+    "color": "brown_mud_leaves_01_color.jpg",
+    "height": "brown_mud_leaves_01_height.png",
+    "roughness": "brown_mud_leaves_01_roughness.png"
+  }
+}

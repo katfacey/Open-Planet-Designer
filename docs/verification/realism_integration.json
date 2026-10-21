@@ -1,0 +1,97 @@
+{
+  "Forest": {
+    "terrain_triangles": 500000,
+    "scatter_triangles": 4999995,
+    "instances": 53196
+  },
+  "Grassland": {
+    "terrain_triangles": 499996,
+    "scatter_triangles": 4999995,
+    "instances": 44948
+  },
+  "Alpine": {
+    "terrain_triangles": 499998,
+    "scatter_triangles": 145096,
+    "instances": 248
+  },
+  "Desert": {
+    "terrain_triangles": 499994,
+    "scatter_triangles": 178308,
+    "instances": 242
+  },
+  "Ocean": {
+    "terrain_triangles": 500000,
+    "scatter_triangles": 0,
+    "instances": 0
+  },
+  "physical_footprints_and_all_caps": "PASS",
+  "revisited_plants": {
+    "count": 53196,
+    "maximum_drift_radius": 0.0,
+    "maximum_drift_m": 0.0
+  },
+  "age_structure": {
+    "DEAD": 1969,
+    "FERN": 628,
+    "FERN_B": 582,
+    "FERN_C": 632,
+    "FIR": 5331,
+    "GRASS": 5914,
+    "ROCK": 6,
+    "SAPLING": 903,
+    "SAPLING_B": 1494,
+    "TREE": 6841,
+    "TREE_B": 7524,
+    "TREE_C": 9685,
+    "WILDGRASS": 5849,
+    "WILDGRASS_B": 5838
+  },
+  "canonical_crown_agreement": {
+    "samples": 120,
+    "matched": 120,
+    "minimum_ratio": 0.7098285097534052,
+    "mean_ratio": 1.5226423880048574
+  },
+  "regional_elevation": [
+    {
+      "name": "rainier",
+      "source_relief_m": 3651.9713745117188,
+      "height_offset_m": 949.1427639407593,
+      "maximum_evaluator_difference_m": 0.49585480409897187
+    },
+    {
+      "name": "canyon",
+      "source_relief_m": 1465.3375854492188,
+      "height_offset_m": 3554.4400910551576,
+      "maximum_evaluator_difference_m": 0.552771959938303
+    }
+  ],
+  "small_budget_caps": "PASS",
+  "path_clearance": {
+    "Forest": {
+      "frames": 240,
+      "minimum_clearance_m": 1.8982801196982813,
+      "minimum_frame": 240
+    },
+    "Grassland": {
+      "frames": 240,
+      "minimum_clearance_m": 1.6377469215578255,
+      "minimum_frame": 225
+    },
+    "Alpine": {
+      "frames": 240,
+      "minimum_clearance_m": 120.46678685663159,
+      "minimum_frame": 240
+    },
+    "Desert": {
+      "frames": 240,
+      "minimum_clearance_m": 120.01209432925397,
+      "minimum_frame": 240
+    },
+    "Ocean": {
+      "frames": 240,
+      "minimum_clearance_m": 5.494374418365977,
+      "minimum_frame": 240
+    }
+  }
+}

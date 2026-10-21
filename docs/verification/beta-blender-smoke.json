@@ -1,0 +1,14 @@
+{
+  "blender": "5.2.0 LTS",
+  "addon_name": "Open Planet Designer",
+  "registration": "passed",
+  "creation_operator": "passed",
+  "created_vertices": 8066,
+  "example_images_packed": true,
+  "example_cameras": 5,
+  "example_resolution": [
+    1280,
+    720
+  ],
+  "fps": 24
+}

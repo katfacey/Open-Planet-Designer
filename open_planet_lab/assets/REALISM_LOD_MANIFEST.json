@@ -1,0 +1,350 @@
+{
+  "OP_TREE_LOD0": {
+    "source_asset": "pine_tree_01",
+    "source_object": "pine_tree_01_a_LOD1",
+    "source_triangles": 826954,
+    "prepared_triangles": 826954,
+    "source_height": 20.396811850368977,
+    "source_width": 8.299274682998657,
+    "normalizing_scale": 20.396811850368977
+  },
+  "OP_TREE_LOD1": {
+    "source_asset": "pine_tree_01",
+    "source_object": "pine_tree_01_a_LOD1",
+    "source_triangles": 826954,
+    "prepared_triangles": 59999,
+    "source_height": 20.396811850368977,
+    "source_width": 8.299274682998657,
+    "normalizing_scale": 20.396811850368977
+  },
+  "OP_TREE_LOD2": {
+    "source_asset": "pine_tree_01",
+    "source_object": "pine_tree_01_a_LOD1",
+    "source_triangles": 826954,
+    "prepared_triangles": 6,
+    "source_height": 20.396811850368977,
+    "source_width": 8.299274682998657,
+    "normalizing_scale": 20.396811850368977
+  },
+  "OP_TREE_B_LOD0": {
+    "source_asset": "pine_tree_01",
+    "source_object": "pine_tree_01_b_LOD1",
+    "source_triangles": 514980,
+    "prepared_triangles": 514980,
+    "source_height": 14.880113810300827,
+    "source_width": 7.615237712860107,
+    "normalizing_scale": 14.880113810300827
+  },
+  "OP_TREE_B_LOD1": {
+    "source_asset": "pine_tree_01",
+    "source_object": "pine_tree_01_b_LOD1",
+    "source_triangles": 514980,
+    "prepared_triangles": 59999,
+    "source_height": 14.880113810300827,
+    "source_width": 7.615237712860107,
+    "normalizing_scale": 14.880113810300827
+  },
+  "OP_TREE_B_LOD2": {
+    "source_asset": "pine_tree_01",
+    "source_object": "pine_tree_01_b_LOD1",
+    "source_triangles": 514980,
+    "prepared_triangles": 6,
+    "source_height": 14.880113810300827,
+    "source_width": 7.615237712860107,
+    "normalizing_scale": 14.880113810300827
+  },
+  "OP_TREE_C_LOD0": {
+    "source_asset": "pine_tree_01",
+    "source_object": "pine_tree_01_c_LOD1",
+    "source_triangles": 703322,
+    "prepared_triangles": 703322,
+    "source_height": 17.55060612410307,
+    "source_width": 7.8864336013793945,
+    "normalizing_scale": 17.55060612410307
+  },
+  "OP_TREE_C_LOD1": {
+    "source_asset": "pine_tree_01",
+    "source_object": "pine_tree_01_c_LOD1",
+    "source_triangles": 703322,
+    "prepared_triangles": 59999,
+    "source_height": 17.55060612410307,
+    "source_width": 7.8864336013793945,
+    "normalizing_scale": 17.55060612410307
+  },
+  "OP_TREE_C_LOD2": {
+    "source_asset": "pine_tree_01",
+    "source_object": "pine_tree_01_c_LOD1",
+    "source_triangles": 703322,
+    "prepared_triangles": 6,
+    "source_height": 17.55060612410307,
+    "source_width": 7.8864336013793945,
+    "normalizing_scale": 17.55060612410307
+  },
+  "OP_SAPLING_LOD0": {
+    "source_asset": "pine_sapling_small",
+    "source_object": "pine_sapling_small_a",
+    "source_triangles": 142506,
+    "prepared_triangles": 142506,
+    "source_height": 1.2989574084058404,
+    "source_width": 0.7876736223697662,
+    "normalizing_scale": 1.2989574084058404
+  },
+  "OP_SAPLING_LOD1": {
+    "source_asset": "pine_sapling_small",
+    "source_object": "pine_sapling_small_a",
+    "source_triangles": 142506,
+    "prepared_triangles": 17999,
+    "source_height": 1.2989574084058404,
+    "source_width": 0.7876736223697662,
+    "normalizing_scale": 1.2989574084058404
+  },
+  "OP_SAPLING_LOD2": {
+    "source_asset": "pine_sapling_small",
+    "source_object": "pine_sapling_small_a",
+    "source_triangles": 142506,
+    "prepared_triangles": 6,
+    "source_height": 1.2989574084058404,
+    "source_width": 0.7876736223697662,
+    "normalizing_scale": 1.2989574084058404
+  },
+  "OP_SAPLING_B_LOD0": {
+    "source_asset": "pine_sapling_small",
+    "source_object": "pine_sapling_small_c",
+    "source_triangles": 133403,
+    "prepared_triangles": 133403,
+    "source_height": 0.9613255789154209,
+    "source_width": 0.5799655318260193,
+    "normalizing_scale": 0.9613255789154209
+  },
+  "OP_SAPLING_B_LOD1": {
+    "source_asset": "pine_sapling_small",
+    "source_object": "pine_sapling_small_c",
+    "source_triangles": 133403,
+    "prepared_triangles": 18000,
+    "source_height": 0.9613255789154209,
+    "source_width": 0.5799655318260193,
+    "normalizing_scale": 0.9613255789154209
+  },
+  "OP_SAPLING_B_LOD2": {
+    "source_asset": "pine_sapling_small",
+    "source_object": "pine_sapling_small_c",
+    "source_triangles": 133403,
+    "prepared_triangles": 6,
+    "source_height": 0.9613255789154209,
+    "source_width": 0.5799655318260193,
+    "normalizing_scale": 0.9613255789154209
+  },
+  "OP_FIR_LOD0": {
+    "source_asset": "fir_sapling_medium",
+    "source_object": "fir_sapling_medium_a_LOD1",
+    "source_triangles": 19016,
+    "prepared_triangles": 19016,
+    "source_height": 8.861017674207687,
+    "source_width": 5.321972608566284,
+    "normalizing_scale": 8.861017674207687
+  },
+  "OP_FIR_LOD1": {
+    "source_asset": "fir_sapling_medium",
+    "source_object": "fir_sapling_medium_a_LOD1",
+    "source_triangles": 19016,
+    "prepared_triangles": 19016,
+    "source_height": 8.861017674207687,
+    "source_width": 5.321972608566284,
+    "normalizing_scale": 8.861017674207687
+  },
+  "OP_FIR_LOD2": {
+    "source_asset": "fir_sapling_medium",
+    "source_object": "fir_sapling_medium_a_LOD1",
+    "source_triangles": 19016,
+    "prepared_triangles": 6,
+    "source_height": 8.861017674207687,
+    "source_width": 5.321972608566284,
+    "normalizing_scale": 8.861017674207687
+  },
+  "OP_DEAD_LOD0": {
+    "source_asset": "pine_tree_01",
+    "modifications": "Removed needle cards for dead snag",
+    "prepared_triangles": 44999,
+    "source_height": 19.976178534328938,
+    "source_width": 7.425839424133301,
+    "normalizing_scale": 19.976178534328938
+  },
+  "OP_DEAD_LOD1": {
+    "source_asset": "pine_tree_01",
+    "modifications": "Removed needle cards for dead snag",
+    "prepared_triangles": 7999,
+    "source_height": 19.976178534328938,
+    "source_width": 7.425839424133301,
+    "normalizing_scale": 19.976178534328938
+  },
+  "OP_DEAD_LOD2": {
+    "source_asset": "pine_tree_01",
+    "modifications": "Removed needle cards for dead snag",
+    "prepared_triangles": 6,
+    "source_height": 19.976178534328938,
+    "source_width": 7.425839424133301,
+    "normalizing_scale": 19.976178534328938
+  },
+  "OP_FERN_LOD0": {
+    "source_asset": "fern_02",
+    "source_object": "fern_02_a",
+    "source_triangles": 784,
+    "prepared_triangles": 784,
+    "source_height": 0.2868035454303026,
+    "source_width": 0.6134210824966431,
+    "normalizing_scale": 0.2868035454303026
+  },
+  "OP_FERN_LOD1": {
+    "source_asset": "fern_02",
+    "source_object": "fern_02_a",
+    "source_triangles": 784,
+    "prepared_triangles": 649,
+    "source_height": 0.2868035454303026,
+    "source_width": 0.6134210824966431,
+    "normalizing_scale": 0.2868035454303026
+  },
+  "OP_FERN_LOD2": {
+    "source_asset": "fern_02",
+    "source_object": "fern_02_a",
+    "source_triangles": 784,
+    "prepared_triangles": 58,
+    "source_height": 0.2868035454303026,
+    "source_width": 0.6134210824966431,
+    "normalizing_scale": 0.2868035454303026
+  },
+  "OP_FERN_B_LOD0": {
+    "source_asset": "fern_02",
+    "source_object": "fern_02_b",
+    "source_triangles": 2384,
+    "prepared_triangles": 2384,
+    "source_height": 0.4276947118341923,
+    "source_width": 0.9897474050521851,
+    "normalizing_scale": 0.4276947118341923
+  },
+  "OP_FERN_B_LOD1": {
+    "source_asset": "fern_02",
+    "source_object": "fern_02_b",
+    "source_triangles": 2384,
+    "prepared_triangles": 650,
+    "source_height": 0.4276947118341923,
+    "source_width": 0.9897474050521851,
+    "normalizing_scale": 0.4276947118341923
+  },
+  "OP_FERN_B_LOD2": {
+    "source_asset": "fern_02",
+    "source_object": "fern_02_b",
+    "source_triangles": 2384,
+    "prepared_triangles": 58,
+    "source_height": 0.4276947118341923,
+    "source_width": 0.9897474050521851,
+    "normalizing_scale": 0.4276947118341923
+  },
+  "OP_FERN_C_LOD0": {
+    "source_asset": "fern_02",
+    "source_object": "fern_02_c",
+    "source_triangles": 2248,
+    "prepared_triangles": 2248,
+    "source_height": 0.3490203693509102,
+    "source_width": 0.8743258118629456,
+    "normalizing_scale": 0.3490203693509102
+  },
+  "OP_FERN_C_LOD1": {
+    "source_asset": "fern_02",
+    "source_object": "fern_02_c",
+    "source_triangles": 2248,
+    "prepared_triangles": 650,
+    "source_height": 0.3490203693509102,
+    "source_width": 0.8743258118629456,
+    "normalizing_scale": 0.3490203693509102
+  },
+  "OP_FERN_C_LOD2": {
+    "source_asset": "fern_02",
+    "source_object": "fern_02_c",
+    "source_triangles": 2248,
+    "prepared_triangles": 58,
+    "source_height": 0.3490203693509102,
+    "source_width": 0.8743258118629456,
+    "normalizing_scale": 0.3490203693509102
+  },
+  "OP_WILDGRASS_LOD0": {
+    "source_asset": "grass_medium_01",
+    "source_object": "grass_medium_01_mid_a_LOD0",
+    "source_triangles": 2287,
+    "prepared_triangles": 2287,
+    "source_height": 0.21774429827928543,
+    "source_width": 0.2213778793811798,
+    "normalizing_scale": 0.21774429827928543
+  },
+  "OP_WILDGRASS_LOD1": {
+    "source_asset": "grass_medium_01",
+    "source_object": "grass_medium_01_mid_a_LOD0",
+    "source_triangles": 2287,
+    "prepared_triangles": 360,
+    "source_height": 0.21774429827928543,
+    "source_width": 0.2213778793811798,
+    "normalizing_scale": 0.21774429827928543
+  },
+  "OP_WILDGRASS_LOD2": {
+    "source_asset": "grass_medium_01",
+    "source_object": "grass_medium_01_mid_a_LOD0",
+    "source_triangles": 2287,
+    "prepared_triangles": 36,
+    "source_height": 0.21774429827928543,
+    "source_width": 0.2213778793811798,
+    "normalizing_scale": 0.21774429827928543
+  },
+  "OP_WILDGRASS_B_LOD0": {
+    "source_asset": "grass_medium_01",
+    "source_object": "grass_medium_01_mid_c_LOD0",
+    "source_triangles": 1466,
+    "prepared_triangles": 1466,
+    "source_height": 0.14463566057384014,
+    "source_width": 0.20285546779632568,
+    "normalizing_scale": 0.14463566057384014
+  },
+  "OP_WILDGRASS_B_LOD1": {
+    "source_asset": "grass_medium_01",
+    "source_object": "grass_medium_01_mid_c_LOD0",
+    "source_triangles": 1466,
+    "prepared_triangles": 360,
+    "source_height": 0.14463566057384014,
+    "source_width": 0.20285546779632568,
+    "normalizing_scale": 0.14463566057384014
+  },
+  "OP_WILDGRASS_B_LOD2": {
+    "source_asset": "grass_medium_01",
+    "source_object": "grass_medium_01_mid_c_LOD0",
+    "source_triangles": 1466,
+    "prepared_triangles": 36,
+    "source_height": 0.14463566057384014,
+    "source_width": 0.20285546779632568,
+    "normalizing_scale": 0.14463566057384014
+  },
+  "OP_ROCK_LOD0": {
+    "source_asset": "boulder_01",
+    "source_object": "boulder_01_LOD0",
+    "source_triangles": 66122,
+    "prepared_triangles": 66122,
+    "source_height": 1.0038301944732666,
+    "source_width": 1.8303342461585999,
+    "normalizing_scale": 1.8303342461585999
+  },
+  "OP_ROCK_LOD1": {
+    "source_asset": "boulder_01",
+    "source_object": "boulder_01_LOD0",
+    "source_triangles": 66122,
+    "prepared_triangles": 3500,
+    "source_height": 1.0038301944732666,
+    "source_width": 1.8303342461585999,
+    "normalizing_scale": 1.8303342461585999
+  },
+  "OP_ROCK_LOD2": {
+    "source_asset": "boulder_01",
+    "source_object": "boulder_01_LOD0",
+    "source_triangles": 66122,
+    "prepared_triangles": 314,
+    "source_height": 1.0038301944732666,
+    "source_width": 1.8303342461585999,
+    "normalizing_scale": 1.8303342461585999
+  }
+}

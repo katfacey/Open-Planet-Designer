@@ -1,0 +1,11 @@
+{
+  "asset": "forrest_ground_01",
+  "source": "https://polyhaven.com/a/forrest_ground_01",
+  "license": "CC0 1.0",
+  "license_url": "https://polyhaven.com/license",
+  "files": {
+    "color": "forrest_ground_01_color.jpg",
+    "height": "forrest_ground_01_height.png",
+    "roughness": "forrest_ground_01_roughness.png"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "Forest": {
+    "terrain_triangles": 499990,
+    "scatter_triangles": 4999998,
+    "instances": 53201,
+    "update_seconds": 27.722575299965683,
+    "ecology": {
+      "DEAD": 1968,
+      "FERN": 626,
+      "FERN_B": 579,
+      "FERN_C": 634,
+      "FIR": 5332,
+      "GRASS": 5936,
+      "ROCK": 6,
+      "SAPLING": 902,
+      "SAPLING_B": 1494,
+      "TREE": 6839,
+      "TREE_B": 7524,
+      "TREE_C": 9687,
+      "WILDGRASS": 5838,
+      "WILDGRASS_B": 5836
+    },
+    "reach": {
+      "trees": 0.00017999978879425268,
+      "ground": 1.8886097525982094e-05
+    },
+    "status": "Budget limited \u00b7 499,990 triangles \u00b7 depth 24",
+    "eevee_seconds": 43.015623999992386,
+    "cycles_seconds": 37.01082829997176
+  },
+  "Grassland": {
+    "terrain_triangles": 499998,
+    "scatter_triangles": 4999996,
+    "instances": 44944,
+    "update_seconds": 16.276612500019837,
+    "ecology": {
+      "DEAD": 72,
+      "FERN": 21,
+      "FERN_B": 34,
+      "FERN_C": 25,
+      "FIR": 237,
+      "GRASS": 14376,
+      "ROCK": 4,
+      "SAPLING": 52,
+      "SAPLING_B": 78,
+      "TREE": 327,
+      "TREE_B": 178,
+      "TREE_C": 345,
+      "WILDGRASS": 14606,
+      "WILDGRASS_B": 14589
+    },
+    "reach": {
+      "trees": 0.0001798491883174685,
+      "ground": 3.030324796445778e-05
+    },
+    "status": "Budget limited \u00b7 499,998 triangles \u00b7 depth 24",
+    "eevee_seconds": 22.34696709999116,
+    "cycles_seconds": 27.051813600002788
+  },
+  "Alpine": {
+    "terrain_triangles": 499996,
+    "scatter_triangles": 141910,
+    "instances": 248,
+    "update_seconds": 14.20337770000333,
+    "ecology": {
+      "FIR": 30,
+      "ROCK": 218
+    },
+    "reach": {
+      "ground": 4.795392637682588e-05,
+      "trees": 0.00017599435563503215
+    },
+    "status": "Budget limited \u00b7 499,996 triangles \u00b7 depth 22",
+    "eevee_seconds": 21.392335100041237,
+    "cycles_seconds": 23.407683899975382
+  },
+  "Desert": {
+    "terrain_triangles": 499994,
+    "scatter_triangles": 178308,
+    "instances": 242,
+    "update_seconds": 13.584867300000042,
+    "ecology": {
+      "FERN": 2,
+      "FERN_C": 1,
+      "FIR": 17,
+      "ROCK": 222
+    },
+    "reach": {
+      "trees": 0.00017688880557577513,
+      "ground": 4.791483906313102e-05
+    },
+    "status": "Budget limited \u00b7 499,994 triangles \u00b7 depth 24",
+    "eevee_seconds": 23.40763579995837,
+    "cycles_seconds": 25.630345000012312
+  }
+}

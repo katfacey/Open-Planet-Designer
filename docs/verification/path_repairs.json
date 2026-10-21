@@ -1,0 +1,22 @@
+{
+  "Forest": {
+    "corrected_frames": 0,
+    "previous_minimum_clearance_m": 1.8982800645270803
+  },
+  "Grassland": {
+    "corrected_frames": 25,
+    "previous_minimum_clearance_m": -1.281795712809286
+  },
+  "Alpine": {
+    "corrected_frames": 0,
+    "previous_minimum_clearance_m": 120.75146345186893
+  },
+  "Desert": {
+    "corrected_frames": 0,
+    "previous_minimum_clearance_m": 120.01209432925397
+  },
+  "Ocean": {
+    "corrected_frames": 0,
+    "previous_minimum_clearance_m": 5.423172647815777
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "OP_TREE_LOD0": {
+    "source_triangles": 416451,
+    "prepared_triangles": 416451
+  },
+  "OP_TREE_LOD1": {
+    "source_triangles": 416451,
+    "prepared_triangles": 24000
+  },
+  "OP_TREE_LOD2": {
+    "source_triangles": 416451,
+    "prepared_triangles": 1199
+  },
+  "OP_TREE_B_LOD0": {
+    "source_triangles": 267343,
+    "prepared_triangles": 267343
+  },
+  "OP_TREE_B_LOD1": {
+    "source_triangles": 267343,
+    "prepared_triangles": 24000
+  },
+  "OP_TREE_B_LOD2": {
+    "source_triangles": 267343,
+    "prepared_triangles": 1200
+  },
+  "OP_TREE_C_LOD0": {
+    "source_triangles": 347991,
+    "prepared_triangles": 347991
+  },
+  "OP_TREE_C_LOD1": {
+    "source_triangles": 347991,
+    "prepared_triangles": 24000
+  },
+  "OP_TREE_C_LOD2": {
+    "source_triangles": 347991,
+    "prepared_triangles": 1200
+  },
+  "OP_WILDGRASS_LOD0": {
+    "source_triangles": 659,
+    "prepared_triangles": 659
+  },
+  "OP_WILDGRASS_LOD1": {
+    "source_triangles": 659,
+    "prepared_triangles": 239
+  },
+  "OP_WILDGRASS_LOD2": {
+    "source_triangles": 659,
+    "prepared_triangles": 64
+  },
+  "OP_ROCK_LOD0": {
+    "source_triangles": 66122,
+    "prepared_triangles": 66122
+  },
+  "OP_ROCK_LOD1": {
+    "source_triangles": 66122,
+    "prepared_triangles": 3000
+  },
+  "OP_ROCK_LOD2": {
+    "source_triangles": 66122,
+    "prepared_triangles": 180
+  },
+  "OP_FERN_LOD0": {
+    "source_triangles": 784,
+    "prepared_triangles": 784
+  },
+  "OP_FERN_LOD1": {
+    "source_triangles": 784,
+    "prepared_triangles": 700
+  },
+  "OP_FERN_LOD2": {
+    "source_triangles": 784,
+    "prepared_triangles": 99
+  }
+}

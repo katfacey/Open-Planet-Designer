@@ -1,0 +1,6 @@
+{
+  "pure_python_tests": 11,
+  "result": "passed",
+  "blender_integration": "Recorded original 1.3 structural pass: see realism_integration.json",
+  "release": "1.3.0-beta.1"
+}

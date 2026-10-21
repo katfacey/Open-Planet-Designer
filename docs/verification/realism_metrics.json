@@ -1,0 +1,46 @@
+{
+  "Forest": {
+    "mean_display_rgb_percent": 5.8814826011657715,
+    "p95_channel_difference_percent": 13.333333969116211,
+    "p99_channel_difference_percent": 18.431373596191406,
+    "foreground_mean_percent": 5.971421718597412,
+    "center_mean_percent": 5.103647232055664,
+    "resolution": [
+      1280,
+      720
+    ]
+  },
+  "Grassland": {
+    "mean_display_rgb_percent": 3.296779155731201,
+    "p95_channel_difference_percent": 12.94117546081543,
+    "p99_channel_difference_percent": 19.215686798095703,
+    "foreground_mean_percent": 3.7689990997314453,
+    "center_mean_percent": 3.4855284690856934,
+    "resolution": [
+      1280,
+      720
+    ]
+  },
+  "Alpine": {
+    "mean_display_rgb_percent": 0.34367114305496216,
+    "p95_channel_difference_percent": 1.5686273574829102,
+    "p99_channel_difference_percent": 2.7450978755950928,
+    "foreground_mean_percent": 0.6082255840301514,
+    "center_mean_percent": 0.3419852554798126,
+    "resolution": [
+      1280,
+      720
+    ]
+  },
+  "Desert": {
+    "mean_display_rgb_percent": 1.5469859838485718,
+    "p95_channel_difference_percent": 3.9215683937072754,
+    "p99_channel_difference_percent": 5.098042011260986,
+    "foreground_mean_percent": 1.6240330934524536,
+    "center_mean_percent": 1.588545322418213,
+    "resolution": [
+      1280,
+      720
+    ]
+  }
+}

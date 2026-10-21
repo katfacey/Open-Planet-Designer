@@ -1,0 +1,9 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+.gitignore text eol=lf
+*.png binary
+*.jpg binary
+*.gif binary
+*.mp4 binary

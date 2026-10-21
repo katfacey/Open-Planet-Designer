@@ -1,0 +1,26 @@
+[
+  {
+    "name": "rainier",
+    "tile": "N46W122",
+    "download": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/N46/N46W122.hgt.gz",
+    "height_min_m": 263.0,
+    "height_max_m": 4392.0,
+    "source": "Mapzen Terrain Tiles, U.S. Geological Survey 3DEP/NED elevations",
+    "license": "USGS public domain; Mapzen attribution retained",
+    "attribution": "Mapzen; 3DEP data courtesy of the U.S. Geological Survey",
+    "license_source": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+    "modifications": "Resampled to 2048 square and normalized to 16-bit height; artistically remapped in the generator. Not a geographic reconstruction."
+  },
+  {
+    "name": "grand_canyon",
+    "tile": "N36W113",
+    "download": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/N36/N36W113.hgt.gz",
+    "height_min_m": 517.0,
+    "height_max_m": 2807.0,
+    "source": "Mapzen Terrain Tiles, U.S. Geological Survey 3DEP/NED elevations",
+    "license": "USGS public domain; Mapzen attribution retained",
+    "attribution": "Mapzen; 3DEP data courtesy of the U.S. Geological Survey",
+    "license_source": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+    "modifications": "Resampled to 2048 square and normalized to 16-bit height; artistically remapped in the generator. Not a geographic reconstruction."
+  }
+]
