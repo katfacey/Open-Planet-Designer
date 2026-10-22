@@ -6,6 +6,8 @@ Build editable procedural worlds in Blender, from orbital planets to bounded reg
 
 [Download the beta](https://github.com/katfacey/Open-Planet-Designer/releases/tag/v1.3.0-beta.1) · [User guide](docs/REALISM_GUIDE.md) · [Expanded discussion and roadmap](docs/EXPANDED_DISCUSSION.md) · [AI disclosure](AI_DISCLOSURE.md)
 
+**Source development: 1.4.0-dev.** An optional Blender 5.2+ daylight/ground pass adds aligned scan layers, a shared sun/sky, bounded static lighting captures, and a clear-air entry prototype. See the [development guide and measured limits](docs/DAYLIGHT_GROUND_DEVELOPMENT.md). The downloadable 1.3 beta and its demo remain the released baseline; engine agreement and full atmospheric entry are still in development.
+
 ## What the beta can do
 
 - Create eleven world presets, including terrestrial, ocean, desert, ice, gas-giant and stellar examples.
@@ -38,7 +40,7 @@ Develop convincing terrain, materials and ecosystems across orbital, aerial and 
 
 ## Development and licensing
 
-Run `python -m unittest discover -s tests -p "test_planet_*.py"` for the pure-Python terrain/ecology checks. Restore the release assets before using Blender generation tools. Saved integration results are in [docs/verification](docs/verification).
+Run `python -m unittest discover -s tests` for the pure-Python terrain, ecology and clear-air checks. Restore the release assets before using Blender generation tools. Saved integration results are in [docs/verification](docs/verification).
 
 Code: [GPL-3.0-or-later](LICENSE). Bundled source assets: CC0 or public domain, with [provenance and notices](THIRD_PARTY_NOTICES.md). This project was developed with substantial AI assistance; read the [AI disclosure](AI_DISCLOSURE.md).
 

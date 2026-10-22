@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-bl_info={'name':'Open Planet Designer','author':'Open Planet Designer contributors','version':(1,3,0),
+bl_info={'name':'Open Planet Designer','author':'Open Planet Designer contributors','version':(1,4,0),
          'blender':(5,0,0),'location':'View3D > N sidebar > Open Planet',
          'description':'Beta: procedural worlds, real terrain, living surfaces and camera-adaptive detail',
          'doc_url':'https://github.com/katfacey/Open-Planet-Designer',
@@ -11,8 +11,8 @@ from bpy.props import EnumProperty,PointerProperty,FloatProperty
 # rather than leaving the previous generator/shader modules in Python's cache.
 if 'generator' in globals():
     import importlib
-    from . import presets,nodes,lod_mesh,lod,generator,biome,ecology,terrain_regions,realism
-    for module in (presets,nodes,lod_mesh,ecology,terrain_regions,lod,generator,biome,realism):importlib.reload(module)
+    from . import presets,nodes,lod_mesh,lod,generator,biome,ecology,terrain_regions,realism,look_math,ground,air,lookdev
+    for module in (presets,nodes,lod_mesh,ecology,terrain_regions,lod,generator,biome,realism,look_math,ground,air,lookdev):importlib.reload(module)
 from .presets import PRESETS,LABELS,BASE,RANGES
 from . import generator,lod
 
@@ -68,6 +68,36 @@ class OP_OT_lod_enable(bpy.types.Operator):
         cam=r.op_lod.camera;cam.data.clip_start=max(.000001,float(r['radius'])*.0000001)
         cam.data.clip_end=max(cam.data.clip_end,float(r['radius'])*12.)
         self.report({'INFO'},r.get('op_lod_status','Camera LOD enabled'));return {'FINISHED'}
+
+class OP_OT_look_enable(bpy.types.Operator):
+    bl_idname='oplab.look_enable';bl_label='Upgrade Daylight & Ground';bl_options={'REGISTER','UNDO'}
+    def execute(self,context):
+        from . import lookdev
+        root=generator.active_root(context)
+        if not root:return {'CANCELLED'}
+        try:lookdev.enable(context.scene,root)
+        except Exception as exc:self.report({'ERROR'},str(exc));return {'CANCELLED'}
+        self.report({'INFO'},'Development daylight enabled. Bake lighting after locking the shot.')
+        return {'FINISHED'}
+
+class OP_OT_look_bake(bpy.types.Operator):
+    bl_idname='oplab.look_bake';bl_label='Bake Current Shot Lighting'
+    def execute(self,context):
+        from . import lookdev
+        root=generator.active_root(context)
+        if not root:return {'CANCELLED'}
+        try:lookdev.bake(context.scene,root)
+        except Exception as exc:self.report({'ERROR'},str(exc));return {'CANCELLED'}
+        self.report({'INFO'},'Finite indirect-light capture baked for this static shot')
+        return {'FINISHED'}
+
+class OP_OT_look_disable(bpy.types.Operator):
+    bl_idname='oplab.look_disable';bl_label='Restore Beta Daylight';bl_options={'REGISTER','UNDO'}
+    def execute(self,context):
+        from . import lookdev
+        root=generator.active_root(context)
+        if root:lookdev.disable(context.scene,root)
+        return {'FINISHED'}
 
 class OP_OT_lod_refresh(bpy.types.Operator):
     bl_idname='oplab.lod_refresh';bl_label='Refresh Camera Detail';bl_options={'REGISTER','UNDO'}
@@ -200,8 +230,30 @@ class OP_PT_biome(WorldPanel,bpy.types.Panel):
         l.label(text='Terrain + scatter: %s triangles'%format(r.get('op_total_triangles',0),','))
         l.label(text='CC0 assets Â· Poly Haven')
 
+class OP_PT_look(WorldPanel,bpy.types.Panel):
+    bl_label='Development · Daylight & Ground';bl_idname='OP_PT_look'
+    def draw(self,context):
+        l=self.layout;r=generator.active_root(context)
+        l.operator('oplab.look_enable',icon='WORLD')
+        if not r.get('look_enabled'):
+            l.label(text='Optional · Blender 5.2+ · living rocky worlds')
+            return
+        for key in ('look_texture_scale','look_moisture','look_air_density','look_aerosol','look_sky_strength','look_shadow_texel'):
+            l.prop(r,'["%s"]'%key,text=LABELS[key])
+        l.operator('oplab.lod_refresh',text='Refresh Ground & Daylight',icon='FILE_REFRESH')
+        l.separator()
+        for key in ('look_probe_extent','look_probe_capture','look_probe_resolution','look_probe_samples'):
+            l.prop(r,'["%s"]'%key,text=LABELS[key])
+        l.operator('oplab.look_bake',icon='LIGHTPROBE_VOLUME')
+        l.label(text=r.get('op_gi_status','Bake after locking the shot'))
+        l.label(text='Static local capture; changing detail needs a new bake')
+        l.label(text='Clear-air preview; cloud passage remains in development')
+        l.operator('oplab.look_disable')
+
 classes=(OP_LODSettings,OP_Settings,OP_OT_create,OP_OT_demo,OP_OT_engine,OP_OT_setup,OP_OT_keyframe,
-    OP_OT_lod_enable,OP_OT_lod_refresh,OP_OT_lod_restore,OP_OT_entry_demo,OP_OT_biome_enable,OP_OT_realism_enable,OP_PT_main,OP_PT_terrain,OP_PT_clouds,OP_PT_rings,OP_PT_lighting,OP_PT_lod,OP_PT_biome)
+    OP_OT_lod_enable,OP_OT_lod_refresh,OP_OT_lod_restore,OP_OT_entry_demo,OP_OT_biome_enable,OP_OT_realism_enable,
+    OP_OT_look_enable,OP_OT_look_bake,OP_OT_look_disable,
+    OP_PT_main,OP_PT_terrain,OP_PT_clouds,OP_PT_rings,OP_PT_lighting,OP_PT_lod,OP_PT_biome,OP_PT_look)
 def register():
     for c in classes:bpy.utils.register_class(c)
     bpy.types.Scene.oplab=bpy.props.PointerProperty(type=OP_Settings)

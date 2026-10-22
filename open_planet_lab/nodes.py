@@ -483,6 +483,7 @@ def surface(root,t,kind):
         ice=g.math('MULTIPLY',ice,g.math('LESS_THAN',p['ice'],.99))
         col=g.mix(ice,col,p['ice_color'])
         physical_color=col
+        substrate=None
         if kind=='ROCK' and root.get('biome_enabled'):
             forestfloor=ground_texture(g,tc.outputs['Object'],'forrest_ground_01')
             meadowfloor=ground_texture(g,tc.outputs['Object'],'leafy_grass')
@@ -499,6 +500,10 @@ def surface(root,t,kind):
                 macro=ground_texture(g,tc.outputs['Object'],'rock_boulder_dry',frequency=15000.)
                 macro=g.vec('ADD',g.vec('SCALE',macro,scale=2.),(.5,.5,.5))
                 ground=g.vec('MULTIPLY',ground,g.mix(g.math('MAXIMUM',b['mountain'],b['desert']),(1.,1.,1.,1),macro))
+                if root.get('look_enabled'):
+                    from . import ground as substrate_module
+                    substrate=substrate_module.fields(g,root,p,tc.outputs['Object'],v,b,geo.outputs['Normal'])
+                    ground=substrate['color']
                 # Keep distant land under the same photographic palette as the
                 # near texture, so model fades do not expose a bright flat band.
                 distance_weight=g.math('MAXIMUM',fade,.65)
@@ -564,26 +569,42 @@ def surface(root,t,kind):
             foam=g.math('MULTIPLY',g.smooth(crest,g.math('MULTIPLY',p['biome_wave_height'],.95),g.math('MULTIPLY',p['biome_wave_height'],1.45)),g.math('SUBTRACT',1.,dry))
             foam=g.math('MULTIPLY',foam,g.smooth(g.noise(tc.outputs['Object'],g.math('MULTIPLY',3000.,1000.),3.,.6),.44,.64))
             basecolor=g.mix(dry,g.mix(foam,(.003,.022,.026,1),(.65,.72,.73,1)),physical_color)
-            g.put(basecolor,bsdf.inputs['Base Color']);g.put(g.math('ADD',g.math('MULTIPLY_ADD',dry,.82,.055),g.math('MULTIPLY',foam,.45)),bsdf.inputs['Roughness'])
+            g.put(basecolor,bsdf.inputs['Base Color'])
+            roughness=g.math('ADD',g.math('MULTIPLY_ADD',dry,.82,.055),g.math('MULTIPLY',foam,.45))
+            if substrate is not None:
+                roughness=g.math('ADD',g.math('MULTIPLY',dry,substrate['roughness']),g.math('MULTIPLY',g.math('SUBTRACT',1.,dry),.055))
+                roughness=g.math('ADD',roughness,g.math('MULTIPLY',foam,.45))
+            g.put(roughness,bsdf.inputs['Roughness'])
             g.put(g.math('MULTIPLY_ADD',dry,.117,1.333),bsdf.inputs['IOR'])
             if root.get('biome_enabled'):
                 floorheight=ground_texture(g,tc.outputs['Object'],'leafy_grass','height')
                 if floorheight is not None:
                     rockheight=ground_texture(g,tc.outputs['Object'],'rock_boulder_dry','height')
                     floorheight=g.mix(g.math('MAXIMUM',b['mountain'],b['desert']),floorheight,rockheight)
+                    if substrate is not None:floorheight=substrate['height']
                     bump=g.node('ShaderNodeBump','Photographed ground microrelief')
                     g.put(floorheight,bump.inputs['Height']);g.put(g.math('MULTIPLY',p['radius'],.000000003),bump.inputs['Distance'])
+                    if substrate is not None:
+                        # Scan detail remains centimetric when planet radius
+                        # changes; it does not grow into metre-sized grit.
+                        distance=g.math('DIVIDE',g.math('MULTIPLY',.019113,p['look_texture_scale']),substrate_module.field(g,'op_metres_per_scene_unit',root))
+                        g.put(distance,bump.inputs['Distance'])
                     g.put(g.math('MULTIPLY',fade,dry),bump.inputs['Strength'])
                     drift=g.vec('ADD',tc.outputs['Object'],g.vec('SCALE',(.7,.3,.2),scale=g.math('MULTIPLY',p['biome_time'],.00000003)))
                     micro=g.noise(drift,g.math('MULTIPLY',10000.,1000.),3.,.6)
                     ripple=g.node('ShaderNodeBump','Small water ripples above geometric swells')
                     g.put(micro,ripple.inputs['Height']);g.put(g.math('MULTIPLY',p['radius'],.000000002),ripple.inputs['Distance'])
                     g.put(g.math('SUBTRACT',1.,dry),ripple.inputs['Strength']);g.put(bump.outputs['Normal'],ripple.inputs['Normal']);g.put(ripple.outputs['Normal'],bsdf.inputs['Normal'])
-            fog,opacity,inside=atmosphere_path(g,p,True,origin)
-            fogmix=g.node('ShaderNodeMixShader','Physical surface with shared aerial haze')
-            g.put(g.math('MULTIPLY',inside,opacity),fogmix.inputs[0]);g.put(bsdf.outputs[0],fogmix.inputs[1]);g.put(emission(g,fog),fogmix.inputs[2])
+            if root.get('look_enabled'):
+                from . import air
+                physical_shader=air.wrap(g,root,bsdf.outputs[0])
+            else:
+                fog,opacity,inside=atmosphere_path(g,p,True,origin)
+                fogmix=g.node('ShaderNodeMixShader','Physical surface with shared aerial haze')
+                g.put(g.math('MULTIPLY',inside,opacity),fogmix.inputs[0]);g.put(bsdf.outputs[0],fogmix.inputs[1]);g.put(emission(g,fog),fogmix.inputs[2])
+                physical_shader=fogmix.outputs[0]
             mode=g.node('ShaderNodeMixShader','Orbital analytic / living PBR surface')
-            g.put(p['biome_enabled'],mode.inputs[0]);g.put(emission(g,col),mode.inputs[1]);g.put(fogmix.outputs[0],mode.inputs[2]);output(g,mode.outputs[0])
+            g.put(p['biome_enabled'],mode.inputs[0]);g.put(emission(g,col),mode.inputs[1]);g.put(physical_shader,mode.inputs[2]);output(g,mode.outputs[0])
         else:output(g,emission(g,col))
         return m
     output(g,emission(g,g.rgbscale(col,light)));return m
@@ -611,6 +632,9 @@ def clouds(root,t):
     return add_transparency(g,m,col,alpha,facing=facing)
 
 def atmosphere(root,t,kind):
+    if root.get('look_enabled'):
+        from . import air
+        return air.shell(root)
     m,g=material(root.name+' Â· Atmosphere');p=params(g,t);geo=g.node('ShaderNodeNewGeometry')
     tc=g.node('ShaderNodeTexCoord');v=g.vec('NORMALIZE',tc.outputs['Object'])
     mu=g.math('ABSOLUTE',g.vec('DOT_PRODUCT',geo.outputs['Normal'],geo.outputs['Incoming']))

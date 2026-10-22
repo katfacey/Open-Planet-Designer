@@ -1,0 +1,38 @@
+{
+  "Forest": {
+    "exposure": 3.0,
+    "frozen_geometry": true,
+    "bake_seconds": 34.94424469999649,
+    "renders": {
+      "eevee": 16.345845600000757,
+      "cycles": 38.34681000000273
+    }
+  },
+  "Grassland": {
+    "exposure": 0.0,
+    "frozen_geometry": true,
+    "bake_seconds": 13.095251999999164,
+    "renders": {
+      "eevee": 17.212894900003448,
+      "cycles": 20.179159999999683
+    }
+  },
+  "Alpine": {
+    "exposure": 0.0,
+    "frozen_geometry": true,
+    "bake_seconds": 7.147065199998906,
+    "renders": {
+      "eevee": 7.925723899999866,
+      "cycles": 8.513543500004744
+    }
+  },
+  "Desert": {
+    "exposure": 0.0,
+    "frozen_geometry": true,
+    "bake_seconds": 5.45069119999971,
+    "renders": {
+      "eevee": 8.946584400000575,
+      "cycles": 13.068436900000961
+    }
+  }
+}

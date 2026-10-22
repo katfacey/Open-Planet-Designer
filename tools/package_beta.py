@@ -1,4 +1,6 @@
-"""Package the renamed public beta without including unrelated workspace files."""
+"""Package an explicit source version without including unrelated workspace files."""
+import argparse
+import ast
 import hashlib
 import json
 from pathlib import Path
@@ -8,7 +10,16 @@ ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT
 OUT = REPO / 'dist'
 OUT.mkdir(exist_ok=True)
-target = OUT / 'Open-Planet-Designer-1.3.0-beta.1.zip'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--version',default='1.4.0-dev.1')
+parser.add_argument('--stage',choices=('development','beta'),default='development')
+args=parser.parse_args()
+tree=ast.parse((REPO/'open_planet_lab/__init__.py').read_text(encoding='utf-8'))
+info=next(ast.literal_eval(n.value) for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='bl_info' for t in n.targets))
+numeric='.'.join(str(x) for x in info['version'])
+if args.version.split('-')[0]!=numeric:raise SystemExit('Requested package version does not match source bl_info')
+if any(c not in '0123456789abcdefghijklmnopqrstuvwxyz.-' for c in args.version):raise SystemExit('Invalid version name')
+target = OUT / ('Open-Planet-Designer-'+args.version+'.zip')
 with ZipFile(target, 'w', ZIP_DEFLATED, compresslevel=6) as archive:
     for source in sorted((REPO / 'open_planet_lab').glob('*.py')):
         archive.write(source, 'open_planet_lab/' + source.name)
@@ -25,9 +36,11 @@ with ZipFile(target, 'w', ZIP_DEFLATED, compresslevel=6) as archive:
         archive.write(source, 'open_planet_lab/docs/' + source.name)
     for source in sorted((REPO / 'docs/verification').glob('*.json')):
         archive.write(source, 'open_planet_lab/docs/verification/' + source.name)
-    info = {'name': 'Open Planet Designer', 'version': '1.3.0-beta.1', 'internal_module': 'open_planet_lab',
-            'tested_blender': '5.2.0 LTS', 'stage': 'beta', 'ai_assisted': True}
-    archive.writestr('open_planet_lab/BETA_RELEASE.json', json.dumps(info, indent=2))
+    for source in sorted((REPO / 'docs/media/daylight-ground').glob('*.jpg')):
+        archive.write(source,'open_planet_lab/docs/media/daylight-ground/'+source.name)
+    info = {'name': 'Open Planet Designer', 'version': args.version, 'internal_module': 'open_planet_lab',
+            'tested_blender': '5.2.0 LTS', 'stage': args.stage, 'ai_assisted': True}
+    archive.writestr('open_planet_lab/RELEASE.json', json.dumps(info, indent=2))
 with ZipFile(target) as archive:
     assert archive.testzip() is None
     source = archive.read('open_planet_lab/__init__.py').decode()

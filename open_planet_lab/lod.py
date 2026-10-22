@@ -99,7 +99,7 @@ def signature(scene,root,cam):
             tuple(root.get(k,v) for k,v in DEFAULTS.items()),root.get('cloud_coverage',0),root.get('cloud_height',0),
             root.get('cloud_depth',0),root.get('atmosphere',0),root.get('rings',0),root.get('seed',0),
             root.get('relief',0),root.get('sea_level',0),root.get('crater_amount',0),root.get('crater_scale',0),
-            tuple((k,root.get(k,v)) for k,v in BASE.items() if k.startswith('biome_') and k!='biome_time'))
+            tuple((k,root.get(k,v)) for k,v in BASE.items() if (k.startswith('biome_') or k.startswith('look_')) and k!='biome_time'))
 
 def update(scene,root,force=False):
     global _busy
@@ -181,6 +181,15 @@ def update(scene,root,force=False):
             clouds.hide_render=cloud_budget==0;clouds.hide_viewport=cloud_budget==0
         remaining=max(48,budget-fixed-cloud_budget)
         local_radius=sample_radius(scene,root,by_role['SURFACE'],cp)
+        if root.get('look_enabled'):
+            from . import lookdev
+            lookdev.environment(scene,root,local_radius)
+            # The new shell is a fixed physical clear-air layer, independent
+            # of the legacy artistic atmosphere-height control.
+            shell=by_role.get('ATMOSPHERE')
+            if shell:
+                shell.hide_render=not root['atmosphere']
+                shell.hide_viewport=shell.hide_render
         if root.get('biome_enabled'):
             altitude=max(0.,cp.length-local_radius)
             # Centimetre shadow texels are useful on the ground, but exhaust
@@ -218,6 +227,9 @@ def update(scene,root,force=False):
             from . import biome
             biome.update(scene,root,ecam)
         root['op_total_triangles']=total+root.get('op_biome_triangles',0)
+        if root.get('look_enabled'):
+            from . import lookdev
+            lookdev.validate_capture(scene,root)
         _cache[key]=signature(scene,root,cam.evaluated_get(bpy.context.evaluated_depsgraph_get()))
     finally:_busy=False
 
@@ -276,7 +288,16 @@ def _frame(scene,*args):
     else:update_scene(scene)
 
 @persistent
-def _render(scene,*args):update_scene(scene,True)
+def _render(scene,*args):
+    update_scene(scene,True)
+    # A locked detail camera can differ from the moving render camera. Sky
+    # altitude must still follow the latter when geometry is held for a shot.
+    from . import lookdev
+    for root in scene.objects:
+        if root.get('op_root') and root.get('look_enabled'):
+            lookdev.environment(scene,root)
+            lookdev.lighting(scene,root)
+            lookdev.validate_capture(scene,root)
 
 @persistent
 def _load(*args):

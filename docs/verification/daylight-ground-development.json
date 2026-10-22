@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-22",
+  "stage": "development",
+  "blender": "5.2.0 LTS",
+  "hardware": "RTX 5090; consumer tiers unqualified",
+  "pure_tests_passed": 18,
+  "native_roundtrip_checks_passed": 13,
+  "reviews": {
+    "forest": {
+      "display_rgb_mae_percent": 5.2126349047849585,
+      "signed_brightness_bias_percent": -0.2318544238683126,
+      "p95_channel_error_percent": 18.82352941176471,
+      "exposure_ev": 3,
+      "geometry_frozen": true
+    },
+    "grassland": {
+      "display_rgb_mae_percent": 2.6832884491245057,
+      "signed_brightness_bias_percent": 0.29800794803518116,
+      "p95_channel_error_percent": 10.196078431372548,
+      "exposure_ev": 0,
+      "geometry_frozen": true
+    },
+    "alpine": {
+      "display_rgb_mae_percent": 0.7639937868151375,
+      "signed_brightness_bias_percent": 0.4980936819172112,
+      "p95_channel_error_percent": 3.529411764705881,
+      "exposure_ev": 0,
+      "geometry_frozen": true
+    },
+    "desert": {
+      "display_rgb_mae_percent": 3.1229128842895184,
+      "signed_brightness_bias_percent": -0.5740067477608327,
+      "p95_channel_error_percent": 7.4509803921568585,
+      "exposure_ev": 0,
+      "geometry_frozen": true
+    }
+  },
+  "clear_air_comparisons": [
+    {
+      "altitude_m": 10000,
+      "display_rgb_mae_percent": 0.3033547794117647
+    },
+    {
+      "altitude_m": 30000,
+      "display_rgb_mae_percent": 0.19275315450254174
+    },
+    {
+      "altitude_m": 80000,
+      "display_rgb_mae_percent": 0.12935389433551192
+    },
+    {
+      "altitude_m": 90000,
+      "display_rgb_mae_percent": 0.12435718500363108
+    },
+    {
+      "altitude_m": 99000,
+      "display_rgb_mae_percent": 0.12310332697893973
+    },
+    {
+      "altitude_m": 100000,
+      "display_rgb_mae_percent": 0.12183982389251996
+    },
+    {
+      "altitude_m": 101000,
+      "display_rgb_mae_percent": 0.12123388707334784
+    },
+    {
+      "altitude_m": 120000,
+      "display_rgb_mae_percent": 0.10805532861292663
+    }
+  ],
+  "acceptance": {
+    "coherent_ground_layer_implementation": true,
+    "matched_daylight_static_capture_implementation": true,
+    "cache_and_alpha_roundtrip": true,
+    "photographic_approval": false,
+    "dense_foliage_engine_agreement": false,
+    "full_atmospheric_entry": false,
+    "temporal_lod_qualified": false
+  },
+  "limits": [
+    "Display RGB metrics vary with exposure and do not establish realism.",
+    "A brighter grassland stress test at +3 EV has 7.75 percent mean error.",
+    "Scalar clear-air approximation washes out land contrast.",
+    "Frozen static review geometry; no dynamic GI or route streaming qualification.",
+    "Direct nested shader-group/image-file edits require manual rebake."
+  ],
+  "package_import_and_render_passed": true
+}

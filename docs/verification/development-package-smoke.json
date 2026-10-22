@@ -1,0 +1,12 @@
+{
+  "version": "1.4.0-dev.1",
+  "stage": "development",
+  "archive_crc_ok": true,
+  "independent_package_import": true,
+  "register_ok": true,
+  "new_ground_shader_render_ok": true,
+  "capture_valid_after_render": true,
+  "all_used_file_images_packed": true,
+  "bake_seconds": 27.231706899998244,
+  "render_seconds": 10.658139400002256
+}
