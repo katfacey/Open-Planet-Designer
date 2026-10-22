@@ -2,6 +2,8 @@
 
 The internal add-on package remains `open_planet_lab` for compatibility with existing saved files. Public branding is Open Planet Designer. The public release is 1.3.0-beta.1. Current source is 1.4.0-dev, with Blender numeric version `(1, 4, 0)` and an optional Blender 5.2+ [daylight/ground development pass](DAYLIGHT_GROUND_DEVELOPMENT.md).
 
+The [foliage follow-up](FOLIAGE_DEVELOPMENT.md) adds an explicit normal/capture repair with preserved runtime scatter costs, plus recorded regressions and acceptance limits. Its local package is `1.4.0-dev.2`; it does not replace the public beta.
+
 ## Source and assets
 
 Clone the repository, download the complete add-on release ZIP, and run:

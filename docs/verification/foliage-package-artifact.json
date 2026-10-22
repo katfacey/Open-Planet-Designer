@@ -1,0 +1,11 @@
+{
+  "version": "1.4.0-dev.2",
+  "file": "Open-Planet-Designer-1.4.0-dev.2.zip",
+  "bytes": 448065358,
+  "sha256": "c899cecb075ecbade6a2a5be95d3ce528c1b66c04da19c980f16fce986924ab3",
+  "final_archive_crc_ok": true,
+  "runtime_source_byte_identical_to_independently_smoked_package": true,
+  "runtime_python_modules": 16,
+  "final_change_after_native_smoke": "Documentation and verification records only",
+  "review_file": "Open-Planet-Designer-1.4.0-dev.2-Review.blend"
+}

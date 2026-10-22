@@ -86,6 +86,8 @@ Eight clear-air altitude pairs from 10–120 km, including 99/100/101 km, were r
 
 ## Remaining acceptance gates
 
+The subsequent [foliage development pass](FOLIAGE_DEVELOPMENT.md) isolates crown normal convention, transparent-card capture support and below-ground capture rows. Its repair is optional and preserves the existing scatter/runtime budget. Refer to its separate before/after measurements; the results above describe the earlier baseline.
+
 - Photographic approval in forest, meadow, alpine and desert, including front light, backlight and overcast foliage tests.
 - Clear-air views around the handoff, near the horizon and along an atmospheric descent; verify no duplicate haze or abrupt transition.
 - Broader capture persistence across Blender versions and animated routes; the current static reload/edit/restore checks pass.

@@ -8,6 +8,8 @@ Build editable procedural worlds in Blender, from orbital planets to bounded reg
 
 **Source development: 1.4.0-dev.** An optional Blender 5.2+ daylight/ground pass adds aligned scan layers, a shared sun/sky, bounded static lighting captures, and a clear-air entry prototype. See the [development guide and measured limits](docs/DAYLIGHT_GROUND_DEVELOPMENT.md). The downloadable 1.3 beta and its demo remain the released baseline; engine agreement and full atmospheric entry are still in development.
 
+The optional [foliage lighting repair](docs/FOLIAGE_DEVELOPMENT.md) corrects inward distant-crown normals and trims transparent crown regions during static lighting capture. Original runtime tree geometry and scatter budgets are retained. An experimental above-ground capture option is off by default after a forest regression. Backlighting, distant coverage and temporal transitions still need qualification.
+
 ## What the beta can do
 
 - Create eleven world presets, including terrestrial, ocean, desert, ice, gas-giant and stellar examples.

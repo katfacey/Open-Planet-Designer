@@ -17,6 +17,7 @@ from . import ground
 from .look_math import smooth
 
 VERSION = 1
+CAPTURE_VERSION = 3
 
 
 def ensure(scene, root):
@@ -195,7 +196,7 @@ def shot_signature(scene, root, details=False):
         digest.update(value)
         sections.setdefault(section,hashlib.sha256()).update(value)
     def add(value):emit(repr(value).encode('utf-8'))
-    add(VERSION)
+    add((VERSION,CAPTURE_VERSION))
     add([(k,tuple(root[k]) if k.endswith('_color') else root.get(k,v)) for k,v in BASE.items()])
     add(scene.unit_settings.scale_length)
     section='camera'
@@ -204,6 +205,18 @@ def shot_signature(scene, root, details=False):
         add(tuple(round(x,12) for x in cp));add(tuple(round(x,9) for x in forward))
         add((cam.data.lens,cam.data.type,cam.data.ortho_scale))
     add((scene.render.resolution_x,scene.render.resolution_y,scene.render.resolution_percentage))
+    probe=probe_for(root)
+    if probe:
+        section='capture volume'
+        # Hash editable channels: recomposing a loaded matrix can introduce
+        # float roundoff even when all restored transform channels are exact.
+        add((tuple(probe.location),tuple(probe.scale),probe.rotation_mode))
+        rotation=probe.rotation_quaternion if probe.rotation_mode=='QUATERNION' else (
+            probe.rotation_axis_angle if probe.rotation_mode=='AXIS_ANGLE' else probe.rotation_euler)
+        add(tuple(rotation));add(tuple(x for row in probe.matrix_parent_inverse for x in row))
+        add(tuple(getattr(probe.data,key,None) for key in ('resolution_x','resolution_y','resolution_z',
+            'bake_samples','surfel_density','capture_distance','capture_world','capture_indirect',
+            'capture_emission','clamp_indirect','intensity','normal_bias','view_bias','validity_threshold')))
     materials=set()
     for ob in sorted(scene.objects,key=lambda x:x.name):
         if ob.type=='LIGHT':
@@ -223,18 +236,25 @@ def shot_signature(scene, root, details=False):
                 vector=attr.data_type=='FLOAT_VECTOR'
                 data=array.array('f' if vector else 'i',[0])*(len(attr.data)*(3 if vector else 1))
                 attr.data.foreach_get('vector' if vector else 'value',data);emit(data.tobytes())
+        if ob.get('op_role')=='BIOME_SOURCE' and ob.get('op_asset_lod')==2 and mesh.uv_layers.active:
+            uv=array.array('f',[0])*(len(mesh.loops)*2)
+            mesh.uv_layers.active.data.foreach_get('uv',uv);emit(uv.tobytes())
         for mat in mesh.materials:
             if not mat or mat.as_pointer() in materials or not mat.use_nodes:continue
             section='material: '+mat.name
             materials.add(mat.as_pointer());add(mat.name)
+            add(tuple(getattr(mat,key,None) for key in ('use_transparent_shadow',
+                'use_backface_culling','use_backface_culling_shadow','use_backface_culling_lightprobe_volume')))
             for node in mat.node_tree.nodes:
                 add((node.name,node.bl_idname))
+                add(tuple(getattr(node,key,None) for key in ('operation','space','uv_map')))
                 for socket in node.inputs:
                     if not socket.is_linked and hasattr(socket,'default_value'):
                         val=socket.default_value
                         add((socket.name,tuple(val) if hasattr(val,'__len__') else str(val)))
                 if node.type=='TEX_IMAGE' and node.image:
-                    add((node.image.name,node.image.filepath,tuple(node.image.size),node.image.is_dirty))
+                    add((node.image.name,node.image.filepath,tuple(node.image.size),node.image.is_dirty,
+                         node.image.colorspace_settings.name))
             add([(l.from_node.name,l.from_socket.name,l.to_node.name,l.to_socket.name) for l in mat.node_tree.links])
     result=digest.hexdigest()
     return (result,{key:value.hexdigest() for key,value in sections.items()}) if details else result
@@ -258,11 +278,12 @@ def validate_capture(scene, root):
 
 def bake(scene, root):
     if not root.get('look_enabled'):raise RuntimeError('Upgrade Daylight & Ground first')
-    from . import biome,lod
+    from . import biome,lod,foliage
     cam=lod.camera_for(scene,root)
     if not cam:raise RuntimeError('Choose a shot camera first')
     lod.update(scene,root)
     environment(scene,root);biome.lighting(scene,root);wrap_assets(root)
+    foliage.patch_sources(root)
     probe=probe_for(root)
     if probe is None:
         data=bpy.data.lightprobes.new(root.name+' · Static shot indirect light','VOLUME')
@@ -276,6 +297,11 @@ def bake(scene, root):
     metres=root['radius']*scene.unit_settings.scale_length
     width=root['look_probe_extent']
     probe.location=cp+up*(10./metres)
+    if root.get('look_foliage_enabled') and root.get('look_probe_above_ground'):
+        # The old camera-centered volume put its lowest rows below the terrain.
+        # Keep the first row above the sampled camera ground; no intensity gain.
+        ground_radius=1.+root.get('op_ground_altitude_m',0.)/metres
+        probe.location=up*(ground_radius+(width*.2+root['look_probe_clearance'])/metres)
     probe.rotation_euler=Matrix((east,north,up)).transposed().to_euler()
     probe.scale=(width*.5/metres,width*.5/metres,width*.2/metres)
     data=probe.data;resolution=int(root['look_probe_resolution'])
@@ -292,9 +318,10 @@ def bake(scene, root):
         for ob in selected:ob.select_set(False)
         probe.select_set(True);bpy.context.view_layer.objects.active=probe
         scene.render.engine='BLENDER_EEVEE';root['op_air_capture_bypass']=1.
-        bpy.context.view_layer.update()
-        result=bpy.ops.object.lightprobe_cache_bake(subset='SELECTED')
-        if 'FINISHED' not in result:raise RuntimeError('Blender did not finish the light capture')
+        with foliage.capture_sources(root) as capture_stats:
+            result=bpy.ops.object.lightprobe_cache_bake(subset='SELECTED')
+            if 'FINISHED' not in result:raise RuntimeError('Blender did not finish the light capture')
+        root['op_foliage_capture_stats']=json.dumps(capture_stats)
         succeeded=True
     finally:
         root['op_air_capture_bypass']=0.;scene.render.engine=engine
@@ -352,6 +379,8 @@ def enable(scene, root):
 
 def disable(scene, root):
     """Rebuild legacy shaders and restore the original alpha of bundled assets."""
+    from . import foliage
+    foliage.restore(root)
     for ob in root.children:
         if ob.get('op_role')!='BIOME_SOURCE':continue
         for mat in ob.data.materials:

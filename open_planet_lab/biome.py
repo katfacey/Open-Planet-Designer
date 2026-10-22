@@ -209,6 +209,9 @@ def assets(root):
         if root.get('look_enabled'):
             from . import lookdev
             lookdev.wrap_assets(root)
+        if root.get('look_foliage_enabled'):
+            from . import foliage
+            foliage.patch_sources(root)
         return found
     path=Path(__file__).parent/('assets/realism_library.blend' if realism else 'assets/biome_library.blend')
     if not path.exists():raise RuntimeError('Install the full add-on ZIP including its CC0 model library')
@@ -235,6 +238,9 @@ def assets(root):
     if root.get('look_enabled'):
         from . import lookdev
         lookdev.wrap_assets(root)
+    if root.get('look_foliage_enabled'):
+        from . import foliage
+        foliage.patch_sources(root)
     return found
 
 def sample(scene,root,directions,local=False):

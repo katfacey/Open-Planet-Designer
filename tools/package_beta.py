@@ -36,8 +36,9 @@ with ZipFile(target, 'w', ZIP_DEFLATED, compresslevel=6) as archive:
         archive.write(source, 'open_planet_lab/docs/' + source.name)
     for source in sorted((REPO / 'docs/verification').glob('*.json')):
         archive.write(source, 'open_planet_lab/docs/verification/' + source.name)
-    for source in sorted((REPO / 'docs/media/daylight-ground').glob('*.jpg')):
-        archive.write(source,'open_planet_lab/docs/media/daylight-ground/'+source.name)
+    for folder in ('daylight-ground','foliage'):
+        for source in sorted((REPO / 'docs/media'/folder).glob('*.jpg')):
+            archive.write(source,'open_planet_lab/docs/media/'+folder+'/'+source.name)
     info = {'name': 'Open Planet Designer', 'version': args.version, 'internal_module': 'open_planet_lab',
             'tested_blender': '5.2.0 LTS', 'stage': args.stage, 'ai_assisted': True}
     archive.writestr('open_planet_lab/RELEASE.json', json.dumps(info, indent=2))

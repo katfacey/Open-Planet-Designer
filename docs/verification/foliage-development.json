@@ -1,0 +1,1945 @@
+{
+  "blender": "5.2.0 LTS",
+  "hardware": "RTX 5090; Core i9-14900K; see per-case device",
+  "portable_tests": 23,
+  "native_checks": {
+    "checks": {
+      "visible legacy maps repaired once": true,
+      "detailed foliage PBR untouched": true,
+      "atlas alpha bit identical": true,
+      "seven tessellated alpha supports": true,
+      "success restores source identity": true,
+      "success cleans temporary data": true,
+      "bake error propagated": true,
+      "bake failure restores and cleans": true,
+      "unsupported UV edit reported": true,
+      "partial build failure restores and cleans": true,
+      "restore exact original normal links": true,
+      "restore clears mode": true,
+      "outward atlas never double flipped": true,
+      "new atlas convention honored": true,
+      "all runtime proxies remain six triangles": true
+    },
+    "capture_support": [
+      {
+        "kind": "DEAD",
+        "support_triangles": 230,
+        "support_area_uv": 0.138427734375
+      },
+      {
+        "kind": "FIR",
+        "support_triangles": 786,
+        "support_area_uv": 0.793212890625
+      },
+      {
+        "kind": "SAPLING_B",
+        "support_triangles": 668,
+        "support_area_uv": 0.659912109375
+      },
+      {
+        "kind": "SAPLING",
+        "support_triangles": 652,
+        "support_area_uv": 0.68115234375
+      },
+      {
+        "kind": "TREE_B",
+        "support_triangles": 584,
+        "support_area_uv": 0.5556640625
+      },
+      {
+        "kind": "TREE_C",
+        "support_triangles": 512,
+        "support_area_uv": 0.515625
+      },
+      {
+        "kind": "TREE",
+        "support_triangles": 492,
+        "support_area_uv": 0.470703125
+      }
+    ]
+  },
+  "capture_checks": {
+    "saved capture initially valid": true,
+    "edited normal conversion invalidates": true,
+    "restored normal conversion recovers": true,
+    "edited node operation invalidates": true,
+    "restored node operation recovers": true,
+    "edited transparent shadow setting invalidates": true,
+    "restored transparent shadow setting recovers": true,
+    "edited probe bias invalidates": true,
+    "restored probe bias recovers": true,
+    "edited probe placement invalidates": true,
+    "restored probe placement recovers": true,
+    "edited crown UV invalidates": true,
+    "restored crown UV recovers": true,
+    "temporary capture support leaves signature unchanged": true,
+    "foliage restore removes normal fixes": true,
+    "foliage restore invalidates repaired capture": true,
+    "repeated repair recovers exact signature": true,
+    "no temporary geometry persists": true
+  },
+  "linear_benchmarks": [
+    {
+      "case": "foliage-parity",
+      "kind": "tree",
+      "level": 0,
+      "lighting": "back",
+      "resolution": 640,
+      "rotation_degrees": 0,
+      "baseline": {
+        "linear_rgb_mae": 0.020377708598971367,
+        "linear_rgb_p95": 0.0740898847579956,
+        "linear_normalized_mae": 0.16688750684261322,
+        "linear_tree_region_mae": 0.023092657327651978
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.019337140023708344,
+        "linear_rgb_p95": 0.07349179685115814,
+        "linear_normalized_mae": 0.1576855480670929,
+        "linear_tree_region_mae": 0.021708622574806213
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.020377706736326218,
+        "linear_rgb_p95": 0.07408986985683441,
+        "linear_normalized_mae": 0.16688749194145203,
+        "linear_tree_region_mae": 0.02309265360236168
+      }
+    },
+    {
+      "case": "foliage-parity",
+      "kind": "tree",
+      "level": 0,
+      "lighting": "front",
+      "resolution": 640,
+      "rotation_degrees": 0,
+      "baseline": {
+        "linear_rgb_mae": 0.002358057303354144,
+        "linear_rgb_p95": 0.011352986097335815,
+        "linear_normalized_mae": 0.020635370165109634,
+        "linear_tree_region_mae": 0.0030885739251971245
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.003209818620234728,
+        "linear_rgb_p95": 0.011345401406288147,
+        "linear_normalized_mae": 0.027962325140833855,
+        "linear_tree_region_mae": 0.004258660599589348
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.0023580570705235004,
+        "linear_rgb_p95": 0.011353015899658203,
+        "linear_normalized_mae": 0.020635368302464485,
+        "linear_tree_region_mae": 0.003088573692366481
+      }
+    },
+    {
+      "case": "foliage-parity",
+      "kind": "tree",
+      "level": 0,
+      "lighting": "overcast",
+      "resolution": 640,
+      "rotation_degrees": 0,
+      "baseline": {
+        "linear_rgb_mae": 0.008221079595386982,
+        "linear_rgb_p95": 0.03147038072347641,
+        "linear_normalized_mae": 0.0330025777220726,
+        "linear_tree_region_mae": 0.011116330511868
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.003034616354852915,
+        "linear_rgb_p95": 0.009523659944534302,
+        "linear_normalized_mae": 0.012053677812218666,
+        "linear_tree_region_mae": 0.004259276203811169
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.008221079595386982,
+        "linear_rgb_p95": 0.03147038072347641,
+        "linear_normalized_mae": 0.0330025777220726,
+        "linear_tree_region_mae": 0.011116330511868
+      }
+    },
+    {
+      "case": "foliage-parity",
+      "kind": "tree",
+      "level": 1,
+      "lighting": "back",
+      "resolution": 640,
+      "rotation_degrees": 0,
+      "baseline": {
+        "linear_rgb_mae": 0.02034662663936615,
+        "linear_rgb_p95": 0.07403378188610077,
+        "linear_normalized_mae": 0.16697101294994354,
+        "linear_tree_region_mae": 0.02302946150302887
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.019306330010294914,
+        "linear_rgb_p95": 0.073431596159935,
+        "linear_normalized_mae": 0.15775258839130402,
+        "linear_tree_region_mae": 0.021647054702043533
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.02034662663936615,
+        "linear_rgb_p95": 0.07403381168842316,
+        "linear_normalized_mae": 0.16697101294994354,
+        "linear_tree_region_mae": 0.02302946150302887
+      }
+    },
+    {
+      "case": "foliage-parity",
+      "kind": "tree",
+      "level": 1,
+      "lighting": "front",
+      "resolution": 640,
+      "rotation_degrees": 0,
+      "baseline": {
+        "linear_rgb_mae": 0.0023447773419320583,
+        "linear_rgb_p95": 0.011310726404190063,
+        "linear_normalized_mae": 0.020547276362776756,
+        "linear_tree_region_mae": 0.0030531822703778744
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.0032031964510679245,
+        "linear_rgb_p95": 0.011299923062324524,
+        "linear_normalized_mae": 0.027942737564444542,
+        "linear_tree_region_mae": 0.0042330436408519745
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.0023447752464562654,
+        "linear_rgb_p95": 0.011310726404190063,
+        "linear_normalized_mae": 0.020547255873680115,
+        "linear_tree_region_mae": 0.0030531769152730703
+      }
+    },
+    {
+      "case": "foliage-parity",
+      "kind": "tree",
+      "level": 1,
+      "lighting": "overcast",
+      "resolution": 640,
+      "rotation_degrees": 0,
+      "baseline": {
+        "linear_rgb_mae": 0.008156473748385906,
+        "linear_rgb_p95": 0.03130478411912918,
+        "linear_normalized_mae": 0.03281201422214508,
+        "linear_tree_region_mae": 0.010984526947140694
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.002984805963933468,
+        "linear_rgb_p95": 0.009427011013031006,
+        "linear_normalized_mae": 0.011880657635629177,
+        "linear_tree_region_mae": 0.0041602556593716145
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.008156475611031055,
+        "linear_rgb_p95": 0.031304776668548584,
+        "linear_normalized_mae": 0.03281202167272568,
+        "linear_tree_region_mae": 0.01098452229052782
+      }
+    },
+    {
+      "case": "foliage-parity",
+      "kind": "tree",
+      "level": 2,
+      "lighting": "back",
+      "resolution": 640,
+      "rotation_degrees": 0,
+      "baseline": {
+        "linear_rgb_mae": 0.02098742499947548,
+        "linear_rgb_p95": 0.07347932457923889,
+        "linear_normalized_mae": 0.1724153757095337,
+        "linear_tree_region_mae": 0.02467266097664833
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.018979517742991447,
+        "linear_rgb_p95": 0.07333390414714813,
+        "linear_normalized_mae": 0.1551491767168045,
+        "linear_tree_region_mae": 0.021010814234614372
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.020022200420498848,
+        "linear_rgb_p95": 0.07390157878398895,
+        "linear_normalized_mae": 0.16438506543636322,
+        "linear_tree_region_mae": 0.022415341809391975
+      }
+    },
+    {
+      "case": "foliage-parity",
+      "kind": "tree",
+      "level": 2,
+      "lighting": "front",
+      "resolution": 640,
+      "rotation_degrees": 0,
+      "baseline": {
+        "linear_rgb_mae": 0.0025048444513231516,
+        "linear_rgb_p95": 0.010905936360359192,
+        "linear_normalized_mae": 0.022206967696547508,
+        "linear_tree_region_mae": 0.0031328252516686916
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.0029425190296024084,
+        "linear_rgb_p95": 0.010870665311813354,
+        "linear_normalized_mae": 0.025493578985333443,
+        "linear_tree_region_mae": 0.0035454637836664915
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.002119785640388727,
+        "linear_rgb_p95": 0.010865852236747742,
+        "linear_normalized_mae": 0.018449021503329277,
+        "linear_tree_region_mae": 0.0024166356306523085
+      }
+    },
+    {
+      "case": "foliage-parity",
+      "kind": "tree",
+      "level": 2,
+      "lighting": "overcast",
+      "resolution": 640,
+      "rotation_degrees": 0,
+      "baseline": {
+        "linear_rgb_mae": 0.010039625689387321,
+        "linear_rgb_p95": 0.04924248903989792,
+        "linear_normalized_mae": 0.040606539696455,
+        "linear_tree_region_mae": 0.014553333632647991
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.0025527654215693474,
+        "linear_rgb_p95": 0.009207390248775482,
+        "linear_normalized_mae": 0.010156226344406605,
+        "linear_tree_region_mae": 0.0030314805917441845
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.007594970054924488,
+        "linear_rgb_p95": 0.0311211496591568,
+        "linear_normalized_mae": 0.030533557757735252,
+        "linear_tree_region_mae": 0.009635113179683685
+      }
+    },
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 0,
+      "lighting": "back",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.0188734233379364,
+        "linear_rgb_p95": 0.0731261670589447,
+        "linear_normalized_mae": 0.16671831905841827,
+        "linear_tree_region_mae": 0.02028735540807247
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.017807379364967346,
+        "linear_rgb_p95": 0.0721486359834671,
+        "linear_normalized_mae": 0.1565302312374115,
+        "linear_tree_region_mae": 0.01880018413066864
+      }
+    },
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 0,
+      "lighting": "front",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.002684366889297962,
+        "linear_rgb_p95": 0.011443200521171093,
+        "linear_normalized_mae": 0.024416599422693253,
+        "linear_tree_region_mae": 0.004089801572263241
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.003377780318260193,
+        "linear_rgb_p95": 0.011443200521171093,
+        "linear_normalized_mae": 0.030566629022359848,
+        "linear_tree_region_mae": 0.004950342699885368
+      }
+    },
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 0,
+      "lighting": "overcast",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.011313526891171932,
+        "linear_rgb_p95": 0.036502737551927567,
+        "linear_normalized_mae": 0.0460512675344944,
+        "linear_tree_region_mae": 0.018008194863796234
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.005930598359555006,
+        "linear_rgb_p95": 0.020393630489706993,
+        "linear_normalized_mae": 0.023866772651672363,
+        "linear_tree_region_mae": 0.010744605213403702
+      }
+    },
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 2,
+      "lighting": "back",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.019590673968195915,
+        "linear_rgb_p95": 0.07278356701135635,
+        "linear_normalized_mae": 0.1695822924375534,
+        "linear_tree_region_mae": 0.021567704156041145
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.018052242696285248,
+        "linear_rgb_p95": 0.0730045884847641,
+        "linear_normalized_mae": 0.15588536858558655,
+        "linear_tree_region_mae": 0.01901525817811489
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.019079700112342834,
+        "linear_rgb_p95": 0.07321079820394516,
+        "linear_normalized_mae": 0.16551533341407776,
+        "linear_tree_region_mae": 0.020461376756429672
+      }
+    },
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 2,
+      "lighting": "front",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.002376826712861657,
+        "linear_rgb_p95": 0.010333215817809105,
+        "linear_normalized_mae": 0.0218054112046957,
+        "linear_tree_region_mae": 0.0029796611052006483
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.0028012804687023163,
+        "linear_rgb_p95": 0.010291308164596558,
+        "linear_normalized_mae": 0.02489594742655754,
+        "linear_tree_region_mae": 0.003394250525161624
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.0021673892624676228,
+        "linear_rgb_p95": 0.010266113094985485,
+        "linear_normalized_mae": 0.019351402297616005,
+        "linear_tree_region_mae": 0.002631703857332468
+      }
+    },
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 2,
+      "lighting": "overcast",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.01133057288825512,
+        "linear_rgb_p95": 0.04698646068572998,
+        "linear_normalized_mae": 0.046768635511398315,
+        "linear_tree_region_mae": 0.017404746264219284
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.0043467325158417225,
+        "linear_rgb_p95": 0.01785607822239399,
+        "linear_normalized_mae": 0.017652248963713646,
+        "linear_tree_region_mae": 0.0068916864693164825
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.009406818076968193,
+        "linear_rgb_p95": 0.03338000923395157,
+        "linear_normalized_mae": 0.0386141873896122,
+        "linear_tree_region_mae": 0.013737152330577374
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 0,
+      "lighting": "back",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.020144125446677208,
+        "linear_rgb_p95": 0.07334227859973907,
+        "linear_normalized_mae": 0.16847822070121765,
+        "linear_tree_region_mae": 0.022623373195528984
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.019083017483353615,
+        "linear_rgb_p95": 0.0724283903837204,
+        "linear_normalized_mae": 0.15888692438602448,
+        "linear_tree_region_mae": 0.02116522006690502
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 0,
+      "lighting": "front",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.0027587779331952333,
+        "linear_rgb_p95": 0.01147321704775095,
+        "linear_normalized_mae": 0.0243093091994524,
+        "linear_tree_region_mae": 0.004281817469745874
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.0034688389860093594,
+        "linear_rgb_p95": 0.011514099314808846,
+        "linear_normalized_mae": 0.030421458184719086,
+        "linear_tree_region_mae": 0.005238858517259359
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 0,
+      "lighting": "overcast",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.013011935167014599,
+        "linear_rgb_p95": 0.035959597676992416,
+        "linear_normalized_mae": 0.05189920589327812,
+        "linear_tree_region_mae": 0.022549159824848175
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.007774577010422945,
+        "linear_rgb_p95": 0.018512744456529617,
+        "linear_normalized_mae": 0.03067849576473236,
+        "linear_tree_region_mae": 0.01545745600014925
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 2,
+      "lighting": "back",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.020476287230849266,
+        "linear_rgb_p95": 0.0724877268075943,
+        "linear_normalized_mae": 0.17277035117149353,
+        "linear_tree_region_mae": 0.02356654591858387
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.01841614954173565,
+        "linear_rgb_p95": 0.07295028865337372,
+        "linear_normalized_mae": 0.15515606105327606,
+        "linear_tree_region_mae": 0.019686998799443245
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.01946173794567585,
+        "linear_rgb_p95": 0.07333094626665115,
+        "linear_normalized_mae": 0.16469639539718628,
+        "linear_tree_region_mae": 0.02114156261086464
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 2,
+      "lighting": "front",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.002335511613637209,
+        "linear_rgb_p95": 0.010126657783985138,
+        "linear_normalized_mae": 0.02105582132935524,
+        "linear_tree_region_mae": 0.002865480026230216
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.002721241442486644,
+        "linear_rgb_p95": 0.010166257619857788,
+        "linear_normalized_mae": 0.02383595146238804,
+        "linear_tree_region_mae": 0.003237558528780937
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.0020494083873927593,
+        "linear_rgb_p95": 0.010131176561117172,
+        "linear_normalized_mae": 0.01803237944841385,
+        "linear_tree_region_mae": 0.0023633234668523073
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 2,
+      "lighting": "overcast",
+      "resolution": 112,
+      "rotation_degrees": 0.0,
+      "baseline": {
+        "linear_rgb_mae": 0.011314698494970798,
+        "linear_rgb_p95": 0.047965385019779205,
+        "linear_normalized_mae": 0.045844968408346176,
+        "linear_tree_region_mae": 0.01701696775853634
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.004080876242369413,
+        "linear_rgb_p95": 0.014858709648251534,
+        "linear_normalized_mae": 0.016269108280539513,
+        "linear_tree_region_mae": 0.005853747949004173
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.009189408272504807,
+        "linear_rgb_p95": 0.0332888588309288,
+        "linear_normalized_mae": 0.037019602954387665,
+        "linear_tree_region_mae": 0.01287232805043459
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 0,
+      "lighting": "back",
+      "resolution": 112,
+      "rotation_degrees": 180.0,
+      "baseline": {
+        "linear_rgb_mae": 0.020866233855485916,
+        "linear_rgb_p95": 0.07388067245483398,
+        "linear_normalized_mae": 0.17133139073848724,
+        "linear_tree_region_mae": 0.024189047515392303
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.019857192412018776,
+        "linear_rgb_p95": 0.07334967702627182,
+        "linear_normalized_mae": 0.16237016022205353,
+        "linear_tree_region_mae": 0.02283620461821556
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 0,
+      "lighting": "front",
+      "resolution": 112,
+      "rotation_degrees": 180.0,
+      "baseline": {
+        "linear_rgb_mae": 0.002375904470682144,
+        "linear_rgb_p95": 0.010994472540915012,
+        "linear_normalized_mae": 0.020832303911447525,
+        "linear_tree_region_mae": 0.0033107323106378317
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.0031271695625036955,
+        "linear_rgb_p95": 0.010999142192304134,
+        "linear_normalized_mae": 0.027298493310809135,
+        "linear_tree_region_mae": 0.004361200146377087
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 0,
+      "lighting": "overcast",
+      "resolution": 112,
+      "rotation_degrees": 180.0,
+      "baseline": {
+        "linear_rgb_mae": 0.01119900867342949,
+        "linear_rgb_p95": 0.034755390137434006,
+        "linear_normalized_mae": 0.0453142374753952,
+        "linear_tree_region_mae": 0.01765485480427742
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.00610016006976366,
+        "linear_rgb_p95": 0.019806550815701485,
+        "linear_normalized_mae": 0.024428963661193848,
+        "linear_tree_region_mae": 0.010806459933519363
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 2,
+      "lighting": "back",
+      "resolution": 112,
+      "rotation_degrees": 180.0,
+      "baseline": {
+        "linear_rgb_mae": 0.02130843512713909,
+        "linear_rgb_p95": 0.07393207401037216,
+        "linear_normalized_mae": 0.174886092543602,
+        "linear_tree_region_mae": 0.025593863800168037
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.019266890361905098,
+        "linear_rgb_p95": 0.07316677272319794,
+        "linear_normalized_mae": 0.15772396326065063,
+        "linear_tree_region_mae": 0.021563177928328514
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.020250076428055763,
+        "linear_rgb_p95": 0.07373657077550888,
+        "linear_normalized_mae": 0.1664477288722992,
+        "linear_tree_region_mae": 0.022897357121109962
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 2,
+      "lighting": "front",
+      "resolution": 112,
+      "rotation_degrees": 180.0,
+      "baseline": {
+        "linear_rgb_mae": 0.0023801950737833977,
+        "linear_rgb_p95": 0.010269681923091412,
+        "linear_normalized_mae": 0.02110847271978855,
+        "linear_tree_region_mae": 0.0031845099292695522
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.00286699365824461,
+        "linear_rgb_p95": 0.010420635342597961,
+        "linear_normalized_mae": 0.02481517754495144,
+        "linear_tree_region_mae": 0.0036702288780361414
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.0021437762770801783,
+        "linear_rgb_p95": 0.01041035819798708,
+        "linear_normalized_mae": 0.018635263666510582,
+        "linear_tree_region_mae": 0.002669354435056448
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 2,
+      "lighting": "overcast",
+      "resolution": 112,
+      "rotation_degrees": 180.0,
+      "baseline": {
+        "linear_rgb_mae": 0.011107920669019222,
+        "linear_rgb_p95": 0.0491078682243824,
+        "linear_normalized_mae": 0.04497228562831879,
+        "linear_tree_region_mae": 0.017155570909380913
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.004139445256441832,
+        "linear_rgb_p95": 0.01266016811132431,
+        "linear_normalized_mae": 0.016509754583239555,
+        "linear_tree_region_mae": 0.005627664737403393
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.009001349098980427,
+        "linear_rgb_p95": 0.03241144120693207,
+        "linear_normalized_mae": 0.03625567629933357,
+        "linear_tree_region_mae": 0.012165622785687447
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 0,
+      "lighting": "back",
+      "resolution": 112,
+      "rotation_degrees": 90.0,
+      "baseline": {
+        "linear_rgb_mae": 0.020891845226287842,
+        "linear_rgb_p95": 0.07392244786024094,
+        "linear_normalized_mae": 0.17142203450202942,
+        "linear_tree_region_mae": 0.024180039763450623
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.01988079957664013,
+        "linear_rgb_p95": 0.07346999645233154,
+        "linear_normalized_mae": 0.1624477207660675,
+        "linear_tree_region_mae": 0.022815534844994545
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 0,
+      "lighting": "front",
+      "resolution": 112,
+      "rotation_degrees": 90.0,
+      "baseline": {
+        "linear_rgb_mae": 0.002375421579927206,
+        "linear_rgb_p95": 0.010967561975121498,
+        "linear_normalized_mae": 0.020811045542359352,
+        "linear_tree_region_mae": 0.003297429531812668
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.003127028001472354,
+        "linear_rgb_p95": 0.010963043197989464,
+        "linear_normalized_mae": 0.027276135981082916,
+        "linear_tree_region_mae": 0.004353653639554977
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 0,
+      "lighting": "overcast",
+      "resolution": 112,
+      "rotation_degrees": 90.0,
+      "baseline": {
+        "linear_rgb_mae": 0.011102573946118355,
+        "linear_rgb_p95": 0.03467966616153717,
+        "linear_normalized_mae": 0.04489181563258171,
+        "linear_tree_region_mae": 0.017377743497490883
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.006017880514264107,
+        "linear_rgb_p95": 0.019610032439231873,
+        "linear_normalized_mae": 0.02408313751220703,
+        "linear_tree_region_mae": 0.010566720739006996
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 2,
+      "lighting": "back",
+      "resolution": 112,
+      "rotation_degrees": 90.0,
+      "baseline": {
+        "linear_rgb_mae": 0.0213484950363636,
+        "linear_rgb_p95": 0.07349812984466553,
+        "linear_normalized_mae": 0.17489679157733917,
+        "linear_tree_region_mae": 0.02562258578836918
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.01931796222925186,
+        "linear_rgb_p95": 0.07329420745372772,
+        "linear_normalized_mae": 0.1578364372253418,
+        "linear_tree_region_mae": 0.021645210683345795
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.02031051181256771,
+        "linear_rgb_p95": 0.07382819801568985,
+        "linear_normalized_mae": 0.16662633419036865,
+        "linear_tree_region_mae": 0.022999228909611702
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 2,
+      "lighting": "front",
+      "resolution": 112,
+      "rotation_degrees": 90.0,
+      "baseline": {
+        "linear_rgb_mae": 0.0023907513823360205,
+        "linear_rgb_p95": 0.010289535857737064,
+        "linear_normalized_mae": 0.021198129281401634,
+        "linear_tree_region_mae": 0.0031927376985549927
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.002841009758412838,
+        "linear_rgb_p95": 0.010373764671385288,
+        "linear_normalized_mae": 0.024574261158704758,
+        "linear_tree_region_mae": 0.0035942893009632826
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.002113965805619955,
+        "linear_rgb_p95": 0.010341535322368145,
+        "linear_normalized_mae": 0.01836492121219635,
+        "linear_tree_region_mae": 0.002583728637546301
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 2,
+      "lighting": "overcast",
+      "resolution": 112,
+      "rotation_degrees": 90.0,
+      "baseline": {
+        "linear_rgb_mae": 0.011212642304599285,
+        "linear_rgb_p95": 0.04979230463504791,
+        "linear_normalized_mae": 0.04540679231286049,
+        "linear_tree_region_mae": 0.01723429374396801
+      },
+      "capture_fix": {
+        "linear_rgb_mae": 0.004126405343413353,
+        "linear_rgb_p95": 0.012703977525234222,
+        "linear_normalized_mae": 0.016457242891192436,
+        "linear_tree_region_mae": 0.005582442972809076
+      },
+      "capture_support": {
+        "linear_rgb_mae": 0.009034845978021622,
+        "linear_rgb_p95": 0.032551221549510956,
+        "linear_normalized_mae": 0.03639260679483414,
+        "linear_tree_region_mae": 0.012190246023237705
+      }
+    }
+  ],
+  "isolated_tree": [
+    {
+      "level": 0,
+      "light": "front",
+      "baseline": {
+        "display_rgb_mae_percent": 0.3797503702001633,
+        "tree_region_mae_percent": 0.5800925925925925
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 0.37975228502859465,
+        "tree_region_mae_percent": 0.5800942946623092
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.4913424223856208,
+        "tree_region_mae_percent": 0.7115979030501091
+      }
+    },
+    {
+      "level": 0,
+      "light": "back",
+      "baseline": {
+        "display_rgb_mae_percent": 2.443424479166667,
+        "tree_region_mae_percent": 2.6595528662854027
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 2.4434222452001633,
+        "tree_region_mae_percent": 2.659551164215686
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 2.296921913296569,
+        "tree_region_mae_percent": 2.4982238902505447
+      }
+    },
+    {
+      "level": 0,
+      "light": "overcast",
+      "baseline": {
+        "display_rgb_mae_percent": 1.8907031888276142,
+        "tree_region_mae_percent": 2.3087835307734204
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 1.890703507965686,
+        "tree_region_mae_percent": 2.3087826797385613
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.6415670955882353,
+        "tree_region_mae_percent": 0.9048338779956425
+      }
+    },
+    {
+      "level": 1,
+      "light": "front",
+      "baseline": {
+        "display_rgb_mae_percent": 0.3791076261233659,
+        "tree_region_mae_percent": 0.5784620098039217
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 0.3791063495710783,
+        "tree_region_mae_percent": 0.5784586056644881
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.49159677542892155,
+        "tree_region_mae_percent": 0.7108285675381266
+      }
+    },
+    {
+      "level": 1,
+      "light": "back",
+      "baseline": {
+        "display_rgb_mae_percent": 2.4432665058210787,
+        "tree_region_mae_percent": 2.655789590141612
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 2.443268101511438,
+        "tree_region_mae_percent": 2.655792994281046
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 2.295877374387255,
+        "tree_region_mae_percent": 2.493298951525054
+      }
+    },
+    {
+      "level": 1,
+      "light": "overcast",
+      "baseline": {
+        "display_rgb_mae_percent": 1.8853780509599671,
+        "tree_region_mae_percent": 2.304848345588235
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 1.8853774126838234,
+        "tree_region_mae_percent": 2.3048449414488017
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.6399838516135622,
+        "tree_region_mae_percent": 0.9080133442265795
+      }
+    },
+    {
+      "level": 2,
+      "light": "front",
+      "baseline": {
+        "display_rgb_mae_percent": 0.3868275760825162,
+        "tree_region_mae_percent": 0.5394224877450982
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 0.307818244485294,
+        "tree_region_mae_percent": 0.3811904275599129
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.4158710554534313,
+        "tree_region_mae_percent": 0.5092601102941178
+      }
+    },
+    {
+      "level": 2,
+      "light": "back",
+      "baseline": {
+        "display_rgb_mae_percent": 2.566148067299836,
+        "tree_region_mae_percent": 3.0005472154139423
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 2.334744561887255,
+        "tree_region_mae_percent": 2.4491344975490206
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 2.1878890293096407,
+        "tree_region_mae_percent": 2.2826542075163396
+      }
+    },
+    {
+      "level": 2,
+      "light": "overcast",
+      "baseline": {
+        "display_rgb_mae_percent": 2.5290380540236925,
+        "tree_region_mae_percent": 3.465990944989107
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 1.7365693933823527,
+        "tree_region_mae_percent": 1.9461414079520691
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.5255176419526145,
+        "tree_region_mae_percent": 0.6071384803921571
+      }
+    }
+  ],
+  "intended_size": [
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 0,
+      "light": "front",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 0.4848814525810323,
+        "tree_region_mae_percent": 0.8715708505624472
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.5730000333466717,
+        "tree_region_mae_percent": 0.9558267751545061
+      }
+    },
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 0,
+      "light": "back",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.447531095771642,
+        "tree_region_mae_percent": 2.728897114401316
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 2.26578131252501,
+        "tree_region_mae_percent": 2.5158118803076785
+      }
+    },
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 0,
+      "light": "overcast",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.4198429371748698,
+        "tree_region_mae_percent": 3.329526254946423
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 1.036987711751367,
+        "tree_region_mae_percent": 1.6986794717887153
+      }
+    },
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 2,
+      "light": "front",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 0.4025568560757636,
+        "tree_region_mae_percent": 0.6037692854919747
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.4218354008269973,
+        "tree_region_mae_percent": 0.547719087635054
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 0.33743705815659586,
+        "tree_region_mae_percent": 0.4675759192565914
+      }
+    },
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 2,
+      "light": "back",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.549655278778178,
+        "tree_region_mae_percent": 2.9486516828953797
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 2.199827847805789,
+        "tree_region_mae_percent": 2.3093959806144677
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 2.3565988895558223,
+        "tree_region_mae_percent": 2.4976657329598506
+      }
+    },
+    {
+      "case": "FIR-0-112",
+      "kind": "fir",
+      "level": 2,
+      "light": "overcast",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.8302049986661326,
+        "tree_region_mae_percent": 4.072712418300654
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.877767773776177,
+        "tree_region_mae_percent": 1.357042817126851
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 2.167304421768707,
+        "tree_region_mae_percent": 2.857115068249522
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 0,
+      "light": "front",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 0.44658488395358137,
+        "tree_region_mae_percent": 0.771892090169401
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.5436862244897956,
+        "tree_region_mae_percent": 0.889716997910275
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 0,
+      "light": "back",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.563494147659063,
+        "tree_region_mae_percent": 2.9674369747899156
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 2.406525110044018,
+        "tree_region_mae_percent": 2.7846416344315505
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 0,
+      "light": "overcast",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.4781683506736027,
+        "tree_region_mae_percent": 3.5073473833978035
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 1.1716248999599836,
+        "tree_region_mae_percent": 2.00802543239518
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 2,
+      "light": "front",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 0.37533763505402157,
+        "tree_region_mae_percent": 0.5319072073273755
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.3952622715752967,
+        "tree_region_mae_percent": 0.49108532301809615
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 0.30467395291449906,
+        "tree_region_mae_percent": 0.3878495842781557
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 2,
+      "light": "back",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.6380239595838337,
+        "tree_region_mae_percent": 3.151844070961718
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 2.1964723389355743,
+        "tree_region_mae_percent": 2.2727980080921255
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 2.351534363745498,
+        "tree_region_mae_percent": 2.4533146591970123
+      }
+    },
+    {
+      "case": "SAPLING_B-0-112",
+      "kind": "sapling_b",
+      "level": 2,
+      "light": "overcast",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.7889280712284914,
+        "tree_region_mae_percent": 3.8809412653950464
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.8047906662665064,
+        "tree_region_mae_percent": 1.0865179405095369
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 2.079310891023076,
+        "tree_region_mae_percent": 2.5596349650971497
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 0,
+      "light": "front",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 0.39651277177537675,
+        "tree_region_mae_percent": 0.643868658574541
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.49546902094170997,
+        "tree_region_mae_percent": 0.7642779333955806
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 0,
+      "light": "back",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.5712785114045618,
+        "tree_region_mae_percent": 2.9182784224801033
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 2.4284609677204214,
+        "tree_region_mae_percent": 2.7621604197234446
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 0,
+      "light": "overcast",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.369135154061625,
+        "tree_region_mae_percent": 3.2158418923124805
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 1.1166028911564623,
+        "tree_region_mae_percent": 1.8180327686630207
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 2,
+      "light": "front",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 0.37266990129385086,
+        "tree_region_mae_percent": 0.5540271664221245
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.4105287948512738,
+        "tree_region_mae_percent": 0.5372982526343872
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 0.3133024042950513,
+        "tree_region_mae_percent": 0.419973544973545
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 2,
+      "light": "back",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.66515981392557,
+        "tree_region_mae_percent": 3.2285414165666264
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 2.253713985594237,
+        "tree_region_mae_percent": 2.370392601485038
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 2.39046660330799,
+        "tree_region_mae_percent": 2.5224534258147706
+      }
+    },
+    {
+      "case": "TREE-180-112",
+      "kind": "tree",
+      "level": 2,
+      "light": "overcast",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.656197895824997,
+        "tree_region_mae_percent": 3.819944644524477
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.7669734560490862,
+        "tree_region_mae_percent": 0.897358943577431
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 1.9555843170601575,
+        "tree_region_mae_percent": 2.2245287003690364
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 0,
+      "light": "front",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 0.3895724956649326,
+        "tree_region_mae_percent": 0.6258058779067183
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.48896641990129375,
+        "tree_region_mae_percent": 0.746242941621093
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 0,
+      "light": "back",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.5746027577697745,
+        "tree_region_mae_percent": 2.9116646658663465
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 2.431420484860611,
+        "tree_region_mae_percent": 2.752045262549464
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 0,
+      "light": "overcast",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.3482726423902895,
+        "tree_region_mae_percent": 3.1543450713618784
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 1.0998045051353873,
+        "tree_region_mae_percent": 1.7680127606598195
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 2,
+      "light": "front",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 0.367063492063492,
+        "tree_region_mae_percent": 0.5330743408474501
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.4061207816459917,
+        "tree_region_mae_percent": 0.5242096838735496
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 0.3083108243297318,
+        "tree_region_mae_percent": 0.4052176426126005
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 2,
+      "light": "back",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.666358209950647,
+        "tree_region_mae_percent": 3.216564403539193
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 2.25500616913432,
+        "tree_region_mae_percent": 2.369753456938331
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 2.3930509703881553,
+        "tree_region_mae_percent": 2.524092970521542
+      }
+    },
+    {
+      "case": "TREE-90-112",
+      "kind": "tree",
+      "level": 2,
+      "light": "overcast",
+      "resolution": [
+        112,
+        112
+      ],
+      "baseline": {
+        "display_rgb_mae_percent": 2.6899718220621582,
+        "tree_region_mae_percent": 3.8223344893512956
+      },
+      "capture_fix": {
+        "display_rgb_mae_percent": 0.766004318394024,
+        "tree_region_mae_percent": 0.8927459872838025
+      },
+      "capture_support": {
+        "display_rgb_mae_percent": 1.9662760937708417,
+        "tree_region_mae_percent": 2.234699435329688
+      }
+    }
+  ],
+  "scenes": {
+    "Forest": {
+      "checks": {
+        "before capture valid": true,
+        "repair idempotent": true,
+        "all seven crowns have capture support": true,
+        "failure restores original source data": true,
+        "failure leaves no temporary data": true,
+        "after capture valid": true,
+        "placements IDs rotations and sizes unchanged": true,
+        "instance counts unchanged": true,
+        "runtime triangle budget unchanged": true,
+        "all runtime sources restored": true,
+        "render sources still six triangles": true,
+        "probe intensity one": true,
+        "changed clearance invalidates capture": true,
+        "restored clearance recovers capture": true
+      },
+      "exposure_ev": 3.0,
+      "resolution": [
+        960,
+        540
+      ],
+      "samples": 128,
+      "cycles_denoising": true,
+      "cycles_device": "GPU",
+      "transparent_bounces": 64,
+      "comparisons": {
+        "before": {
+          "linear_rgb_mae": 0.0021984109189361334,
+          "linear_rgb_p95": 0.009570540860295296,
+          "linear_normalized_mae": 0.6610705256462097,
+          "linear_eevee_mean": 0.0031503397040069103,
+          "linear_cycles_mean": 0.003500723745673895,
+          "display_rgb_mae_percent": 5.218619381909142,
+          "display_channel_p95_percent": 19.215686274509803,
+          "display_signed_bias_percent": -0.23761044541273316,
+          "lower_half_mae_percent": 4.3938992778181225,
+          "middle_crop_mae_percent": 5.545746590817399
+        },
+        "after": {
+          "linear_rgb_mae": 0.002098043914884329,
+          "linear_rgb_p95": 0.008884668350219727,
+          "linear_normalized_mae": 0.527420699596405,
+          "linear_eevee_mean": 0.0036318995989859104,
+          "linear_cycles_mean": 0.0043239654041826725,
+          "display_rgb_mae_percent": 4.738611262406197,
+          "display_channel_p95_percent": 16.470588235294116,
+          "display_signed_bias_percent": -1.1380802166545632,
+          "lower_half_mae_percent": 4.440717037843943,
+          "middle_crop_mae_percent": 5.202445432905674
+        }
+      },
+      "renders": {
+        "forest_before_eevee": "Reused completed matching render",
+        "forest_after_eevee": 15.798971399999573,
+        "forest_before_cycles": "Reused completed 128-sample CPU render",
+        "forest_after_cycles": 51.16333329999907
+      },
+      "before_bake_seconds": 36.16272469999967,
+      "after_bake_seconds": 13.380138599997736,
+      "normal_diagnostics": [
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR DEAD \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.1882353127002716,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR FIR \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.16862745583057404,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR FIR \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.16862745583057404,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR FIR \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.10196079313755035,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.1411764770746231,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.15294118225574493,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.1568627506494522,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING_B \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.1411764770746231,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING_B \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.16078431904315948,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING_B \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.14901961386203766,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.1725490242242813,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.1764705926179886,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.1725490242242813,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_B \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.16862745583057404,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_B \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.1764705926179886,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_B \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.1725490242242813,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_C \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.1725490242242813,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_C \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.1764705926179886,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_C \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.16078431904315948,
+          "legacy_inward_z": true
+        }
+      ],
+      "capture_support": [
+        {
+          "kind": "DEAD",
+          "support_triangles": 230,
+          "support_area_uv": 0.138427734375
+        },
+        {
+          "kind": "FIR",
+          "support_triangles": 786,
+          "support_area_uv": 0.793212890625
+        },
+        {
+          "kind": "SAPLING",
+          "support_triangles": 652,
+          "support_area_uv": 0.68115234375
+        },
+        {
+          "kind": "SAPLING_B",
+          "support_triangles": 668,
+          "support_area_uv": 0.659912109375
+        },
+        {
+          "kind": "TREE",
+          "support_triangles": 492,
+          "support_area_uv": 0.470703125
+        },
+        {
+          "kind": "TREE_B",
+          "support_triangles": 584,
+          "support_area_uv": 0.5556640625
+        },
+        {
+          "kind": "TREE_C",
+          "support_triangles": 512,
+          "support_area_uv": 0.515625
+        }
+      ],
+      "runtime_triangles": 4999998,
+      "counts": {
+        "DEAD": 1969,
+        "FERN": 737,
+        "FERN_B": 729,
+        "FERN_C": 769,
+        "FIR": 6316,
+        "GRASS": 7237,
+        "ROCK": 7,
+        "SAPLING": 1106,
+        "SAPLING_B": 1855,
+        "TREE": 6841,
+        "TREE_B": 7524,
+        "TREE_C": 9685,
+        "WILDGRASS": 7244,
+        "WILDGRASS_B": 7193
+      },
+      "placement_hash": "3450926a1f4c180358d89112794160339ef83bbeace29f51ca512856de72dddb",
+      "cycles_devices": {
+        "before": "CPU (reused)",
+        "after": "GPU"
+      }
+    },
+    "Grassland": {
+      "checks": {
+        "before capture valid": true,
+        "repair idempotent": true,
+        "all seven crowns have capture support": true,
+        "failure restores original source data": true,
+        "failure leaves no temporary data": true,
+        "after capture valid": true,
+        "placements IDs rotations and sizes unchanged": true,
+        "instance counts unchanged": true,
+        "runtime triangle budget unchanged": true,
+        "all runtime sources restored": true,
+        "render sources still six triangles": true,
+        "probe intensity one": true,
+        "changed clearance invalidates capture": true,
+        "restored clearance recovers capture": true
+      },
+      "exposure_ev": 3.0,
+      "resolution": [
+        960,
+        540
+      ],
+      "samples": 128,
+      "cycles_denoising": true,
+      "cycles_device": "GPU",
+      "transparent_bounces": 64,
+      "comparisons": {
+        "before": {
+          "linear_rgb_mae": 0.014145719818770885,
+          "linear_rgb_p95": 0.05777954310178757,
+          "linear_normalized_mae": 0.1149594634771347,
+          "linear_eevee_mean": 0.1180398240685463,
+          "linear_cycles_mean": 0.12805944681167603,
+          "display_rgb_mae_percent": 7.636444464617122,
+          "display_channel_p95_percent": 23.921568627450984,
+          "display_signed_bias_percent": -3.5703108609699026,
+          "lower_half_mae_percent": 8.876403009763575,
+          "middle_crop_mae_percent": 9.032158330867784
+        },
+        "after": {
+          "linear_rgb_mae": 0.014830701984465122,
+          "linear_rgb_p95": 0.06568078696727753,
+          "linear_normalized_mae": 0.12083934992551804,
+          "linear_eevee_mean": 0.11679092049598694,
+          "linear_cycles_mean": 0.12867054343223572,
+          "display_rgb_mae_percent": 7.382376896231745,
+          "display_channel_p95_percent": 22.745098039215684,
+          "display_signed_bias_percent": -4.566367858871943,
+          "lower_half_mae_percent": 8.819444948761397,
+          "middle_crop_mae_percent": 8.67748622654366
+        }
+      },
+      "renders": {
+        "grassland_before_eevee": "Reused completed matching render",
+        "grassland_after_eevee": 14.872863199998392,
+        "grassland_before_cycles": 12.702044800003932,
+        "grassland_after_cycles": 12.96028600000136
+      },
+      "before_bake_seconds": 13.514013500003784,
+      "after_bake_seconds": 10.927331999999296,
+      "normal_diagnostics": [
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR DEAD \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.1882353127002716,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR FIR \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.16862745583057404,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR FIR \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.16862745583057404,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR FIR \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.10196079313755035,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.1411764770746231,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.15294118225574493,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.1568627506494522,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING_B \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.1411764770746231,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING_B \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.16078431904315948,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR SAPLING_B \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.14901961386203766,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.1725490242242813,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.1764705926179886,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.1725490242242813,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_B \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.16862745583057404,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_B \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.1764705926179886,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_B \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.1725490242242813,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_C \u00b7 source silhouette 0",
+          "opaque_median_encoded_z": 0.1725490242242813,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_C \u00b7 source silhouette 1",
+          "opaque_median_encoded_z": 0.1764705926179886,
+          "legacy_inward_z": true
+        },
+        {
+          "material": "Terra \u00b7 Living Biomes \u00b7 PBR TREE_C \u00b7 source silhouette 2",
+          "opaque_median_encoded_z": 0.16078431904315948,
+          "legacy_inward_z": true
+        }
+      ],
+      "capture_support": [
+        {
+          "kind": "DEAD",
+          "support_triangles": 230,
+          "support_area_uv": 0.138427734375
+        },
+        {
+          "kind": "FIR",
+          "support_triangles": 786,
+          "support_area_uv": 0.793212890625
+        },
+        {
+          "kind": "SAPLING",
+          "support_triangles": 652,
+          "support_area_uv": 0.68115234375
+        },
+        {
+          "kind": "SAPLING_B",
+          "support_triangles": 668,
+          "support_area_uv": 0.659912109375
+        },
+        {
+          "kind": "TREE",
+          "support_triangles": 492,
+          "support_area_uv": 0.470703125
+        },
+        {
+          "kind": "TREE_B",
+          "support_triangles": 584,
+          "support_area_uv": 0.5556640625
+        },
+        {
+          "kind": "TREE_C",
+          "support_triangles": 512,
+          "support_area_uv": 0.515625
+        }
+      ],
+      "runtime_triangles": 4999996,
+      "counts": {
+        "DEAD": 72,
+        "FERN": 42,
+        "FERN_B": 43,
+        "FERN_C": 37,
+        "FIR": 260,
+        "GRASS": 21042,
+        "ROCK": 6,
+        "SAPLING": 127,
+        "SAPLING_B": 140,
+        "TREE": 327,
+        "TREE_B": 178,
+        "TREE_C": 345,
+        "WILDGRASS": 21302,
+        "WILDGRASS_B": 21377
+      },
+      "placement_hash": "57ef07392724bd25938755c868dc52bb72c6ce1fe7fc9722c6ff1b8675cb892c",
+      "cycles_devices": {
+        "before": "GPU",
+        "after": "GPU"
+      }
+    }
+  },
+  "experimental_above_ground": {
+    "forest": {
+      "display_rgb_mae_percent": 9.454213820301783,
+      "same_corrected_normals_cycles_reference": true,
+      "default_enabled": false
+    },
+    "grassland": {
+      "display_rgb_mae_percent": 6.831161492374728,
+      "same_corrected_normals_cycles_reference": true,
+      "default_enabled": false
+    }
+  }
+}

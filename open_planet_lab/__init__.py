@@ -11,8 +11,8 @@ from bpy.props import EnumProperty,PointerProperty,FloatProperty
 # rather than leaving the previous generator/shader modules in Python's cache.
 if 'generator' in globals():
     import importlib
-    from . import presets,nodes,lod_mesh,lod,generator,biome,ecology,terrain_regions,realism,look_math,ground,air,lookdev
-    for module in (presets,nodes,lod_mesh,ecology,terrain_regions,lod,generator,biome,realism,look_math,ground,air,lookdev):importlib.reload(module)
+    from . import presets,nodes,lod_mesh,lod,generator,biome,ecology,terrain_regions,realism,look_math,ground,air,foliage_math,foliage,lookdev
+    for module in (presets,nodes,lod_mesh,ecology,terrain_regions,lod,generator,biome,realism,look_math,ground,air,foliage_math,foliage,lookdev):importlib.reload(module)
 from .presets import PRESETS,LABELS,BASE,RANGES
 from . import generator,lod
 
@@ -78,6 +78,17 @@ class OP_OT_look_enable(bpy.types.Operator):
         try:lookdev.enable(context.scene,root)
         except Exception as exc:self.report({'ERROR'},str(exc));return {'CANCELLED'}
         self.report({'INFO'},'Development daylight enabled. Bake lighting after locking the shot.')
+        return {'FINISHED'}
+
+class OP_OT_foliage_enable(bpy.types.Operator):
+    bl_idname='oplab.foliage_enable';bl_label='Repair Foliage Lighting';bl_options={'REGISTER','UNDO'}
+    def execute(self,context):
+        from . import foliage
+        root=generator.active_root(context)
+        if not root:return {'CANCELLED'}
+        try:foliage.enable(context.scene,root)
+        except Exception as exc:self.report({'ERROR'},str(exc));return {'CANCELLED'}
+        self.report({'INFO'},root.get('op_foliage_status','Foliage lighting repaired'))
         return {'FINISHED'}
 
 class OP_OT_look_bake(bpy.types.Operator):
@@ -242,6 +253,12 @@ class OP_PT_look(WorldPanel,bpy.types.Panel):
             l.prop(r,'["%s"]'%key,text=LABELS[key])
         l.operator('oplab.lod_refresh',text='Refresh Ground & Daylight',icon='FILE_REFRESH')
         l.separator()
+        l.operator('oplab.foliage_enable',icon='MATERIAL')
+        if r.get('look_foliage_enabled'):
+            l.label(text=r.get('op_foliage_status','Corrected crown lighting'))
+            l.prop(r,'["look_probe_above_ground"]',text=LABELS['look_probe_above_ground'])
+            if r.get('look_probe_above_ground'):
+                l.prop(r,'["look_probe_clearance"]',text=LABELS['look_probe_clearance'])
         for key in ('look_probe_extent','look_probe_capture','look_probe_resolution','look_probe_samples'):
             l.prop(r,'["%s"]'%key,text=LABELS[key])
         l.operator('oplab.look_bake',icon='LIGHTPROBE_VOLUME')
@@ -252,7 +269,7 @@ class OP_PT_look(WorldPanel,bpy.types.Panel):
 
 classes=(OP_LODSettings,OP_Settings,OP_OT_create,OP_OT_demo,OP_OT_engine,OP_OT_setup,OP_OT_keyframe,
     OP_OT_lod_enable,OP_OT_lod_refresh,OP_OT_lod_restore,OP_OT_entry_demo,OP_OT_biome_enable,OP_OT_realism_enable,
-    OP_OT_look_enable,OP_OT_look_bake,OP_OT_look_disable,
+    OP_OT_look_enable,OP_OT_foliage_enable,OP_OT_look_bake,OP_OT_look_disable,
     OP_PT_main,OP_PT_terrain,OP_PT_clouds,OP_PT_rings,OP_PT_lighting,OP_PT_lod,OP_PT_biome,OP_PT_look)
 def register():
     for c in classes:bpy.utils.register_class(c)
