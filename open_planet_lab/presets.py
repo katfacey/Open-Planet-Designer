@@ -107,3 +107,22 @@ BASE.update(biome_realism=False,biome_region_strength=1.,biome_transition=.22,bi
 LABELS.update(biome_realism='Coherent terrain and habitat',biome_region_strength='Measured terrain height scale',
     biome_transition='Detail transition width',biome_tree_distance='Individual tree distance / radius')
 RANGES.update(biome_realism=(0,1),biome_region_strength=(.1,3.),biome_transition=(.05,.5),biome_tree_distance=(.00001,.002))
+
+# Experimental Earth daylight and substrate pass; existing beta scenes opt in.
+BASE.update(look_enabled=False,look_texture_scale=1.,look_moisture=.35,
+    look_air_density=1.,look_aerosol=.35,look_sky_strength=.035,
+    look_probe_extent=90.,look_probe_resolution=24,look_probe_samples=512,
+    look_probe_capture=40.,look_shadow_texel=.02,look_foliage_enabled=False,look_probe_clearance=.3,
+    look_probe_above_ground=False)
+LABELS.update(look_enabled='Development daylight and ground',look_texture_scale='Ground scan scale',
+    look_moisture='Ground moisture',look_air_density='Air density',look_aerosol='Aerosol density',
+    look_sky_strength='Sky illumination',look_probe_extent='Lighting capture width (m)',
+    look_probe_resolution='Lighting cells across',look_probe_samples='Lighting bake samples',
+    look_probe_capture='Capture distance (m)',look_shadow_texel='Minimum shadow texel (m)',
+    look_foliage_enabled='Corrected crown normals and alpha-aware capture',look_probe_clearance='Capture floor clearance (m)',
+    look_probe_above_ground='Experimental above-ground capture')
+RANGES.update(look_enabled=(0,1),look_texture_scale=(.1,10.),look_moisture=(0.,1.),
+    look_air_density=(0.,3.),look_aerosol=(0.,3.),look_sky_strength=(0.,1.),
+    look_probe_extent=(10.,500.),look_probe_resolution=(4,48),look_probe_samples=(32,2048),
+    look_probe_capture=(5.,500.),look_shadow_texel=(.005,.2),look_foliage_enabled=(0,1),look_probe_clearance=(.05,5.),
+    look_probe_above_ground=(0,1))

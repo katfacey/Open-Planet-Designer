@@ -61,6 +61,10 @@ def enable(scene,root):
     upgrade_entry(scene,root)
 
 def setup_world(scene,root):
+    if root.get('look_enabled'):
+        from . import lookdev
+        lookdev.environment(scene,root)
+        return
     def orient(world):
         up=Vector(tuple(root.get('op_anchor_'+a,0.) for a in 'xyz'))
         up=(root.matrix_world.to_quaternion()@up).normalized() if up.length else Vector((0,0,1))
@@ -167,6 +171,9 @@ def lighting(scene,root):
     surface.visible_shadow=True;surface.visible_glossy=True;surface.visible_diffuse=True
     scene.eevee.use_raytracing=True
     scene.eevee.shadow_ray_count=4;scene.eevee.shadow_step_count=12
+    if root.get('look_enabled'):
+        from . import lookdev
+        lookdev.lighting(scene,root)
 
 def blades(name,collection,count):
     """Curved tapered ribbons: actual blade geometry, no flat grass image plane."""
@@ -198,7 +205,14 @@ def assets(root):
             if key[0]!='GRASS':bpy.data.objects.remove(ob,do_unlink=True);del found[key]
     kinds=('TREE','TREE_B','TREE_C','SAPLING','SAPLING_B','FIR','DEAD','GRASS','WILDGRASS','WILDGRASS_B','ROCK','FERN','FERN_B','FERN_C') if realism else ('TREE','TREE_B','TREE_C','GRASS','WILDGRASS','ROCK','FERN')
     required={(kind,level) for kind in kinds for level in range(3)}
-    if required<=found.keys():return found
+    if required<=found.keys():
+        if root.get('look_enabled'):
+            from . import lookdev
+            lookdev.wrap_assets(root)
+        if root.get('look_foliage_enabled'):
+            from . import foliage
+            foliage.patch_sources(root)
+        return found
     path=Path(__file__).parent/('assets/realism_library.blend' if realism else 'assets/biome_library.blend')
     if not path.exists():raise RuntimeError('Install the full add-on ZIP including its CC0 model library')
     present={kind for kind,level in found}
@@ -221,6 +235,12 @@ def assets(root):
     for (kind,level),ob in found.items():
         ob.name=root.name+' Â· '+kind+' source LOD'+str(level);ob.parent=root;ob.hide_render=True;ob.hide_set(True)
         ob.hide_select=True;ob['op_role']='BIOME_SOURCE';ob['op_owner']=root.name
+    if root.get('look_enabled'):
+        from . import lookdev
+        lookdev.wrap_assets(root)
+    if root.get('look_foliage_enabled'):
+        from . import foliage
+        foliage.patch_sources(root)
     return found
 
 def sample(scene,root,directions,local=False):

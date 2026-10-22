@@ -1,6 +1,8 @@
 # Development
 
-The internal add-on package remains `open_planet_lab` for compatibility with existing saved files. Public branding is Open Planet Designer. The release is 1.3.0-beta.1; Blender's numeric add-on version is `(1, 3, 0)`.
+The internal add-on package remains `open_planet_lab` for compatibility with existing saved files. Public branding is Open Planet Designer. The public release is 1.3.0-beta.1. Current source is 1.4.0-dev, with Blender numeric version `(1, 4, 0)` and an optional Blender 5.2+ [daylight/ground development pass](DAYLIGHT_GROUND_DEVELOPMENT.md).
+
+The [foliage follow-up](FOLIAGE_DEVELOPMENT.md) adds an explicit normal/capture repair with preserved runtime scatter costs, plus recorded regressions and acceptance limits. Its local package is `1.4.0-dev.2`; it does not replace the public beta.
 
 ## Source and assets
 
@@ -8,7 +10,7 @@ Clone the repository, download the complete add-on release ZIP, and run:
 
 ```text
 python tools/restore_assets.py /path/to/Open-Planet-Designer-1.3.0-beta.1.zip --sha256 CHECKSUM_FROM_RELEASE
-python -m unittest discover -s tests -p "test_planet_*.py"
+python -m unittest discover -s tests
 ```
 
 The source package requires Blender's `bpy`. Pure-Python tests do not require Blender. Asset preparation/data scripts may additionally require NumPy, Pillow and network access. Scene generation is an offline workflow and can take substantial time.

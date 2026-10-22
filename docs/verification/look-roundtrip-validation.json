@@ -1,0 +1,15 @@
+{
+  "saved capture initially valid": true,
+  "edited placement invalidates": true,
+  "restored placement recovers": true,
+  "edited sun invalidates": true,
+  "restored sun recovers": true,
+  "alpha-bearing source materials found": true,
+  "restore recovers legacy fill light": true,
+  "restore removes air wrappers": true,
+  "restore keeps source alpha": true,
+  "frozen-detail upgrade removes legacy fills": true,
+  "upgrade wraps source once": true,
+  "upgrade keeps alpha coverage": true,
+  "lighting bake UI icon exists": true
+}

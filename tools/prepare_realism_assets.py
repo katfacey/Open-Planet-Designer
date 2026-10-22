@@ -82,7 +82,8 @@ def render_atlas(ob,kind):
         if bs.inputs['Base Color'].is_linked:ls.new(bs.inputs['Base Color'].links[0].from_socket,emission.inputs['Color'])
         else:emission.inputs['Color'].default_value=bs.inputs['Base Color'].default_value
         geom=ns.new('ShaderNodeNewGeometry');tr=ns.new('ShaderNodeVectorTransform');tr.vector_type='NORMAL';tr.convert_from='WORLD';tr.convert_to='CAMERA';ls.new(geom.outputs['Normal'],tr.inputs[0])
-        mul=ns.new('ShaderNodeVectorMath');mul.operation='MULTIPLY_ADD';mul.inputs[1].default_value=(.5,.5,.5);mul.inputs[2].default_value=(.5,.5,.5);ls.new(tr.outputs[0],mul.inputs[0])
+        # Camera forward is -Z, while tangent normals face outward along +Z.
+        mul=ns.new('ShaderNodeVectorMath');mul.operation='MULTIPLY_ADD';mul.inputs[1].default_value=(.5,.5,-.5);mul.inputs[2].default_value=(.5,.5,.5);ls.new(tr.outputs[0],mul.inputs[0])
         normal=ns.new('ShaderNodeEmission');normal.name='Atlas tangent normal';ls.new(mul.outputs[0],normal.inputs['Color'])
         transparent=ns.new('ShaderNodeBsdfTransparent');mix=ns.new('ShaderNodeMixShader');mix.name='Atlas alpha'
         if bs.inputs['Alpha'].is_linked:ls.new(bs.inputs['Alpha'].links[0].from_socket,mix.inputs[0])
@@ -118,6 +119,7 @@ def proxy(kind,paths):
         for li,coord in zip(polygon.loop_indices,((0,0),(1,0),(1,1),(0,1))):uv.data[li].uv=coord
     for i,pair in enumerate(paths):
         mat=bpy.data.materials.new(kind+' · source silhouette '+str(i));mat.use_nodes=True;ns=mat.node_tree.nodes;ls=mat.node_tree.links;bs=ns.get('Principled BSDF');bs.inputs['Roughness'].default_value=.78
+        mat['op_atlas_normal_convention']='TANGENT_OUTWARD_Z_V1'
         color=ns.new('ShaderNodeTexImage');color.image=bpy.data.images.load(str(pair['color']),check_existing=True);color.image.pack()
         ls.new(color.outputs['Color'],bs.inputs['Base Color']);ls.new(color.outputs['Alpha'],bs.inputs['Alpha'])
         tex=ns.new('ShaderNodeTexImage');tex.image=bpy.data.images.load(str(pair['normal']),check_existing=True);tex.image.colorspace_settings.name='Non-Color';tex.image.pack()

@@ -1,12 +1,16 @@
 # Open Planet Designer: photorealism research and implementation guide
 
-**Research date: 20 October 2026. Beta status updated: 21 October 2026.**
+**Research date: 20 October 2026. Beta status updated: 21 October 2026. Development update: 22 October 2026.**
 
 This expanded discussion records the research, diagnosis, implementation direction and remaining goals for Open Planet Designer. The first three highest-priority structural corrections have been implemented in the beta and are struck through below. The research originally preceded implementation; later sections remain design proposals unless the beta status explicitly says otherwise. See [the realism guide](REALISM_GUIDE.md) for the actual implementation, tests and limitations.
 
 **Completed structural pass:** more varied forest ages/forms; coherent measured regional terrain; fixed-size grass and vegetation representations derived from shared placements. These are scoped implementation milestones. Photographic approval, close engine agreement, hero cliff meshes, complete ecological rules and seamless animated LOD transitions remain open. The 25-second demo shows one continuous bounded descent with cached destination detail. It does not qualify arbitrary routes, dynamic LOD transitions or consumer hardware.
 
 ## 1. Recommended direction
+
+**Next development pass:** the three High priorities below now have an optional first implementation: coherent ground scan layers, matched daylight with finite static indirect-light capture, and shared spherical clear-air perspective. See [the research, controls, experiments and remaining gates](DAYLIGHT_GROUND_DEVELOPMENT.md). They remain open because photographic approval, dense-foliage shadow agreement, physical calibration, and full atmospheric/cloud entry are not yet qualified.
+
+**Foliage lighting follow-up:** ~~Correct legacy inward-facing distant-crown normal atlases~~ and ~~remove empty rectangular crown regions from the local lighting capture~~ are implemented as an optional repair. Raising the capture floor improved a flat overcast test but overlit the forest, so that experiment is off by default. See [the foliage findings, before/after tests and remaining limits](FOLIAGE_DEVELOPMENT.md). Runtime source geometry, deterministic plants and triangle accounting are preserved. Backlighting, canopy occlusion outside the finite capture, empty dead-tree atlas views and temporal LOD still keep the broader lighting priority open.
 
 Build a **continuous landscape with several representations of the same underlying terrain and ecosystem**. Use measured terrain and scanned foreground assets for the first photographic benchmark; add procedural generators for variation after that benchmark works. Spend geometry where it changes the visible shape, parallax, shadows, or reflections. Preserve the appearance of that geometry when replacing it at a distance.
 
