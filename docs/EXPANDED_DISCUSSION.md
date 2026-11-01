@@ -1,5 +1,7 @@
 # Open Planet Designer: photorealism research and implementation guide
 
+**Godot-first direction, 1 November 2026:** the [Godot implementation plan](GODOT_IMPLEMENTATION_PLAN.md) is now the active roadmap and supersedes this document's future implementation sequence and Eevee/Cycles release gates. This file preserves the original research, completed Blender work and unresolved findings. Blender remains an optional offline authoring/reference tool; the visual and scalability problems carry forward into the Godot runtime.
+
 **Research date: 20 October 2026. Beta status updated: 21 October 2026. Development update: 22 October 2026.**
 
 This expanded discussion records the research, diagnosis, implementation direction and remaining goals for Open Planet Designer. The first three highest-priority structural corrections have been implemented in the beta and are struck through below. The research originally preceded implementation; later sections remain design proposals unless the beta status explicitly says otherwise. See [the realism guide](REALISM_GUIDE.md) for the actual implementation, tests and limitations.
@@ -8,7 +10,7 @@ This expanded discussion records the research, diagnosis, implementation directi
 
 ## 1. Recommended direction
 
-**1 November 2026 — FOSS runtime direction:** interactive exploration is moving toward Godot. The [first Blender import](GODOT_IMPORT.md) preserves existing geometry, placements and CC0 assets in editable native scenes with distance LOD and a free-flight viewer. The imported coverage is frozen. Camera-driven procedural generation must become a background, cached tile system before this can qualify arbitrary planetary flight. Existing atmosphere, ocean, photographic and temporal gates remain open.
+**1 November 2026 — FOSS runtime direction:** Godot is the primary deployment target. The [first Blender import](GODOT_IMPORT.md) preserves existing geometry, placements and CC0 assets in editable native scenes with distance LOD and a free-flight viewer. The imported coverage is frozen. The [native implementation plan](GODOT_IMPLEMENTATION_PLAN.md) starts with profiling, canonical coordinates/data and bounded streaming. Existing atmosphere, ocean, photographic and temporal problems remain open under Godot-specific gates.
 
 **Next development pass:** the three High priorities below now have an optional first implementation: coherent ground scan layers, matched daylight with finite static indirect-light capture, and shared spherical clear-air perspective. See [the research, controls, experiments and remaining gates](DAYLIGHT_GROUND_DEVELOPMENT.md). They remain open because photographic approval, dense-foliage shadow agreement, physical calibration, and full atmospheric/cloud entry are not yet qualified.
 

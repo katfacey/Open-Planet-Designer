@@ -1,5 +1,7 @@
 # Daylight, ground layers and clear-air development pass
 
+**Historical Blender development report.** Godot is now the primary deployment target. The [active implementation plan](GODOT_IMPLEMENTATION_PLAN.md) carries forward the unresolved ground, lighting and atmosphere work; the controls, measurements and engine comparisons below describe the preserved Blender baseline.
+
 Research and implementation: 22 October 2026. This is the optional 1.4 development pass; the public 1.3 beta remains the released baseline.
 
 ## Scope

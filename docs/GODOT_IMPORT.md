@@ -1,6 +1,6 @@
 # Godot migration: first Blender import
 
-1 November 2026. This is a Godot 4.7.2 Forward+ prototype using the existing Blender development review as its source. Interactive development is moving toward a FOSS runtime; the Blender add-on, original files and release remain available.
+1 November 2026. This is a Godot 4.7.2 Forward+ prototype using the existing Blender development review as its source. Godot is now the primary runtime/deployment target; the [implementation plan](GODOT_IMPLEMENTATION_PLAN.md) defines the next stages. The Blender add-on, original files and release remain available as the preserved authoring/reference baseline.
 
 ## Open it
 

@@ -1,6 +1,14 @@
 # Open Planet Designer
 
-**Godot migration prototype:** the five Blender review locations are imported into a native FOSS viewer with free flight, spatial vegetation batches and distance LOD. See the [Godot import guide and actual captures](docs/GODOT_IMPORT.md) and [project instructions](godot/README.md). This first import has frozen terrain/vegetation coverage; native procedural world streaming and atmospheric entry remain development work.
+Open Planet Designer is a FOSS planet and landscape project with **Godot as its primary runtime and deployment target**. The goal is photographic terrain and ecosystems that retain their identity from orbit to ground level, with real foreground geometry and configurable detail budgets.
+
+**Current Godot prototype:** five Blender review locations are imported into a native viewer with free flight, spatial vegetation batches and distance LOD. This is frozen terrain/vegetation coverage; native procedural streaming, planetary atmosphere, animated water and photographic calibration remain development work. The 0.1 project package is an editable migration prototype, not a standalone application release.
+
+[Godot project instructions](godot/README.md) · [Implementation plan and priorities](docs/GODOT_IMPLEMENTATION_PLAN.md) · [Import evidence and actual captures](docs/GODOT_IMPORT.md) · [AI disclosure](AI_DISCLOSURE.md)
+
+The next implementation batch is route profiling/test export, precise planetary coordinates and canonical terrain data, then bounded terrain streaming. Vegetation streaming, photographic calibration, atmospheric entry, clouds, water and additional biomes follow their measured gates. Blender remains an optional offline authoring/export tool; future deployed builds must run independently of it. Eevee/Cycles parity is preserved as historical research rather than an active release requirement.
+
+## Blender archive
 
 **1.3.0-beta.1 · Experimental Blender add-on · Tested in Blender 5.2.0 LTS**
 
@@ -8,11 +16,11 @@ Build editable procedural worlds in Blender, from orbital planets to bounded reg
 
 [Download the beta](https://github.com/katfacey/Open-Planet-Designer/releases/tag/v1.3.0-beta.1) · [User guide](docs/REALISM_GUIDE.md) · [Expanded discussion and roadmap](docs/EXPANDED_DISCUSSION.md) · [AI disclosure](AI_DISCLOSURE.md)
 
-**Source development: 1.4.0-dev.** An optional Blender 5.2+ daylight/ground pass adds aligned scan layers, a shared sun/sky, bounded static lighting captures, and a clear-air entry prototype. See the [development guide and measured limits](docs/DAYLIGHT_GROUND_DEVELOPMENT.md). The downloadable 1.3 beta and its demo remain the released baseline; engine agreement and full atmospheric entry are still in development.
+**Preserved Blender development: 1.4.0-dev.** An optional Blender 5.2+ daylight/ground pass adds aligned scan layers, a shared sun/sky, bounded static lighting captures, and a clear-air entry prototype. See the [development guide and measured limits](docs/DAYLIGHT_GROUND_DEVELOPMENT.md). The downloadable 1.3 beta and its demo remain the released Blender baseline. Unfinished visual work is carried forward into the Godot plan.
 
 The optional [foliage lighting repair](docs/FOLIAGE_DEVELOPMENT.md) corrects inward distant-crown normals and trims transparent crown regions during static lighting capture. Original runtime tree geometry and scatter budgets are retained. An experimental above-ground capture option is off by default after a forest regression. Backlighting, distant coverage and temporal transitions still need qualification.
 
-## What the beta can do
+## What the archived Blender beta can do
 
 - Create eleven world presets, including terrestrial, ocean, desert, ice, gas-giant and stellar examples.
 - Displace actual terrain geometry shared by Eevee and Cycles. The supplied review includes bounded measured mountain and canyon regions.
@@ -21,7 +29,7 @@ The optional [foliage lighting repair](docs/FOLIAGE_DEVELOPMENT.md) corrects inw
 - Use a floating origin for close surface work, with separate controls for terrain, plants, waves and shadows.
 - Animate existing world controls, cloud drift and geometric waves. Render in Eevee or Cycles using the shared scene data.
 
-## Install
+## Install the archived Blender beta
 
 1. Download **Open-Planet-Designer-1.3.0-beta.1.zip** from the beta release. GitHub's automatic source ZIP does not include the large runtime assets.
 2. In Blender, open **Preferences → Add-ons → Install from Disk**, select that ZIP, and enable **Open Planet Designer**.
@@ -30,7 +38,7 @@ The optional [foliage lighting repair](docs/FOLIAGE_DEVELOPMENT.md) corrects inw
 
 The internal Python module remains `open_planet_lab` so existing saved scenes and operators remain compatible. UI branding is Open Planet Designer. Blender 5.0+ is targeted; this release has been tested in 5.2.0 LTS only.
 
-## Current limits
+## Blender baseline limits
 
 This beta does not promise unlimited measured detail or completed photorealism. High-resolution terrain has finite coverage; heightfields do not supply overhangs. Atmospheric/cloud rendering remains an approximation, and the ocean is not a spectral surf simulation. Detail swaps can still pop during movement.
 
@@ -40,11 +48,11 @@ Development rendering used an RTX 5090. Consumer-GPU memory/performance tiers ar
 
 ## Project goals
 
-Develop convincing terrain, materials and ecosystems across orbital, aerial and ground views; preserve landscape identity through detail changes; improve foliage illumination and Eevee/Cycles agreement; build predictable caches and measured hardware presets; and extend atmospheric entry, ocean behavior and ecological placement. The [expanded discussion](docs/EXPANDED_DISCUSSION.md) records the research, completed structural priorities and remaining acceptance gates.
+Develop convincing terrain, materials and ecosystems across orbital, aerial and ground views in Godot; preserve landscape identity through detail changes; improve foliage illumination; build bounded streaming/caches and measured hardware presets; and extend atmospheric entry, ocean behavior and ecological placement. The [Godot implementation plan](docs/GODOT_IMPLEMENTATION_PLAN.md) is the active roadmap. The [expanded discussion](docs/EXPANDED_DISCUSSION.md) preserves earlier research and Blender results.
 
 ## Development and licensing
 
-Run `python -m unittest discover -s tests` for the pure-Python terrain, ecology and clear-air checks. Restore the release assets before using Blender generation tools. Saved integration results are in [docs/verification](docs/verification).
+See the [development workflow](docs/DEVELOPMENT.md) for the Godot project and optional Blender reconstruction tools. Run `python -m unittest discover -s tests` for the retained pure-Python terrain, ecology and clear-air reference checks. Saved integration results are in [docs/verification](docs/verification).
 
 Code: [GPL-3.0-or-later](LICENSE). Bundled source assets: CC0 or public domain, with [provenance and notices](THIRD_PARTY_NOTICES.md). This project was developed with substantial AI assistance; read the [AI disclosure](AI_DISCLOSURE.md).
 

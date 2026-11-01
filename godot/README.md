@@ -2,6 +2,8 @@
 
 This project imports the saved Blender development review into Godot 4.7.2 Forward+. It is a native, editable starting point for the FOSS runtime migration. The Blender source is preserved.
 
+Godot is now the primary deployment target. The [implementation plan](../docs/GODOT_IMPLEMENTATION_PLAN.md) covers native streaming, ecosystems, photographic calibration, atmosphere/clouds, water, designer controls and standalone exports. The current project remains the frozen-import baseline for that work.
+
 ## Open and explore
 
 Import `project.godot` in Godot and press **F5**. The first run can take time while Godot imports the models and textures. On Windows, `./launch.ps1 -Editor` finds an existing Godot Start-menu installation and opens the forest working scene; `./launch.ps1` starts the viewer.
