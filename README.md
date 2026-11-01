@@ -1,5 +1,7 @@
 # Open Planet Designer
 
+**Godot migration prototype:** the five Blender review locations are imported into a native FOSS viewer with free flight, spatial vegetation batches and distance LOD. See the [Godot import guide and actual captures](docs/GODOT_IMPORT.md) and [project instructions](godot/README.md). This first import has frozen terrain/vegetation coverage; native procedural world streaming and atmospheric entry remain development work.
+
 **1.3.0-beta.1 · Experimental Blender add-on · Tested in Blender 5.2.0 LTS**
 
 Build editable procedural worlds in Blender, from orbital planets to bounded regions with real terrain and living surface geometry. Open Planet Designer combines rocky worlds, gas giants and stars with camera-adaptive terrain, instanced vegetation, geometric ocean waves, and artistic controls for atmosphere, clouds, rings and surface appearance.

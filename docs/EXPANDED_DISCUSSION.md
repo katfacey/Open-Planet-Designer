@@ -8,6 +8,8 @@ This expanded discussion records the research, diagnosis, implementation directi
 
 ## 1. Recommended direction
 
+**1 November 2026 — FOSS runtime direction:** interactive exploration is moving toward Godot. The [first Blender import](GODOT_IMPORT.md) preserves existing geometry, placements and CC0 assets in editable native scenes with distance LOD and a free-flight viewer. The imported coverage is frozen. Camera-driven procedural generation must become a background, cached tile system before this can qualify arbitrary planetary flight. Existing atmosphere, ocean, photographic and temporal gates remain open.
+
 **Next development pass:** the three High priorities below now have an optional first implementation: coherent ground scan layers, matched daylight with finite static indirect-light capture, and shared spherical clear-air perspective. See [the research, controls, experiments and remaining gates](DAYLIGHT_GROUND_DEVELOPMENT.md). They remain open because photographic approval, dense-foliage shadow agreement, physical calibration, and full atmospheric/cloud entry are not yet qualified.
 
 **Foliage lighting follow-up:** ~~Correct legacy inward-facing distant-crown normal atlases~~ and ~~remove empty rectangular crown regions from the local lighting capture~~ are implemented as an optional repair. Raising the capture floor improved a flat overcast test but overlit the forest, so that experiment is off by default. See [the foliage findings, before/after tests and remaining limits](FOLIAGE_DEVELOPMENT.md). Runtime source geometry, deterministic plants and triangle accounting are preserved. Backlighting, canopy occlusion outside the finite capture, empty dead-tree atlas views and temporal LOD still keep the broader lighting priority open.
