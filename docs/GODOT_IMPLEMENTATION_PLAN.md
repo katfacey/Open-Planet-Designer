@@ -8,6 +8,10 @@ The product goal remains photographic terrain and ecosystems that retain their i
 
 This document supersedes the **future implementation sequence** in the [expanded Blender discussion](EXPANDED_DISCUSSION.md). That document and the development reports remain the record of research, completed experiments and known failures. No new visual or performance milestone is claimed by this plan.
 
+**Implementation update — 0.2.0-alpha.1:** the first native foundation is now implemented: profiling/replay and Windows export; scalar-precision coordinates and canonical regional/procedural data; bounded stitched terrain generation; and deterministic ecosystem streaming with per-instance LOD and budgets. See [implementation details, verification and remaining limits](GODOT_NATIVE_DEVELOPMENT.md). The complete photographic, temporal and hardware exit gates below remain separate qualifications.
+
+Completed parts of the next batch: ~~route replay/profiling and test export~~; ~~canonical coordinates, physical altitude and height/mask providers~~; ~~first bounded terrain streaming region with coarse fallback~~; ~~native ecology cells, nearby LOD upgrades and budget controls~~. Velocity-aware prefetch, full temporal/HLOD appearance, texture/raster paging, photographic approval and target-hardware qualification remain open.
+
 ## 1. Starting point and changes in direction
 
 Baseline: `godot-import` at `2d8e85c`, the [first Godot import](GODOT_IMPORT.md). The local 0.1 project package is a migration prototype, not an exported standalone application.
@@ -54,7 +58,7 @@ Do not mechanically translate Blender dependency-graph updates or rebuild the gl
 
 ## 3. Milestones and dependency order
 
-Only the initial frozen import is complete. Deliver each stage as a runnable Godot build, recorded checks and an updated known-limits section. Effort estimates/dates wait until the first streaming and rendering spikes have measurements.
+The frozen import and first native implementations of M0–M3 are available. Their measured scope is recorded in the native guide; availability does not close every exit gate. Deliver each subsequent stage as a runnable Godot build, recorded checks and an updated known-limits section. Dates/effort for the remaining work require the accumulated measurements.
 
 | Order | Milestone | Depends on | Exit deliverable |
 | --- | --- | --- | --- |
@@ -213,7 +217,7 @@ The first public runtime beta requires the streaming/photographic benchmark, sav
 
 ## 12. Next implementation batch
 
-The next coding work should complete these three items in order:
+The first implementation pass of these three items is now available in the native alpha; their remaining qualification/extension work follows the gates above:
 
 1. **M0 foundation:** add repeatable camera-route playback and structured profiling to the existing viewer; export a minimal Windows test app. Preserve the current frozen review as a selectable reference. Record the projection/GI/atmosphere feasibility checks and baseline memory, not just FPS.
 2. **M1 provider and coordinates:** introduce `PlanetDefinition`, scalar-precision location/local-frame helpers and one native height/mask provider. Add small cross-language golden fixtures, polar/seam tests, physical altitude, and versioned region-data conversion.

@@ -1,0 +1,592 @@
+{
+  "schema": 1,
+  "date": "2026-11-01",
+  "version": "0.2.0-alpha.1",
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "renderer": "Forward+ / Vulkan",
+  "machine": {
+    "cpu": "Intel(R) Core(TM) i9-14900K",
+    "ram_bytes": 137107681280,
+    "os": "Windows x86-64",
+    "gpu": "NVIDIA GeForce RTX 5090"
+  },
+  "runtime_source_sha256": "c4289463b3142ea128a59723dcf348c5671b57369a47a2cbaf5ea44bb9ed8e95",
+  "pck_sha256": "aadcca207ee75ff861831eb0880a23f4f23f01cf0e1735065e9b32ab2b9f7b39",
+  "core_checks": {
+    "all_16_stitch_patterns_cover_patch_without_holes": true,
+    "camera_sweep_stops_at_canonical_trunk": true,
+    "canonical_height_continuous_at_face_seams": true,
+    "centimetre_survives_planet_radius_before_local_float_conversion": true,
+    "coarse_fine_edge_vertices_share_canonical_surface": true,
+    "corrupt_cache_detected_and_regenerated": true,
+    "coverage_handoff_rejects_incomplete_or_unstitchable_partial_loading": true,
+    "cross_language_noise_height_and_legacy_cube_fixtures": true,
+    "cube_faces_poles_corners_roundtrip": true,
+    "disk_lru_bound_preserves_unrelated_files": true,
+    "ecology_ids_transforms_stable_on_revisit": true,
+    "ecology_ids_unique_in_cell": true,
+    "foreground_contact_resolution_has_priority": true,
+    "instance_budget_is_hard_bound": true,
+    "measured_regions_loaded": true,
+    "mesh_generation_is_repeatable": true,
+    "mesh_uses_real_displaced_geometry": true,
+    "newly_visited_tree_can_select_source_hero_lod": true,
+    "noise_derivative_matches_numeric_reference": true,
+    "quality_changes_preserve_ecology_candidates": true,
+    "regional_samples_preserve_physical_relief": true,
+    "scatter_budget_downgrades_without_reseeding_or_removing_tree": true,
+    "seed_change_invalidates_provider_identity": true,
+    "selection_2_to_1_across_faces_and_poles": true,
+    "selection_covers_all_six_faces_exactly": true,
+    "selection_hard_leaf_budget_includes_balancing": true,
+    "worker_and_cache_match_canonical_mesh": true
+  },
+  "delayed_worker_lifecycle_checks": {
+    "active_boundaries_stay_2_to_1_during_delayed_loading": true,
+    "all_resident_nodes_follow_rebase": true,
+    "complete_coarse_coverage_retained_during_travel": true,
+    "obsolete_requests_discarded": true,
+    "residency_workers_and_leaf_selection_bounded": true,
+    "return_route_loaded_from_cache": true,
+    "travel_caused_eviction": true
+  },
+  "standalone_routes": [
+    {
+      "tag": "native-final-forest",
+      "route": "forest",
+      "flight_seconds": 30,
+      "warmup_seconds": 15,
+      "framebuffer": [
+        1920,
+        1080
+      ],
+      "cache_namespace": "guarded-final-1",
+      "flight_frames": 3091,
+      "dropped_frames": 0,
+      "frame_columns_independently_verified": true,
+      "frame_distributions_ms": {
+        "ecology_upload_ms": {
+          "p50": 0.00300000002607703,
+          "p95": 2.09299993515015,
+          "p99": 2.60500001907349
+        },
+        "frame_ms": {
+          "p50": 7.01100015640259,
+          "p95": 18.1480007171631,
+          "p99": 22.3549995422363
+        },
+        "gpu_ms": {
+          "p50": 0.939999997615814,
+          "p95": 1.5789999961853,
+          "p99": 1.8289999961853
+        },
+        "render_cpu_ms": {
+          "p50": 0.704000055789948,
+          "p95": 0.89300000667572,
+          "p99": 2.20199990272522
+        },
+        "runtime_update_ms": {
+          "p50": 3.06100010871887,
+          "p95": 6.85099983215332,
+          "p99": 17.992000579834
+        },
+        "selection_worker_ms": {
+          "p50": 45.0499992370605,
+          "p95": 55.8079986572266,
+          "p99": 69.0660018920898
+        },
+        "upload_and_retire_ms": {
+          "p50": 0.848999977111816,
+          "p95": 4.2039999961853,
+          "p99": 5.05299997329712
+        }
+      },
+      "flight_max_frame_ms": 33.553001403808594,
+      "flight_stalls_over_100ms": [],
+      "including_warmup_max_frame_ms": 220.023,
+      "process_peak_working_set_bytes": 1160421376,
+      "exit_code": 0,
+      "engine_errors": false,
+      "managed_runtime_modules_detected": false,
+      "peaks": {
+        "resident_tiles": 534.0,
+        "active_tiles": 384.0,
+        "desired_leaves": 384.0,
+        "pending_workers": 2.0,
+        "ecology_pending": 2.0,
+        "vegetation_instances": 2616.0,
+        "expanded_scatter_triangles": 3687860.0,
+        "render_texture_bytes": 568316416.0,
+        "render_buffer_bytes": 215763808.0,
+        "rebases": 15.0,
+        "cache_hits": 387.0,
+        "ecology_cache_hits": 240.0,
+        "evictions": 991.0,
+        "unmet_error_pixels": 88.2972159969614
+      },
+      "thirds_peak_counters": [
+        {
+          "resident_tiles": 511,
+          "vegetation_instances": 2616,
+          "render_buffer_bytes": 214692256,
+          "render_texture_bytes": 568316416
+        },
+        {
+          "resident_tiles": 518,
+          "vegetation_instances": 2045,
+          "render_buffer_bytes": 214925968,
+          "render_texture_bytes": 568316416
+        },
+        {
+          "resident_tiles": 533,
+          "vegetation_instances": 2616,
+          "render_buffer_bytes": 214712512,
+          "render_texture_bytes": 568316416
+        }
+      ],
+      "report_sha256": "7753255ee7f9e4ba93b027b1fb0d2fbc22bd86114283e5108a75de2e6e28a960",
+      "raw_frames_sha256": "3db40258b1cc5bd5599cd537186949ea0d5eb46fdba8d4427270fda533db4187"
+    },
+    {
+      "tag": "native-final-seam",
+      "route": "seam",
+      "flight_seconds": 30,
+      "warmup_seconds": 15,
+      "framebuffer": [
+        1920,
+        1080
+      ],
+      "cache_namespace": "guarded-final-2",
+      "flight_frames": 2852,
+      "dropped_frames": 0,
+      "frame_columns_independently_verified": true,
+      "frame_distributions_ms": {
+        "ecology_upload_ms": {
+          "p50": 0.00400000018998981,
+          "p95": 4.01599979400635,
+          "p99": 8.91100025177002
+        },
+        "frame_ms": {
+          "p50": 8.98299980163574,
+          "p95": 18.9139995574951,
+          "p99": 29.9449996948242
+        },
+        "gpu_ms": {
+          "p50": 0.651000022888184,
+          "p95": 0.837999999523163,
+          "p99": 1.18599998950958
+        },
+        "render_cpu_ms": {
+          "p50": 0.629999995231628,
+          "p95": 0.891000032424927,
+          "p99": 2.33800005912781
+        },
+        "runtime_update_ms": {
+          "p50": 3.37800002098084,
+          "p95": 9.8439998626709,
+          "p99": 17.6480007171631
+        },
+        "selection_worker_ms": {
+          "p50": 46.6209983825684,
+          "p95": 59.6450004577637,
+          "p99": 65.1009979248047
+        },
+        "upload_and_retire_ms": {
+          "p50": 0.861999988555908,
+          "p95": 4.39400005340576,
+          "p99": 5.38399982452393
+        }
+      },
+      "flight_max_frame_ms": 33.67599868774414,
+      "flight_stalls_over_100ms": [],
+      "including_warmup_max_frame_ms": 220.524,
+      "process_peak_working_set_bytes": 1233207296,
+      "exit_code": 0,
+      "engine_errors": false,
+      "managed_runtime_modules_detected": false,
+      "peaks": {
+        "resident_tiles": 544.0,
+        "active_tiles": 384.0,
+        "desired_leaves": 384.0,
+        "pending_workers": 2.0,
+        "ecology_pending": 2.0,
+        "vegetation_instances": 2427.0,
+        "expanded_scatter_triangles": 47782.0,
+        "render_texture_bytes": 568316416.0,
+        "render_buffer_bytes": 216680512.0,
+        "rebases": 10.0,
+        "cache_hits": 315.0,
+        "ecology_cache_hits": 210.0,
+        "evictions": 523.0,
+        "unmet_error_pixels": 14.0799666053709
+      },
+      "thirds_peak_counters": [
+        {
+          "resident_tiles": 514,
+          "vegetation_instances": 2151,
+          "render_buffer_bytes": 214725280,
+          "render_texture_bytes": 568316416
+        },
+        {
+          "resident_tiles": 522,
+          "vegetation_instances": 2427,
+          "render_buffer_bytes": 215062912,
+          "render_texture_bytes": 568316416
+        },
+        {
+          "resident_tiles": 530,
+          "vegetation_instances": 2144,
+          "render_buffer_bytes": 215323888,
+          "render_texture_bytes": 568316416
+        }
+      ],
+      "report_sha256": "efb71a39022927d0640884536d12d7b5184c585183d77b475007421ea3373642",
+      "raw_frames_sha256": "5e960dfa70d00c787900fb0d0e6ed59de022b29e74d5175684717454a6e64219"
+    },
+    {
+      "tag": "native-final-orbit",
+      "route": "orbit",
+      "flight_seconds": 60,
+      "warmup_seconds": 15,
+      "framebuffer": [
+        1920,
+        1080
+      ],
+      "cache_namespace": "guarded-final-3",
+      "flight_frames": 3861,
+      "dropped_frames": 0,
+      "frame_columns_independently_verified": true,
+      "frame_distributions_ms": {
+        "ecology_upload_ms": {
+          "p50": 0.00300000002607703,
+          "p95": 0.122000001370907,
+          "p99": 2.12899994850159
+        },
+        "frame_ms": {
+          "p50": 15.5620002746582,
+          "p95": 18.2700004577637,
+          "p99": 26.6310005187988
+        },
+        "gpu_ms": {
+          "p50": 0.453999996185303,
+          "p95": 1.52600002288818,
+          "p99": 2.3289999961853
+        },
+        "render_cpu_ms": {
+          "p50": 0.416000008583069,
+          "p95": 0.865000009536743,
+          "p99": 0.980000019073486
+        },
+        "runtime_update_ms": {
+          "p50": 1.92900002002716,
+          "p95": 5.76100015640259,
+          "p99": 15.1669998168945
+        },
+        "selection_worker_ms": {
+          "p50": 23.2730007171631,
+          "p95": 48.8720016479492,
+          "p99": 54.7239990234375
+        },
+        "upload_and_retire_ms": {
+          "p50": 0.864000022411346,
+          "p95": 4.38500022888184,
+          "p99": 4.6710000038147
+        }
+      },
+      "flight_max_frame_ms": 36.564998626708984,
+      "flight_stalls_over_100ms": [],
+      "including_warmup_max_frame_ms": 474.426,
+      "process_peak_working_set_bytes": 1252892672,
+      "exit_code": 0,
+      "engine_errors": false,
+      "managed_runtime_modules_detected": false,
+      "peaks": {
+        "resident_tiles": 625.0,
+        "active_tiles": 384.0,
+        "desired_leaves": 384.0,
+        "pending_workers": 2.0,
+        "ecology_pending": 2.0,
+        "vegetation_instances": 2847.0,
+        "expanded_scatter_triangles": 3170931.0,
+        "render_texture_bytes": 568316416.0,
+        "render_buffer_bytes": 222627280.0,
+        "rebases": 1921.0,
+        "cache_hits": 282.0,
+        "ecology_cache_hits": 3.0,
+        "evictions": 1018.0,
+        "unmet_error_pixels": 106.159322591088
+      },
+      "thirds_peak_counters": [
+        {
+          "resident_tiles": 415,
+          "vegetation_instances": 0,
+          "render_buffer_bytes": 206966752,
+          "render_texture_bytes": 568316416
+        },
+        {
+          "resident_tiles": 621,
+          "vegetation_instances": 2847,
+          "render_buffer_bytes": 220499968,
+          "render_texture_bytes": 568316416
+        },
+        {
+          "resident_tiles": 625,
+          "vegetation_instances": 0,
+          "render_buffer_bytes": 220631296,
+          "render_texture_bytes": 568316416
+        }
+      ],
+      "report_sha256": "17e1ff8a7f15c35dd006a0793dba8ab2b40508973fc7167ab1fb27423022f4f3",
+      "raw_frames_sha256": "2c041b463ec9be736160d6e64d87eddf9ff6a3dbb9c43eeee0c4894c872b0501"
+    },
+    {
+      "tag": "native-final-cold",
+      "route": "woodland",
+      "flight_seconds": 300,
+      "warmup_seconds": 15,
+      "framebuffer": [
+        1280,
+        720
+      ],
+      "cache_namespace": "guarded-matched-720-1",
+      "flight_frames": 20564,
+      "dropped_frames": 0,
+      "frame_columns_independently_verified": true,
+      "frame_distributions_ms": {
+        "ecology_upload_ms": {
+          "p50": 0.00400000018998981,
+          "p95": 8.54599952697754,
+          "p99": 13.0579996109009
+        },
+        "frame_ms": {
+          "p50": 15.3959999084473,
+          "p95": 20.25,
+          "p99": 30.5450000762939
+        },
+        "gpu_ms": {
+          "p50": 0.43299999833107,
+          "p95": 0.934000015258789,
+          "p99": 2.17700004577637
+        },
+        "render_cpu_ms": {
+          "p50": 0.638999998569489,
+          "p95": 0.929000020027161,
+          "p99": 1.27900004386902
+        },
+        "runtime_update_ms": {
+          "p50": 3.68600010871887,
+          "p95": 11.9899997711182,
+          "p99": 18.7999992370605
+        },
+        "selection_worker_ms": {
+          "p50": 45.185001373291,
+          "p95": 59.939998626709,
+          "p99": 70.8109970092773
+        },
+        "upload_and_retire_ms": {
+          "p50": 0.875999987125397,
+          "p95": 4.33400011062622,
+          "p99": 5.32100009918213
+        }
+      },
+      "flight_max_frame_ms": 130.9929962158203,
+      "flight_stalls_over_100ms": [
+        {
+          "flight_frame_index": 9350,
+          "frame_ms": 130.9929962158203
+        }
+      ],
+      "including_warmup_max_frame_ms": 217.948,
+      "process_peak_working_set_bytes": 1326071808,
+      "exit_code": 0,
+      "engine_errors": false,
+      "managed_runtime_modules_detected": false,
+      "peaks": {
+        "resident_tiles": 534.0,
+        "active_tiles": 384.0,
+        "desired_leaves": 384.0,
+        "pending_workers": 2.0,
+        "ecology_pending": 2.0,
+        "vegetation_instances": 2483.0,
+        "expanded_scatter_triangles": 2811163.0,
+        "render_texture_bytes": 414161408.0,
+        "render_buffer_bytes": 203656576.0,
+        "rebases": 26.0,
+        "cache_hits": 1071.0,
+        "ecology_cache_hits": 325.0,
+        "evictions": 4621.0,
+        "unmet_error_pixels": 79.5089795129688
+      },
+      "thirds_peak_counters": [
+        {
+          "resident_tiles": 528,
+          "vegetation_instances": 1915,
+          "render_buffer_bytes": 202982992,
+          "render_texture_bytes": 414161408
+        },
+        {
+          "resident_tiles": 526,
+          "vegetation_instances": 1783,
+          "render_buffer_bytes": 202664752,
+          "render_texture_bytes": 414161408
+        },
+        {
+          "resident_tiles": 534,
+          "vegetation_instances": 2483,
+          "render_buffer_bytes": 203205712,
+          "render_texture_bytes": 414161408
+        }
+      ],
+      "report_sha256": "2eb18be409d0f804ed2141cff2b225eca03a157d8af442cc99ab03b64550c28b",
+      "raw_frames_sha256": "2909a2f1656521a93b2716d8249650b20eb6bb737fc2f17df22f48ff9d587bbd"
+    },
+    {
+      "tag": "native-final-warm",
+      "route": "woodland",
+      "flight_seconds": 300,
+      "warmup_seconds": 15,
+      "framebuffer": [
+        1280,
+        720
+      ],
+      "cache_namespace": "guarded-matched-720-1",
+      "flight_frames": 27080,
+      "dropped_frames": 0,
+      "frame_columns_independently_verified": true,
+      "frame_distributions_ms": {
+        "ecology_upload_ms": {
+          "p50": 0.00300000002607703,
+          "p95": 5.3270001411438,
+          "p99": 11.1579999923706
+        },
+        "frame_ms": {
+          "p50": 12.0690002441406,
+          "p95": 17.9759998321533,
+          "p99": 23.378999710083
+        },
+        "gpu_ms": {
+          "p50": 0.437000006437302,
+          "p95": 0.935999989509583,
+          "p99": 1.18099999427795
+        },
+        "render_cpu_ms": {
+          "p50": 0.611999988555908,
+          "p95": 0.862999975681305,
+          "p99": 1.09599995613098
+        },
+        "runtime_update_ms": {
+          "p50": 1.93599998950958,
+          "p95": 9.67000007629395,
+          "p99": 17.9050006866455
+        },
+        "selection_worker_ms": {
+          "p50": 43.9889984130859,
+          "p95": 56.7569999694824,
+          "p99": 59.6629981994629
+        },
+        "upload_and_retire_ms": {
+          "p50": 0.857999980449677,
+          "p95": 4.20900011062622,
+          "p99": 5.07399988174438
+        }
+      },
+      "flight_max_frame_ms": 118.11100006103516,
+      "flight_stalls_over_100ms": [
+        {
+          "flight_frame_index": 133,
+          "frame_ms": 118.11100006103516
+        }
+      ],
+      "including_warmup_max_frame_ms": 220.34,
+      "process_peak_working_set_bytes": 1316536320,
+      "exit_code": 0,
+      "engine_errors": false,
+      "managed_runtime_modules_detected": false,
+      "peaks": {
+        "resident_tiles": 535.0,
+        "active_tiles": 384.0,
+        "desired_leaves": 384.0,
+        "pending_workers": 2.0,
+        "ecology_pending": 2.0,
+        "vegetation_instances": 2490.0,
+        "expanded_scatter_triangles": 2780405.0,
+        "render_texture_bytes": 414161408.0,
+        "render_buffer_bytes": 203451952.0,
+        "rebases": 26.0,
+        "cache_hits": 1606.0,
+        "ecology_cache_hits": 420.0,
+        "evictions": 4716.0,
+        "unmet_error_pixels": 79.4928829640483
+      },
+      "thirds_peak_counters": [
+        {
+          "resident_tiles": 533,
+          "vegetation_instances": 1934,
+          "render_buffer_bytes": 202207408,
+          "render_texture_bytes": 414161408
+        },
+        {
+          "resident_tiles": 526,
+          "vegetation_instances": 1790,
+          "render_buffer_bytes": 202171408,
+          "render_texture_bytes": 414161408
+        },
+        {
+          "resident_tiles": 522,
+          "vegetation_instances": 2490,
+          "render_buffer_bytes": 202152928,
+          "render_texture_bytes": 414161408
+        }
+      ],
+      "report_sha256": "f9045e08c1d9afe46a2f419ac70baa1260779b007a8d77b82b182cce636b0e6a",
+      "raw_frames_sha256": "7d62deb1f4b6ddd0568128ae24688e22ae5d1419669756fe4a38c19aba849d3f"
+    }
+  ],
+  "risk_probe_rgb_difference_percent": {
+    "clear-before -> depth-air-before": {
+      "mean_rgb_percent": 0.011985265649855137,
+      "p95_channel_percent": 0.0,
+      "max_channel_percent": 0.7843138575553894
+    },
+    "depth-air-before -> depth-air-rebased": {
+      "mean_rgb_percent": 0.03397061675786972,
+      "p95_channel_percent": 0.0,
+      "max_channel_percent": 30.58823585510254
+    },
+    "sdfgi-before -> sdfgi-rebased-immediate": {
+      "mean_rgb_percent": 0.03676031157374382,
+      "p95_channel_percent": 0.0,
+      "max_channel_percent": 30.58823585510254
+    },
+    "sdfgi-before -> sdfgi-rebased-settled": {
+      "mean_rgb_percent": 0.03746454417705536,
+      "p95_channel_percent": 0.0,
+      "max_channel_percent": 30.58823585510254
+    }
+  },
+  "decisions": {
+    "precision": "Scalar float64 canonical arithmetic; origin subtraction before float32 vectors.",
+    "indirect_light": "SDFGI disabled by default; rebase probe has localized leaf-edge differences.",
+    "air": "Diagnostic spherical depth pass only; not enabled in the production runtime."
+  },
+  "scope": [
+    "Same Windows development machine, other desktop applications present; not a clean-machine qualification.",
+    "Two matched 300-second 1280x720 woodland runs share route speed and cache namespace; cold means fresh application cache, not driver shader cache.",
+    "Forest, seam and orbit routes render 1920x1080. Every reported window size is checked against the PNG readback dimensions; the pinned engine ViewportTexture size query can include an extra desktop scale factor.",
+    "Peaks include warmup; timing distributions contain all recorded flight frames. Runtime timings are subsystem measurements, not additive CPU totals.",
+    "Engine memory counters are estimates, not total driver VRAM. RSS is a separately observed process peak. Bounded route counters do not prove arbitrary-duration leak freedom.",
+    "Hard tile/job/instance/triangle limits passed. Disk targets and main-thread upload timings are soft interval targets.",
+    "No 8GB GPU, 16GB system RAM, Linux or separate clean Windows machine qualification.",
+    "Photographic appearance, seamless temporal foliage, production atmosphere/clouds and animated water remain open."
+  ]
+}

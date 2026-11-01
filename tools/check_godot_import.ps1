@@ -19,7 +19,7 @@ foreach ($site in $Sites) {
     $stdoutPath = Join-Path $outputFolder ($stem+'.log')
     $stderrPath = Join-Path $outputFolder ($stem+'-errors.log')
     $startedUtc = [DateTime]::UtcNow
-    $arguments = @('--path',('"'+$projectFolder+'"'),'--rendering-driver','vulkan','--audio-driver','Dummy','--quit-after','20000','--',
+    $arguments = @('--path',('"'+$projectFolder+'"'),'--rendering-driver','vulkan','--audio-driver','Dummy','--quit-after','20000','res://main.tscn','--',
         '--smoke',('--site='+$site),('"--screenshot='+$imagePath+'"'),('"--report='+$reportPath+'"'))
     if (-not $Reload) { $arguments += '--save-scene' }
     $job = Start-Process -FilePath $GodotPath -ArgumentList $arguments -WindowStyle Hidden -Wait -PassThru `

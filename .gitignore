@@ -12,3 +12,8 @@ open_planet_lab/assets/**/*.jpg
 open_planet_lab/assets/**/*.hdr
 godot/.godot/
 godot/assets/generated/
+godot/assets/native/*.opheight
+godot/assets/native/*.opbounds
+godot/assets/catalog/models/
+godot/assets/catalog/textures/
+godot/assets/catalog/scans/

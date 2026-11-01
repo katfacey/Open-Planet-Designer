@@ -2,7 +2,7 @@
 
 ## Primary target: Godot
 
-Develop the runtime and future deployment in Godot. The [Godot implementation plan](GODOT_IMPLEMENTATION_PLAN.md) is the canonical sequence and acceptance checklist. The current baseline is the frozen-import viewer, with [recorded scope and checks](GODOT_IMPORT.md), not native procedural streaming yet.
+Develop the runtime and deployment in Godot. The [implementation plan](GODOT_IMPLEMENTATION_PLAN.md) is the canonical sequence and acceptance checklist. The current native alpha implements the first profiling/export, coordinate/provider and terrain/ecosystem streaming pass; see [the native guide and checks](GODOT_NATIVE_DEVELOPMENT.md). The [frozen import](GODOT_IMPORT.md) remains a separate reference mode.
 
 Open `godot/project.godot` with the pinned Godot 4.7.2 build and press F5. See [project instructions](../godot/README.md) for controls, inherited working scenes and launch scripts. The installed .NET editor can run this GDScript project; the project does not require C#.
 
@@ -16,7 +16,7 @@ godot --headless --path godot --editor --import --quit
 
 On Windows, `tools/check_godot_import.ps1 -GodotPath PATH_TO_GODOT` renders the five raw imports and creates generated native scene snapshots. `-Reload` checks the inherited working scenes. **Snapshot creation replaces generated `.scn` files**; preserve user working scenes and any changes to generated resources before rebuilding. `python tools/package_godot.py` packages the editable project and generated content. It does not export a standalone application.
 
-The next batch is profiling/replay and a minimal Windows export, native coordinates/height providers, then bounded terrain streaming. Runtime builds must eventually require neither Blender nor Python. Keep any offline conversion dependencies outside the deployed application. Qualify matching Godot export templates and new GPU/shader APIs before depending on them.
+The first native batch now runs independently of Blender/Python in an exported Windows application. Use `prepare_godot_regions.py`, `prepare_godot_catalog.py`, `write_native_fixtures.py`, native test scripts and `export_godot_runtime.ps1` as described in the native guide. `package_godot_runtime.py` creates the app ZIP and hydrated native source ZIP; `package_godot.py` remains the older full frozen-import packager. Keep offline conversion dependencies outside the deployed application. Qualify matching export templates and new GPU/shader APIs before depending on them.
 
 Retain `python -m unittest discover -s tests` as portable reference coverage while adding native Godot tests for ported algorithms. Python tests alone do not validate native shaders, rendering, threads or exported builds. Record actual hardware, cold/warm conditions, memory and moving-route results; do not promote stationary RTX 5090 measurements into consumer-tier claims.
 

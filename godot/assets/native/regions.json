@@ -1,0 +1,218 @@
+{
+  "schema": 1,
+  "encoding": "uint16 little-endian; row zero south; pixel centres",
+  "regions": [
+    {
+      "name": "rainier",
+      "source": "USGS 3DEP elevation ImageServer",
+      "source_url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer",
+      "request_url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer/exportImage?f=json&bbox=-13567769.796073496%2C5903002.739136859%2C-13538526.212088618%2C5932246.323121737&bboxSR=3857&imageSR=3857&size=4096%2C4096&format=tiff&pixelType=F32&interpolation=%2BRSP_BilinearInterpolation&adjustAspectRatio=false&noData=-999999",
+      "license": "Public domain (USGS 3DEP)",
+      "license_url": "https://data.usgs.gov/datacatalog/data/USGS%3A3a81321b-c153-416f-98b7-cc8e5f0e17c3",
+      "center_longitude": -121.75,
+      "center_latitude": 46.85,
+      "width_m": 20000.0,
+      "grid_spacing_m": 4.8828125,
+      "height_min_m": 740.3899536132812,
+      "height_max_m": 4392.361328125,
+      "resolution": [
+        4096,
+        4096
+      ],
+      "sha256": "7fd6374bd1df265d05b73fff65a2b7cc9bcdd3b9b9302acc3b9f4911dbc43b41",
+      "crs": 3857,
+      "source_extent": {
+        "xmin": -13567769.796073496,
+        "ymin": 5903002.739136859,
+        "xmax": -13538526.212088618,
+        "ymax": 5932246.323121737,
+        "spatialReference": {
+          "wkid": 102100,
+          "latestWkid": 3857
+        }
+      },
+      "retrieved": "2026-10-21",
+      "modifications": "Bounded projected export; physical horizontal scale corrected at center latitude; height preserved in meters as 16-bit linear encoding. Source mosaic resolution varies; export pixel spacing is not an accuracy claim.",
+      "file": "rainier.opheight",
+      "size": 4096,
+      "face": 2,
+      "u": 0.32,
+      "v": 0.18,
+      "height_offset_m": -440.38995361328125,
+      "native_sha256": "14c4983c5701a92aae5ea990cde4ea95a3d0e29ef416ae4299e17e7a2d4bdb52",
+      "source_png_sha256": "ddb17b2257f595cc62360a8ffc18d1c5306d0dab37cb8d4727669f9e6638226e",
+      "bounds_file": "rainier.opbounds",
+      "bounds_levels": [
+        {
+          "size": 2048,
+          "offset": 0,
+          "bytes": 16777216
+        },
+        {
+          "size": 1024,
+          "offset": 16777216,
+          "bytes": 4194304
+        },
+        {
+          "size": 512,
+          "offset": 20971520,
+          "bytes": 1048576
+        },
+        {
+          "size": 256,
+          "offset": 22020096,
+          "bytes": 262144
+        },
+        {
+          "size": 128,
+          "offset": 22282240,
+          "bytes": 65536
+        },
+        {
+          "size": 64,
+          "offset": 22347776,
+          "bytes": 16384
+        },
+        {
+          "size": 32,
+          "offset": 22364160,
+          "bytes": 4096
+        },
+        {
+          "size": 16,
+          "offset": 22368256,
+          "bytes": 1024
+        },
+        {
+          "size": 8,
+          "offset": 22369280,
+          "bytes": 256
+        },
+        {
+          "size": 4,
+          "offset": 22369536,
+          "bytes": 64
+        },
+        {
+          "size": 2,
+          "offset": 22369600,
+          "bytes": 16
+        },
+        {
+          "size": 1,
+          "offset": 22369616,
+          "bytes": 4
+        }
+      ],
+      "bounds_sha256": "5f412de3458d162e7280a3d0e6f1126c9c4c80aae155e25e5b4066e804953596",
+      "no_data_note": "No per-pixel no-data mask survives in the preserved 16-bit PNG; encoded samples are used as supplied.",
+      "placement_note": "New native fictional-planet placement; source relief/footprint retained, explicit constant vertical offset; not the Blender camera transform."
+    },
+    {
+      "name": "canyon",
+      "source": "USGS 3DEP elevation ImageServer",
+      "source_url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer",
+      "request_url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer/exportImage?f=json&bbox=-12490669.088753287%2C4308201.76004678%2C-12478292.696177978%2C4320578.152622089&bboxSR=3857&imageSR=3857&size=4096%2C4096&format=tiff&pixelType=F32&interpolation=%2BRSP_BilinearInterpolation&adjustAspectRatio=false&noData=-999999",
+      "license": "Public domain (USGS 3DEP)",
+      "license_url": "https://data.usgs.gov/datacatalog/data/USGS%3A3a81321b-c153-416f-98b7-cc8e5f0e17c3",
+      "center_longitude": -112.15,
+      "center_latitude": 36.1,
+      "width_m": 10000.0,
+      "grid_spacing_m": 2.44140625,
+      "height_min_m": 715.5762329101562,
+      "height_max_m": 2180.913818359375,
+      "resolution": [
+        4096,
+        4096
+      ],
+      "sha256": "c314d2ae3bb0f06c852f251691ec80087e3050ba41c9523ab40c0274d6ffd121",
+      "crs": 3857,
+      "source_extent": {
+        "xmin": -12490669.088753287,
+        "ymin": 4308201.76004678,
+        "xmax": -12478292.696177978,
+        "ymax": 4320578.152622089,
+        "spatialReference": {
+          "wkid": 102100,
+          "latestWkid": 3857
+        }
+      },
+      "retrieved": "2026-10-21",
+      "modifications": "Bounded projected export; physical horizontal scale corrected at center latitude; height preserved in meters as 16-bit linear encoding. Source mosaic resolution varies; export pixel spacing is not an accuracy claim.",
+      "file": "canyon.opheight",
+      "size": 4096,
+      "face": 0,
+      "u": 0.05,
+      "v": 0.3,
+      "height_offset_m": -515.5762329101562,
+      "native_sha256": "52b3922cc05b4f50327aa6ed9b80fab24af5bed159b42e1dd1e631d773ae0b7c",
+      "source_png_sha256": "c35e23a9d0c7b639046c394edca3f55a9a33b4d191654ed0437bda21f57e0fc8",
+      "bounds_file": "canyon.opbounds",
+      "bounds_levels": [
+        {
+          "size": 2048,
+          "offset": 0,
+          "bytes": 16777216
+        },
+        {
+          "size": 1024,
+          "offset": 16777216,
+          "bytes": 4194304
+        },
+        {
+          "size": 512,
+          "offset": 20971520,
+          "bytes": 1048576
+        },
+        {
+          "size": 256,
+          "offset": 22020096,
+          "bytes": 262144
+        },
+        {
+          "size": 128,
+          "offset": 22282240,
+          "bytes": 65536
+        },
+        {
+          "size": 64,
+          "offset": 22347776,
+          "bytes": 16384
+        },
+        {
+          "size": 32,
+          "offset": 22364160,
+          "bytes": 4096
+        },
+        {
+          "size": 16,
+          "offset": 22368256,
+          "bytes": 1024
+        },
+        {
+          "size": 8,
+          "offset": 22369280,
+          "bytes": 256
+        },
+        {
+          "size": 4,
+          "offset": 22369536,
+          "bytes": 64
+        },
+        {
+          "size": 2,
+          "offset": 22369600,
+          "bytes": 16
+        },
+        {
+          "size": 1,
+          "offset": 22369616,
+          "bytes": 4
+        }
+      ],
+      "bounds_sha256": "526cc6d8debc75f4e99d18ec9c466126f1304ba19f2323ad9108b919d48e9d74",
+      "no_data_note": "No per-pixel no-data mask survives in the preserved 16-bit PNG; encoded samples are used as supplied.",
+      "placement_note": "New native fictional-planet placement; source relief/footprint retained, explicit constant vertical offset; not the Blender camera transform."
+    }
+  ]
+}

@@ -2,9 +2,11 @@
 
 1 November 2026. This is a Godot 4.7.2 Forward+ prototype using the existing Blender development review as its source. Godot is now the primary runtime/deployment target; the [implementation plan](GODOT_IMPLEMENTATION_PLAN.md) defines the next stages. The Blender add-on, original files and release remain available as the preserved authoring/reference baseline.
 
+**Historical 0.1 import baseline:** the newer [native 0.2 alpha](GODOT_NATIVE_DEVELOPMENT.md) adds terrain/ecosystem generation, profiling and a standalone export. The frozen coverage and timings below describe this reference mode, not the new generator.
+
 ## Open it
 
-The local project is `godot/project.godot`. Open it in Godot and press **F5**. On Windows, `godot/launch.ps1 -Editor` locates the installed Godot executable and opens the forest working scene. The prototype ZIP includes the generated assets. GitHub's automatic source ZIP does not include those large files.
+The local project is `godot/project.godot`; **F5** now starts the native runtime. Use **F1**, run `main.tscn`, or use `godot/launch.ps1 -Editor -Review` for this preserved import and its forest working scene. The older 0.1 prototype ZIP includes the frozen generated assets. GitHub's automatic source ZIP does not include those large files.
 
 The project uses GDScript and also works with the installed .NET edition without requiring a C# project. The [project guide](../godot/README.md) describes controls, editable scenes and rebuilding.
 

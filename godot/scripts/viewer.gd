@@ -345,6 +345,7 @@ func _input(event: InputEvent) -> void:
 		camera.rotation=Vector3(pitch,yaw,0.0)
 	elif event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode==KEY_ESCAPE: Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
+		elif event.keycode==KEY_F1: get_tree().change_scene_to_file("res://runtime.tscn")
 		elif event.keycode>=KEY_1 and event.keycode<=KEY_5 and not loading: load_site(SITES[event.keycode-KEY_1])
 		elif event.keycode==KEY_HOME and not loading: _reset_camera()
 		elif event.keycode==KEY_O and not loading:

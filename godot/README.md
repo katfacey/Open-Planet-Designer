@@ -1,12 +1,16 @@
-# Open Planet Designer — Godot import
+# Open Planet Designer — Godot native alpha
 
-This project imports the saved Blender development review into Godot 4.7.2 Forward+. It is a native, editable starting point for the FOSS runtime migration. The Blender source is preserved.
+The main scene now runs the native streaming terrain/ecosystem alpha in Godot 4.7.2 Forward+. See the [native guide](../docs/GODOT_NATIVE_DEVELOPMENT.md) for controls, budgets, saved resource configuration, tests, export instructions and open limits. Terrain and plants generate as you fly beyond the old camera patches. The original five imported scenes remain a separate reference mode in the full checkout.
 
-Godot is now the primary deployment target. The [implementation plan](../docs/GODOT_IMPLEMENTATION_PLAN.md) covers native streaming, ecosystems, photographic calibration, atmosphere/clouds, water, designer controls and standalone exports. The current project remains the frozen-import baseline for that work.
+Godot is the primary deployment target. The [implementation plan](../docs/GODOT_IMPLEMENTATION_PLAN.md) covers the remaining photographic calibration, temporal LOD, atmosphere/clouds, water, designer controls and qualified releases. The native alpha and the preserved Blender reference have different generators/placements; photographic matching is not claimed.
+
+Press **F5** or run `launch.ps1`. Hold RMB to look, use WASD/E/Q to fly, Shift to boost and the wheel to change speed. Home returns to the forest; the location buttons also offer meadow, measured regions and a pole. Expand **Detail budgets** for LOD distances, terrain/scatter/instance limits, shadows and AO. Edit `default_planet.tres` and restart to persist planet settings. **F8** saves a profiling report. The standalone exported build needs its `.pck` beside the executable.
+
+The sections below describe the preserved **frozen import reference**, available with F1 in the full project or `launch.ps1 -Review`. The smaller native source/runtime packages omit that optional reference content.
 
 ## Open and explore
 
-Import `project.godot` in Godot and press **F5**. The first run can take time while Godot imports the models and textures. On Windows, `./launch.ps1 -Editor` finds an existing Godot Start-menu installation and opens the forest working scene; `./launch.ps1` starts the viewer.
+Run `main.tscn` directly, press F1 from native mode, or use `launch.ps1 -Review`. On Windows, `launch.ps1 -Editor -Review` opens the forest working scene. The first editor import can take time while Godot processes models/textures. Press F1 in the reference viewer to return to native mode.
 
 - Hold **right mouse** and move the mouse to look; **WASD** moves along the camera.
 - **E / Q** moves up/down; **Shift** boosts speed; the **wheel** changes speed.
@@ -23,7 +27,7 @@ There is no collision or terrain-following controller yet. This is free flight.
 
 Open the working scenes under `scenes/`. These inherit the generated native `.scn` scenes under `assets/generated/`; they contain real terrain MeshInstance3D nodes and spatial MultiMesh batches, plus the original camera pose and Sun direction.
 
-Use Godot's Inspector to adjust materials, the `ImportedWorldEnvironment`, `ImportedSunDirection`, and the starting `FreeFlightCamera`. Make resources unique when changes should be specific to a location. Save the working `.tscn`. The viewer loads these working scenes, so your saved edits appear the next time that location loads. Press F5 for the free-flight viewer; the working scenes themselves are editable static imports.
+Use Godot's Inspector to adjust materials, the `ImportedWorldEnvironment`, `ImportedSunDirection`, and the starting `FreeFlightCamera`. Make resources unique when changes should be specific to a location. Save the working `.tscn`. The reference viewer loads these working scenes, so edits appear the next time that location loads. F5 starts native mode; use F1 or run `main.tscn` for the reference viewer. The working scenes themselves are editable static imports.
 
 Native terrain/plant nodes are grouped for efficient rendering. Individual vegetation transforms live in MultiMesh resources rather than thousands of separately editable object nodes.
 
@@ -40,7 +44,7 @@ The importer restores Blender material-slot indices on export copies, removes ae
 
 ## Current limits
 
-This is **frozen Blender coverage**, not a completed native planet generator. The terrain and vegetation were evaluated at frame 240 around five saved cameras. You can fly freely through them, but moving outside their detailed coverage does not stream or generate new terrain or plants. The globe retains the exported coarse geometry elsewhere. Native procedural tile generation, background prefetch and evolving terrain LOD remain the next development stage.
+This reference mode is **frozen Blender coverage**. The terrain and vegetation were evaluated at frame 240 around five saved cameras. Moving outside their detailed coverage does not generate new detail in reference mode. Switch back to native mode for the new streaming generator, whose separate limitations are recorded in the native guide.
 
 Blender shader graphs do not transfer directly. Ground layering is reimplemented from the same scans and biome attributes; Godot's sky/lighting is a first approximation. The original spherical clear-air shader, cloud shell, ocean optical shading and water-time animation are not ported. The imported waves are static geometry. Photographic approval and matching Blender renders are open.
 
