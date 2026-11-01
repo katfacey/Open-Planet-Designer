@@ -1,0 +1,76 @@
+{
+  "version": "0.2.0-alpha.1",
+  "build": {
+    "version": "0.2.0-alpha.1",
+    "stage": "native-streaming-alpha",
+    "engine": "Godot 4.7.2",
+    "source_revision": "0aa39af5f1798d50a7a6ca899a19ab178d720432",
+    "source_dirty": false,
+    "runtime_source_sha256": "c4289463b3142ea128a59723dcf348c5671b57369a47a2cbaf5ea44bb9ed8e95",
+    "runtime_files": {
+      "default_planet.tres": "328144983f159ea3a1c7f974b450309bda1c60af559ef28a6175d40f9ad0db9c",
+      "project.godot": "9b50437d6a4a2605570628dbbeb607b3762e8f491748c4106afef5a23ceb78d1",
+      "runtime.tscn": "9d7e3ba5654d815aab9f9aca239a22f7b9473b8e3abcbe893cab425b60622188",
+      "scripts/ecology/cell_job.gd": "8e56499b183065045b39ca21e138cde1f6e854c2250be7144fd406a6912b2078",
+      "scripts/ecology/ecosystem_stream.gd": "69e54747d554ac54867b14d6d28906062ed8f7042f077c3beb1424166e6555ea",
+      "scripts/ecology/layout_job.gd": "788f967471b6be7a3f4dc3b83d2cfd7d1211a585f99550537381e4bf2142d41f",
+      "scripts/navigation/collision_bubble.gd": "db1792927eb8a9749eb49b63510c1dc67646e82069d13f302d43284a8681d25e",
+      "scripts/navigation/flight_route.gd": "29d0eefa66813de016fcb866942da9784b1f3287af4fe433079577834df68ded",
+      "scripts/runtime.gd": "cfaf121d09f1f57c04fa1217db2e109dc4065cbb4d2bb74029b2b08fba7c5124",
+      "scripts/streaming/coverage_job.gd": "94c9f536cf7d3921394c0fad1f9a34e15413ef4165430d0d180df851a47233ac",
+      "scripts/streaming/disk_cache.gd": "5d973002ea039aa6299f2dd9832e37bd0088397e380498c1f67dd487f8215ea8",
+      "scripts/streaming/terrain_stream.gd": "61e535fcd0d17e723276166d56541c24df33bbb7c8b345dc7ef0cf7066fd8f9d",
+      "scripts/streaming/tile_job.gd": "d5a69b9de13d2dd8f636cabd2ac41c4660391783d70f0f528394e08d3fa52039",
+      "scripts/terrain/canonical_noise.gd": "342caf2f13b3dff4b16185718a9520e6bab28d804a5c42ae9f5e5703a5c0afd0",
+      "scripts/terrain/height_provider.gd": "cc60ecd8ec1a5ea16f61dfc46f802cd589d0c16260e69a745b7bd997a2f7717f",
+      "scripts/terrain/tile_mesh.gd": "a99d740525086d0812c794471938b2cd54be0f4cf636a38f9f6b2de7721d661b",
+      "scripts/terrain/tile_selector.gd": "8d22840f2cda99ab7c5147a3ad6760c5948043c1cf66cd09dd8f62f6809290bb",
+      "scripts/tools/flight_recorder.gd": "272f03db443191ba46ef3ef076b7e9586f9b294845307bccf3e702c30c823a53",
+      "scripts/world/planet_definition.gd": "20c3ac4d5164dbd565d10ecbd35894d3a69773879202768ccbe2057cd8598330",
+      "scripts/world/planet_location.gd": "34c90ef1230b7a93a4ba6c4545063a98700f79ec8161deebbf2ac58142c55948",
+      "shaders/atmosphere_probe.gdshader": "3115082c57aba41294956cdd49cce9c9563aedd35d7f668f8c51219137ecb84a",
+      "shaders/ground.gdshader": "b91d8295d9fd39aa3892ddebefeedc73a494fdbb734194db71530891e8d54c8f",
+      "shaders/native_ground.gdshader": "22d1bf9aa39ee4d9aeb1d31bda10f314ab10b91842cc0798bccd1151f83ea398"
+    },
+    "pck_sha256": "aadcca207ee75ff861831eb0880a23f4f23f01cf0e1735065e9b32ab2b9f7b39",
+    "ai_assisted": true,
+    "consumer_hardware_qualified": false,
+    "source_url": "https://github.com/katfacey/Open-Planet-Designer/tree/godot-import"
+  },
+  "archives": [
+    {
+      "file": "Open-Planet-Designer-Godot-0.2.0-alpha.1-Windows.zip",
+      "bytes": 275436789,
+      "sha256": "f02f85b80c5cc54e98e663e6f1b2e71572bb12c2d0e1c7827b3977657ae104e0",
+      "crc_ok": true,
+      "entries": 12
+    },
+    {
+      "file": "Open-Planet-Designer-Godot-0.2.0-alpha.1-Source.zip",
+      "bytes": 337228346,
+      "sha256": "30169c82bc7fc12b95515a2fbf3516bd7cdfc41d9ead26fdcb69970630441d61",
+      "crc_ok": true,
+      "entries": 447
+    }
+  ],
+  "source_includes_native_assets": true,
+  "source_includes_frozen_import": false,
+  "godot_cache_included": false,
+  "extraction_checks": {
+    "fresh_source_import": true,
+    "extracted_source_core_checks": 27,
+    "extracted_executable_vulkan_flight": true,
+    "runtime_framebuffer": [
+      1280,
+      720
+    ],
+    "notices_present": true,
+    "cache_and_frozen_import_excluded": true,
+    "pck_matches_build_fingerprint": true,
+    "separate_clean_machine_qualified": false,
+    "archived_runtime_files_match_fingerprints": true,
+    "native_height_rasters_present": true,
+    "catalogue_relative_resources_validated": 30
+  },
+  "preserved_blender_source_sha256": "28a6de888d430c16dbece2ee7598d96047b18ed99a73d819fd09fdd4374e42ab"
+}

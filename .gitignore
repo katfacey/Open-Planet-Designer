@@ -10,3 +10,17 @@ research/
 open_planet_lab/assets/**/*.png
 open_planet_lab/assets/**/*.jpg
 open_planet_lab/assets/**/*.hdr
+godot/.godot/
+godot/assets/generated/
+godot/assets/native/*.opheight
+godot/assets/native/*.opbounds
+godot/assets/catalog/models/
+godot/assets/catalog/textures/
+godot/assets/catalog/scans/
+godot/assets/appearance/*.png
+godot/assets/appearance/*.jpg
+godot/assets/appearance/*.hdr
+godot/assets/appearance/*.import
+godot/assets/appearance/proxies/
+godot/assets/appearance/forest_study.scn
+godot/assets/appearance/*-files.json

@@ -1,0 +1,83 @@
+{
+  "version": "0.2.0-alpha.2",
+  "build": {
+    "version": "0.2.0-alpha.2",
+    "stage": "earth-woodland-visual-study",
+    "engine": "Godot 4.7.2",
+    "source_revision": "bcf2ec10dc4668c9a0723cfafc6e7f3a1129eed7",
+    "source_dirty": false,
+    "runtime_source_sha256": "6e903fa81939626310f7b2c6275d63d534360fc5592ff95c0c2b26fafba8d0cc",
+    "runtime_files": {
+      "default_planet.tres": "620cbee35edc01177384cdc66a8f4602baef857777970e5bf5a983f018d9b43d",
+      "earth_woodland.tres": "b32159777974a4a28ad08451b8b18fa78e6fb2f63625246f44b4e86d0793f677",
+      "project.godot": "b91a8e96853824c72df2df10698e39403caf24d8577f61637bb9ae930c7203c6",
+      "runtime.tscn": "9d7e3ba5654d815aab9f9aca239a22f7b9473b8e3abcbe893cab425b60622188",
+      "scripts/ecology/cell_job.gd": "da4a23cd97d0b589b5490c9ca50f9b9e3421a757b3526d8ab009b1c2f36a39a7",
+      "scripts/ecology/ecosystem_stream.gd": "b9f7f71b9dbaeb4cb9ad33bbc977393810e0a8bdc83f3b543b22dca2d91b0aac",
+      "scripts/ecology/layout_job.gd": "0d17b44019de83bb679c6b3a0ebb6fc3ad60e1e14aa6fb9877ef5b4dd77074e1",
+      "scripts/navigation/collision_bubble.gd": "db1792927eb8a9749eb49b63510c1dc67646e82069d13f302d43284a8681d25e",
+      "scripts/navigation/flight_route.gd": "29d0eefa66813de016fcb866942da9784b1f3287af4fe433079577834df68ded",
+      "scripts/rendering/earth_look.gd": "0837fa1b75c80dc2aa69fd2afb247b984dff99a39816fccb12aba06f9f59285e",
+      "scripts/rendering/woodland_study.gd": "f88a372f27686a4edb83212675da2e184b30bee194a7c6bbe3326ebc98e02f57",
+      "scripts/runtime.gd": "90cf0bfb8ef46ffc1f11bfb4533a24be9f505176fee61e1aebf2faaa78dd6ace",
+      "scripts/streaming/coverage_job.gd": "94c9f536cf7d3921394c0fad1f9a34e15413ef4165430d0d180df851a47233ac",
+      "scripts/streaming/disk_cache.gd": "5d973002ea039aa6299f2dd9832e37bd0088397e380498c1f67dd487f8215ea8",
+      "scripts/streaming/terrain_stream.gd": "61e535fcd0d17e723276166d56541c24df33bbb7c8b345dc7ef0cf7066fd8f9d",
+      "scripts/streaming/tile_job.gd": "04ef658805726494ca1f385f2afd4d9b3bd91f8ca7eb39ff75956a29a595c654",
+      "scripts/terrain/canonical_noise.gd": "342caf2f13b3dff4b16185718a9520e6bab28d804a5c42ae9f5e5703a5c0afd0",
+      "scripts/terrain/height_provider.gd": "c6d5295af9e9dd3982a39e0e5e33d4061792821810fc76a93c1977b7719cb779",
+      "scripts/terrain/tile_mesh.gd": "196f882c6cb4690d12d69492315d94436e0d0f737fee504be92eda8439b721aa",
+      "scripts/terrain/tile_selector.gd": "8d22840f2cda99ab7c5147a3ad6760c5948043c1cf66cd09dd8f62f6809290bb",
+      "scripts/tools/flight_recorder.gd": "272f03db443191ba46ef3ef076b7e9586f9b294845307bccf3e702c30c823a53",
+      "scripts/world/planet_definition.gd": "f0aa648ff2d4728f44d76771b8fb6daf1bd9792653454cdcfbe600e79579ba8a",
+      "scripts/world/planet_location.gd": "34c90ef1230b7a93a4ba6c4545063a98700f79ec8161deebbf2ac58142c55948",
+      "shaders/atmosphere_probe.gdshader": "3115082c57aba41294956cdd49cce9c9563aedd35d7f668f8c51219137ecb84a",
+      "shaders/ground.gdshader": "b91d8295d9fd39aa3892ddebefeedc73a494fdbb734194db71530891e8d54c8f",
+      "shaders/native_ground.gdshader": "6257da313de3e51ee34a583c8daddacdff4bf2b139231a2007e9e24679de96e8",
+      "woodland_study.tscn": "e77e0d72b704b0d50e34babf331c430333c4fa13d4e7714390af55a10f0fd0c4"
+    },
+    "pck_sha256": "5db8d22cb2fc86fe6d187b9d7a235be09ddf1029650434c9838ec3123870b673",
+    "ai_assisted": true,
+    "consumer_hardware_qualified": false,
+    "source_url": "https://github.com/katfacey/Open-Planet-Designer/tree/godot-import"
+  },
+  "archives": [
+    {
+      "file": "Open-Planet-Designer-Godot-0.2.0-alpha.2-Windows.zip",
+      "bytes": 391942966,
+      "sha256": "d6d9f04a03028a73118b547ade3fc1a50451c55592b331ba5d46980a6d85e4e7",
+      "crc_ok": true,
+      "entries": 15
+    },
+    {
+      "file": "Open-Planet-Designer-Godot-0.2.0-alpha.2-Source.zip",
+      "bytes": 557801409,
+      "sha256": "766259db1bd3b542f89c45a2c90dbbefecd9846dc96c326a8b019ac7206e1161",
+      "crc_ok": true,
+      "entries": 565
+    }
+  ],
+  "source_includes_native_assets": true,
+  "source_includes_frozen_import": false,
+  "godot_cache_included": false,
+  "extraction_checks": {
+    "fresh_source_import": true,
+    "extracted_source_core_checks": 29,
+    "extracted_executable_vulkan_flight": true,
+    "runtime_framebuffer": [
+      1280,
+      720
+    ],
+    "notices_present": true,
+    "cache_and_frozen_import_excluded": true,
+    "pck_matches_build_fingerprint": true,
+    "separate_clean_machine_qualified": false,
+    "extracted_woodland_study": true,
+    "woodland_instances": 59212,
+    "woodland_terrain_triangles": 500000,
+    "archived_runtime_files_match_fingerprints": true,
+    "archived_study_matches_tested_scene": true,
+    "original_cc0_files_checksum_verified": 15
+  },
+  "preserved_blender_source_sha256": "28a6de888d430c16dbece2ee7598d96047b18ed99a73d819fd09fdd4374e42ab"
+}

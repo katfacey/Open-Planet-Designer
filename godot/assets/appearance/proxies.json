@@ -1,0 +1,55 @@
+{
+	"license": "CC0 source assets; see CREDITS.json and project source credits",
+	"proxies": {
+		"DEAD": {
+			"file": "res://assets/appearance/proxies/dead.res",
+			"method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+			"source": "res://assets/catalog/models/dead_1.gltf",
+			"source_triangles": 7999,
+			"triangles": 1796
+		},
+		"FIR": {
+			"file": "res://assets/appearance/proxies/fir.res",
+			"method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+			"source": "res://assets/catalog/models/fir_1.gltf",
+			"source_triangles": 19016,
+			"triangles": 585
+		},
+		"ROCK": {
+			"file": "res://assets/appearance/proxies/rock.res",
+			"method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+			"source": "res://assets/catalog/models/rock_1.gltf",
+			"source_triangles": 3500,
+			"triangles": 1264
+		},
+		"SAPLING": {
+			"file": "res://assets/appearance/proxies/sapling.res",
+			"method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+			"source": "res://assets/catalog/models/sapling_1.gltf",
+			"source_triangles": 17999,
+			"triangles": 15
+		},
+		"TREE": {
+			"file": "res://assets/appearance/proxies/tree.res",
+			"method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+			"source": "res://assets/catalog/models/tree_1.gltf",
+			"source_triangles": 58975,
+			"triangles": 1550
+		},
+		"TREE_B": {
+			"file": "res://assets/appearance/proxies/tree_b.res",
+			"method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+			"source": "res://assets/catalog/models/tree_b_1.gltf",
+			"source_triangles": 59377,
+			"triangles": 401
+		},
+		"TREE_C": {
+			"file": "res://assets/appearance/proxies/tree_c.res",
+			"method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+			"source": "res://assets/catalog/models/tree_c_1.gltf",
+			"source_triangles": 59113,
+			"triangles": 409
+		}
+	},
+	"schema": 1
+}

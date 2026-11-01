@@ -1,0 +1,676 @@
+{
+  "schema": 1,
+  "date": "2026-11-01",
+  "engine": "4.7.2.stable.mono.official.ed1daf0bf",
+  "rendering": "Forward+ / Vulkan 1.4.351",
+  "resolution": [
+    1280,
+    720
+  ],
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "source_preserved": true,
+  "export": {
+    "schema": 1,
+    "sites": {
+      "Forest": {
+        "triangles": 500000,
+        "vertices": 266898,
+        "instances": 59212,
+        "counts": {
+          "DEAD": 1969,
+          "FERN": 737,
+          "FERN_B": 729,
+          "FERN_C": 769,
+          "FIR": 6316,
+          "GRASS": 7237,
+          "ROCK": 7,
+          "SAPLING": 1106,
+          "SAPLING_B": 1855,
+          "TREE": 6841,
+          "TREE_B": 7524,
+          "TREE_C": 9685,
+          "WILDGRASS": 7244,
+          "WILDGRASS_B": 7193
+        },
+        "unique_instance_ids": 59212,
+        "terrain_chunks": 930,
+        "instance_id_sha256": "cac724b03665514a1a5ab8cf767f6ef744296e1a26f8044b47483ec3a4adf5e7"
+      },
+      "Grassland": {
+        "triangles": 499996,
+        "vertices": 265483,
+        "instances": 65298,
+        "counts": {
+          "DEAD": 72,
+          "FERN": 42,
+          "FERN_B": 43,
+          "FERN_C": 37,
+          "FIR": 260,
+          "GRASS": 21042,
+          "ROCK": 6,
+          "SAPLING": 127,
+          "SAPLING_B": 140,
+          "TREE": 327,
+          "TREE_B": 178,
+          "TREE_C": 345,
+          "WILDGRASS": 21302,
+          "WILDGRASS_B": 21377
+        },
+        "unique_instance_ids": 65298,
+        "terrain_chunks": 930,
+        "instance_id_sha256": "5ef1edc9f76b49acd33d5344d5a7dff752f596340f49acd934915878ee286a2b"
+      },
+      "Alpine": {
+        "triangles": 499998,
+        "vertices": 264790,
+        "instances": 248,
+        "counts": {
+          "FIR": 30,
+          "ROCK": 218
+        },
+        "unique_instance_ids": 248,
+        "terrain_chunks": 665,
+        "instance_id_sha256": "15b6335071911d4d6dcd9b43b77aaff4cb836bdc27e4b7d9e49970e9be521fba"
+      },
+      "Desert": {
+        "triangles": 499994,
+        "vertices": 263572,
+        "instances": 242,
+        "counts": {
+          "FERN": 2,
+          "FERN_C": 1,
+          "FIR": 17,
+          "ROCK": 222
+        },
+        "unique_instance_ids": 242,
+        "terrain_chunks": 593,
+        "instance_id_sha256": "ca3353e5077676ae9638bac626d893f3d6b634c8df4ca9f0e7d8d8f8906d3a92"
+      },
+      "Ocean": {
+        "triangles": 500000,
+        "vertices": 262978,
+        "instances": 0,
+        "counts": {},
+        "unique_instance_ids": 0,
+        "terrain_chunks": 886,
+        "instance_id_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "prototypes": {
+      "DEAD_0": {
+        "triangles": 44999,
+        "source_triangles": 44999,
+        "embedded_images": 6,
+        "bytes": 23947316
+      },
+      "DEAD_1": {
+        "triangles": 7999,
+        "source_triangles": 7999,
+        "embedded_images": 6,
+        "bytes": 22845636
+      },
+      "DEAD_2": {
+        "triangles": 6,
+        "source_triangles": 6,
+        "embedded_images": 6,
+        "bytes": 553220
+      },
+      "FERN_0": {
+        "triangles": 784,
+        "source_triangles": 784,
+        "embedded_images": 3,
+        "bytes": 3890616
+      },
+      "FERN_1": {
+        "triangles": 649,
+        "source_triangles": 649,
+        "embedded_images": 3,
+        "bytes": 3886864
+      },
+      "FERN_2": {
+        "triangles": 58,
+        "source_triangles": 58,
+        "embedded_images": 3,
+        "bytes": 3871148
+      },
+      "FERN_B_0": {
+        "triangles": 2384,
+        "source_triangles": 2384,
+        "embedded_images": 3,
+        "bytes": 3935936
+      },
+      "FERN_B_1": {
+        "triangles": 650,
+        "source_triangles": 650,
+        "embedded_images": 3,
+        "bytes": 3890268
+      },
+      "FERN_B_2": {
+        "triangles": 58,
+        "source_triangles": 58,
+        "embedded_images": 3,
+        "bytes": 3872016
+      },
+      "FERN_C_0": {
+        "triangles": 2248,
+        "source_triangles": 2248,
+        "embedded_images": 3,
+        "bytes": 3932176
+      },
+      "FERN_C_1": {
+        "triangles": 650,
+        "source_triangles": 650,
+        "embedded_images": 3,
+        "bytes": 3889948
+      },
+      "FERN_C_2": {
+        "triangles": 58,
+        "source_triangles": 58,
+        "embedded_images": 3,
+        "bytes": 3871952
+      },
+      "FIR_0": {
+        "triangles": 19016,
+        "source_triangles": 19016,
+        "embedded_images": 6,
+        "bytes": 15939436
+      },
+      "FIR_1": {
+        "triangles": 19016,
+        "source_triangles": 19016,
+        "embedded_images": 6,
+        "bytes": 15939436
+      },
+      "FIR_2": {
+        "triangles": 6,
+        "source_triangles": 6,
+        "embedded_images": 6,
+        "bytes": 1574060
+      },
+      "GRASS_0": {
+        "triangles": 336,
+        "source_triangles": 336,
+        "embedded_images": 0,
+        "bytes": 27464
+      },
+      "GRASS_1": {
+        "triangles": 108,
+        "source_triangles": 108,
+        "embedded_images": 0,
+        "bytes": 9676
+      },
+      "GRASS_2": {
+        "triangles": 36,
+        "source_triangles": 36,
+        "embedded_images": 0,
+        "bytes": 4052
+      },
+      "ROCK_0": {
+        "triangles": 66122,
+        "source_triangles": 66122,
+        "embedded_images": 3,
+        "bytes": 10133200
+      },
+      "ROCK_1": {
+        "triangles": 3500,
+        "source_triangles": 3500,
+        "embedded_images": 3,
+        "bytes": 7375856
+      },
+      "ROCK_2": {
+        "triangles": 314,
+        "source_triangles": 314,
+        "embedded_images": 3,
+        "bytes": 7050864
+      },
+      "SAPLING_0": {
+        "triangles": 142506,
+        "source_triangles": 142506,
+        "embedded_images": 6,
+        "bytes": 22702264
+      },
+      "SAPLING_1": {
+        "triangles": 17999,
+        "source_triangles": 17999,
+        "embedded_images": 6,
+        "bytes": 17512932
+      },
+      "SAPLING_2": {
+        "triangles": 6,
+        "source_triangles": 6,
+        "embedded_images": 6,
+        "bytes": 1505592
+      },
+      "SAPLING_B_0": {
+        "triangles": 133403,
+        "source_triangles": 133403,
+        "embedded_images": 6,
+        "bytes": 22291348
+      },
+      "SAPLING_B_1": {
+        "triangles": 18000,
+        "source_triangles": 18000,
+        "embedded_images": 6,
+        "bytes": 17484688
+      },
+      "SAPLING_B_2": {
+        "triangles": 6,
+        "source_triangles": 6,
+        "embedded_images": 6,
+        "bytes": 1477956
+      },
+      "TREE_0": {
+        "triangles": 826954,
+        "source_triangles": 826954,
+        "embedded_images": 9,
+        "bytes": 59893112
+      },
+      "TREE_1": {
+        "triangles": 58975,
+        "source_triangles": 59999,
+        "embedded_images": 9,
+        "bytes": 31199316
+      },
+      "TREE_2": {
+        "triangles": 6,
+        "source_triangles": 6,
+        "embedded_images": 6,
+        "bytes": 1179440
+      },
+      "TREE_B_0": {
+        "triangles": 514980,
+        "source_triangles": 514980,
+        "embedded_images": 9,
+        "bytes": 47056248
+      },
+      "TREE_B_1": {
+        "triangles": 59377,
+        "source_triangles": 59999,
+        "embedded_images": 9,
+        "bytes": 30132900
+      },
+      "TREE_B_2": {
+        "triangles": 6,
+        "source_triangles": 6,
+        "embedded_images": 6,
+        "bytes": 1298456
+      },
+      "TREE_C_0": {
+        "triangles": 703322,
+        "source_triangles": 703322,
+        "embedded_images": 9,
+        "bytes": 55455488
+      },
+      "TREE_C_1": {
+        "triangles": 59113,
+        "source_triangles": 59999,
+        "embedded_images": 9,
+        "bytes": 31061544
+      },
+      "TREE_C_2": {
+        "triangles": 6,
+        "source_triangles": 6,
+        "embedded_images": 6,
+        "bytes": 1240656
+      },
+      "WILDGRASS_0": {
+        "triangles": 2287,
+        "source_triangles": 2287,
+        "embedded_images": 3,
+        "bytes": 6546280
+      },
+      "WILDGRASS_1": {
+        "triangles": 360,
+        "source_triangles": 360,
+        "embedded_images": 3,
+        "bytes": 6472436
+      },
+      "WILDGRASS_2": {
+        "triangles": 36,
+        "source_triangles": 36,
+        "embedded_images": 3,
+        "bytes": 6453144
+      },
+      "WILDGRASS_B_0": {
+        "triangles": 1466,
+        "source_triangles": 1466,
+        "embedded_images": 3,
+        "bytes": 6508936
+      },
+      "WILDGRASS_B_1": {
+        "triangles": 360,
+        "source_triangles": 360,
+        "embedded_images": 3,
+        "bytes": 6467512
+      },
+      "WILDGRASS_B_2": {
+        "triangles": 36,
+        "source_triangles": 36,
+        "embedded_images": 3,
+        "bytes": 6451860
+      }
+    },
+    "source_sha256": "28a6de888d430c16dbece2ee7598d96047b18ed99a73d819fd09fdd4374e42ab"
+  },
+  "saved_working_scenes": {
+    "Forest": {
+      "batches": 4353,
+      "checks": {
+        "all_exported_instances_in_original_lod_batches": true,
+        "all_terrain_chunks_present": true,
+        "camera_kept_local_after_rebase": true,
+        "centimetre_motion_retained": true,
+        "ground_distance_limits_all_lods": true,
+        "return_to_origin_exact": true,
+        "stable_projection_ratio": true,
+        "tree_distance_limits_all_lods": true
+      },
+      "chunks": 930,
+      "errors_are_fatal": true,
+      "fps_at_capture": 209.0,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "instances": 59212,
+      "load_seconds": 4.525704,
+      "renderer": "forward_plus",
+      "scope": "Frozen Blender export; no new procedural terrain generation",
+      "site": "Forest",
+      "terrain_triangles": 500000,
+      "stationary_samples": {
+        "seconds": 2,
+        "count": 418,
+        "median_ms": 4.881,
+        "p95_ms": 5.672
+      }
+    },
+    "Grassland": {
+      "batches": 1636,
+      "checks": {
+        "all_exported_instances_in_original_lod_batches": true,
+        "all_terrain_chunks_present": true,
+        "camera_kept_local_after_rebase": true,
+        "centimetre_motion_retained": true,
+        "ground_distance_limits_all_lods": true,
+        "return_to_origin_exact": true,
+        "stable_projection_ratio": true,
+        "tree_distance_limits_all_lods": true
+      },
+      "chunks": 930,
+      "errors_are_fatal": true,
+      "fps_at_capture": 236.0,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "instances": 65298,
+      "load_seconds": 3.651261,
+      "renderer": "forward_plus",
+      "scope": "Frozen Blender export; no new procedural terrain generation",
+      "site": "Grassland",
+      "terrain_triangles": 499996,
+      "stationary_samples": {
+        "seconds": 2,
+        "count": 473,
+        "median_ms": 4.194,
+        "p95_ms": 4.568
+      }
+    },
+    "Alpine": {
+      "batches": 211,
+      "checks": {
+        "all_exported_instances_in_original_lod_batches": true,
+        "all_terrain_chunks_present": true,
+        "camera_kept_local_after_rebase": true,
+        "centimetre_motion_retained": true,
+        "ground_distance_limits_all_lods": true,
+        "return_to_origin_exact": true,
+        "stable_projection_ratio": true,
+        "tree_distance_limits_all_lods": true
+      },
+      "chunks": 665,
+      "errors_are_fatal": true,
+      "fps_at_capture": 239.0,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "instances": 248,
+      "load_seconds": 1.237299,
+      "renderer": "forward_plus",
+      "scope": "Frozen Blender export; no new procedural terrain generation",
+      "site": "Alpine",
+      "terrain_triangles": 499998,
+      "stationary_samples": {
+        "seconds": 2,
+        "count": 479,
+        "median_ms": 4.184,
+        "p95_ms": 4.3
+      }
+    },
+    "Desert": {
+      "batches": 216,
+      "checks": {
+        "all_exported_instances_in_original_lod_batches": true,
+        "all_terrain_chunks_present": true,
+        "camera_kept_local_after_rebase": true,
+        "centimetre_motion_retained": true,
+        "ground_distance_limits_all_lods": true,
+        "return_to_origin_exact": true,
+        "stable_projection_ratio": true,
+        "tree_distance_limits_all_lods": true
+      },
+      "chunks": 593,
+      "errors_are_fatal": true,
+      "fps_at_capture": 239.0,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "instances": 242,
+      "load_seconds": 1.371993,
+      "renderer": "forward_plus",
+      "scope": "Frozen Blender export; no new procedural terrain generation",
+      "site": "Desert",
+      "terrain_triangles": 499994,
+      "stationary_samples": {
+        "seconds": 2,
+        "count": 479,
+        "median_ms": 4.183,
+        "p95_ms": 4.29
+      }
+    },
+    "Ocean": {
+      "batches": 0,
+      "checks": {
+        "all_exported_instances_in_original_lod_batches": true,
+        "all_terrain_chunks_present": true,
+        "camera_kept_local_after_rebase": true,
+        "centimetre_motion_retained": true,
+        "ground_distance_limits_all_lods": true,
+        "return_to_origin_exact": true,
+        "stable_projection_ratio": true,
+        "tree_distance_limits_all_lods": true
+      },
+      "chunks": 886,
+      "errors_are_fatal": true,
+      "fps_at_capture": 239.0,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "instances": 0,
+      "load_seconds": 0.822362,
+      "renderer": "forward_plus",
+      "scope": "Frozen Blender export; no new procedural terrain generation",
+      "site": "Ocean",
+      "terrain_triangles": 500000,
+      "stationary_samples": {
+        "seconds": 2,
+        "count": 479,
+        "median_ms": 4.184,
+        "p95_ms": 4.301
+      }
+    }
+  },
+  "lifecycle": {
+    "Alpine": {
+      "checks": {
+        "all_exported_instances_in_original_lod_batches": true,
+        "all_terrain_chunks_present": true,
+        "camera_kept_local_after_rebase": true,
+        "centimetre_motion_retained": true,
+        "ground_distance_limits_all_lods": true,
+        "return_to_origin_exact": true,
+        "stable_projection_ratio": true,
+        "tree_distance_limits_all_lods": true
+      },
+      "instances": 248,
+      "terrain_triangles": 499998
+    },
+    "Desert": {
+      "checks": {
+        "all_exported_instances_in_original_lod_batches": true,
+        "all_terrain_chunks_present": true,
+        "camera_kept_local_after_rebase": true,
+        "centimetre_motion_retained": true,
+        "ground_distance_limits_all_lods": true,
+        "return_to_origin_exact": true,
+        "stable_projection_ratio": true,
+        "tree_distance_limits_all_lods": true
+      },
+      "instances": 242,
+      "terrain_triangles": 499994
+    },
+    "Forest": {
+      "checks": {
+        "all_exported_instances_in_original_lod_batches": true,
+        "all_terrain_chunks_present": true,
+        "camera_kept_local_after_rebase": true,
+        "centimetre_motion_retained": true,
+        "ground_distance_limits_all_lods": true,
+        "return_to_origin_exact": true,
+        "stable_projection_ratio": true,
+        "tree_distance_limits_all_lods": true
+      },
+      "instances": 59212,
+      "terrain_triangles": 500000
+    },
+    "Grassland": {
+      "checks": {
+        "all_exported_instances_in_original_lod_batches": true,
+        "all_terrain_chunks_present": true,
+        "camera_kept_local_after_rebase": true,
+        "centimetre_motion_retained": true,
+        "ground_distance_limits_all_lods": true,
+        "return_to_origin_exact": true,
+        "stable_projection_ratio": true,
+        "tree_distance_limits_all_lods": true
+      },
+      "instances": 65298,
+      "terrain_triangles": 499996
+    },
+    "Ocean": {
+      "checks": {
+        "all_exported_instances_in_original_lod_batches": true,
+        "all_terrain_chunks_present": true,
+        "camera_kept_local_after_rebase": true,
+        "centimetre_motion_retained": true,
+        "ground_distance_limits_all_lods": true,
+        "return_to_origin_exact": true,
+        "stable_projection_ratio": true,
+        "tree_distance_limits_all_lods": true
+      },
+      "instances": 0,
+      "terrain_triangles": 500000
+    }
+  },
+  "portable": {
+    "cache_excluded": true,
+    "fresh_editor_import_clean": true,
+    "lifecycle": {
+      "Alpine": {
+        "checks": {
+          "all_exported_instances_in_original_lod_batches": true,
+          "all_terrain_chunks_present": true,
+          "camera_kept_local_after_rebase": true,
+          "centimetre_motion_retained": true,
+          "ground_distance_limits_all_lods": true,
+          "return_to_origin_exact": true,
+          "stable_projection_ratio": true,
+          "tree_distance_limits_all_lods": true
+        },
+        "instances": 248,
+        "terrain_triangles": 499998
+      },
+      "Desert": {
+        "checks": {
+          "all_exported_instances_in_original_lod_batches": true,
+          "all_terrain_chunks_present": true,
+          "camera_kept_local_after_rebase": true,
+          "centimetre_motion_retained": true,
+          "ground_distance_limits_all_lods": true,
+          "return_to_origin_exact": true,
+          "stable_projection_ratio": true,
+          "tree_distance_limits_all_lods": true
+        },
+        "instances": 242,
+        "terrain_triangles": 499994
+      },
+      "Forest": {
+        "checks": {
+          "all_exported_instances_in_original_lod_batches": true,
+          "all_terrain_chunks_present": true,
+          "camera_kept_local_after_rebase": true,
+          "centimetre_motion_retained": true,
+          "ground_distance_limits_all_lods": true,
+          "return_to_origin_exact": true,
+          "stable_projection_ratio": true,
+          "tree_distance_limits_all_lods": true
+        },
+        "instances": 59212,
+        "terrain_triangles": 500000
+      },
+      "Grassland": {
+        "checks": {
+          "all_exported_instances_in_original_lod_batches": true,
+          "all_terrain_chunks_present": true,
+          "camera_kept_local_after_rebase": true,
+          "centimetre_motion_retained": true,
+          "ground_distance_limits_all_lods": true,
+          "return_to_origin_exact": true,
+          "stable_projection_ratio": true,
+          "tree_distance_limits_all_lods": true
+        },
+        "instances": 65298,
+        "terrain_triangles": 499996
+      },
+      "Ocean": {
+        "checks": {
+          "all_exported_instances_in_original_lod_batches": true,
+          "all_terrain_chunks_present": true,
+          "camera_kept_local_after_rebase": true,
+          "centimetre_motion_retained": true,
+          "ground_distance_limits_all_lods": true,
+          "return_to_origin_exact": true,
+          "stable_projection_ratio": true,
+          "tree_distance_limits_all_lods": true
+        },
+        "instances": 0,
+        "terrain_triangles": 500000
+      }
+    },
+    "forest_render": {
+      "batches": 4353,
+      "checks": {
+        "all_exported_instances_in_original_lod_batches": true,
+        "all_terrain_chunks_present": true,
+        "camera_kept_local_after_rebase": true,
+        "centimetre_motion_retained": true,
+        "ground_distance_limits_all_lods": true,
+        "return_to_origin_exact": true,
+        "stable_projection_ratio": true,
+        "tree_distance_limits_all_lods": true
+      },
+      "chunks": 930,
+      "errors_are_fatal": true,
+      "fps_at_capture": 208.0,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "instances": 59212,
+      "load_seconds": 4.460499,
+      "renderer": "forward_plus",
+      "scope": "Frozen Blender export; no new procedural terrain generation",
+      "site": "Forest",
+      "terrain_triangles": 500000
+    }
+  },
+  "engine_logs_clean": true,
+  "python_regression_tests_passed": 23,
+  "scope": "Frozen evaluated Blender coverage at frame 240. Two-second stationary samples on an RTX 5090 are diagnostic, not a world-streaming or consumer-hardware qualification."
+}

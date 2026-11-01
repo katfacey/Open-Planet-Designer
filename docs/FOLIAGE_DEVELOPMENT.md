@@ -1,5 +1,7 @@
 # Foliage lighting development
 
+**Historical Blender development report.** Godot is now the primary deployment target. The [active implementation plan](GODOT_IMPLEMENTATION_PLAN.md) retains the asset repairs and unresolved foliage findings while replacing Eevee-specific capture work with native Godot lighting/streaming validation.
+
 This optional 1.4 development pass addresses distant-tree normals and local Eevee light capture. It uses the existing CC0-derived trees, with the same materials and geometry in both engines. It does not qualify completed photorealism, seamless LOD animation or consumer hardware tiers.
 
 ## Controls
