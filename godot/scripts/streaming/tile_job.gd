@@ -16,7 +16,7 @@ func run() -> void:
 		var f := FileAccess.open(cache_path,FileAccess.READ)
 		if f!=null and f.get_length()>=40 and f.get_buffer(4).get_string_from_ascii()=="OPD1":
 			var size := f.get_32(); var checksum := f.get_buffer(32)
-			if size==f.get_length()-40 and size<1000000:
+			if size==f.get_length()-40 and size<8388608:
 				var payload := f.get_buffer(size)
 				if digest(payload)==checksum:
 					var decoded: Variant=bytes_to_var(payload)

@@ -1,0 +1,210 @@
+{
+  "version": "0.2.0-alpha.2",
+  "date": "2026-11-01",
+  "direction": "Natural daylight with subtle cinematic color; Earth assets first.",
+  "scope": "Bounded original-layout study plus shared native look improvements; photographic approval open.",
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "core_checks": {
+    "all_16_stitch_patterns_cover_patch_without_holes": true,
+    "camera_sweep_stops_at_canonical_trunk": true,
+    "canonical_height_continuous_at_face_seams": true,
+    "centimetre_survives_planet_radius_before_local_float_conversion": true,
+    "coarse_fine_edge_vertices_share_canonical_surface": true,
+    "corrupt_cache_detected_and_regenerated": true,
+    "coverage_handoff_rejects_incomplete_or_unstitchable_partial_loading": true,
+    "cross_language_noise_height_and_legacy_cube_fixtures": true,
+    "cube_faces_poles_corners_roundtrip": true,
+    "dense_ground_cell_cache_survives_large_payload": true,
+    "disk_lru_bound_preserves_unrelated_files": true,
+    "ecology_ids_transforms_stable_on_revisit": true,
+    "ecology_ids_unique_in_cell": true,
+    "foreground_contact_resolution_has_priority": true,
+    "instance_budget_is_hard_bound": true,
+    "measured_regions_loaded": true,
+    "mesh_generation_is_repeatable": true,
+    "mesh_uses_real_displaced_geometry": true,
+    "newly_visited_tree_can_select_source_hero_lod": true,
+    "noise_derivative_matches_numeric_reference": true,
+    "quality_changes_preserve_ecology_candidates": true,
+    "regional_samples_preserve_physical_relief": true,
+    "scan_layer_and_moss_phase_match_across_tile_lod_seams": true,
+    "scatter_budget_downgrades_without_reseeding_or_removing_tree": true,
+    "seed_change_invalidates_provider_identity": true,
+    "selection_2_to_1_across_faces_and_poles": true,
+    "selection_covers_all_six_faces_exactly": true,
+    "selection_hard_leaf_budget_includes_balancing": true,
+    "worker_and_cache_match_canonical_mesh": true
+  },
+  "lifecycle_checks": {
+    "active_boundaries_stay_2_to_1_during_delayed_loading": true,
+    "all_resident_nodes_follow_rebase": true,
+    "complete_coarse_coverage_retained_during_travel": true,
+    "obsolete_requests_discarded": true,
+    "residency_workers_and_leaf_selection_bounded": true,
+    "return_route_loaded_from_cache": true,
+    "travel_caused_eviction": true
+  },
+  "gpu_checks": {
+    "all_original_instances_present": true,
+    "gpu_instance_buffers_are_populated": true,
+    "impostors_excluded_from_static_gi": true,
+    "matched_blender_camera_fov": true,
+    "original_fern_transform_preserved": true,
+    "projection_ratio_is_representable": true,
+    "terrain_has_physical_collision": true
+  },
+  "python_reference_tests": 23,
+  "study": {
+    "instances": 59212,
+    "scatter_triangles": 4999998,
+    "scope": "Fixed original camera populations and terrain; local visual benchmark, not native streaming",
+    "source_sha256": "28a6de888d430c16dbece2ee7598d96047b18ed99a73d819fd09fdd4374e42ab",
+    "terrain_triangles": 500000
+  },
+  "study_asset_sha256": "970df350f8b1aa03920be1cc5dd677e5c6f3f6449630477c1e56cc626e1816ea",
+  "cc0_original_files_verified": 15,
+  "asset_manifest_sha256": "099e48ccb8db6ec3a2b01b20539177c5972738df624594fc01a1f06301fed9c0",
+  "hybrid_representations": {
+    "DEAD": {
+      "file": "res://assets/appearance/proxies/dead.res",
+      "method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+      "source": "res://assets/catalog/models/dead_1.gltf",
+      "source_triangles": 7999,
+      "triangles": 1796,
+      "sha256": "788175319da07cef062a5b55492d480ccebe49ff3b8a336febca5a5e3b8ab65c"
+    },
+    "FIR": {
+      "file": "res://assets/appearance/proxies/fir.res",
+      "method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+      "source": "res://assets/catalog/models/fir_1.gltf",
+      "source_triangles": 19016,
+      "triangles": 585,
+      "sha256": "f324e8a027799e5762e382fabff36a617d43145d4fa974294dd5b8b78cf1955c"
+    },
+    "ROCK": {
+      "file": "res://assets/appearance/proxies/rock.res",
+      "method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+      "source": "res://assets/catalog/models/rock_1.gltf",
+      "source_triangles": 3500,
+      "triangles": 1264,
+      "sha256": "2e259a8732eb8be8971224a0d2b1e4c2289aa52fd37512d0a189d91531d02c4a"
+    },
+    "SAPLING": {
+      "file": "res://assets/appearance/proxies/sapling.res",
+      "method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+      "source": "res://assets/catalog/models/sapling_1.gltf",
+      "source_triangles": 17999,
+      "triangles": 15,
+      "sha256": "b11654252e47c395b6691759a2574d030ece5eb39fec574171e1cd0252579804"
+    },
+    "TREE": {
+      "file": "res://assets/appearance/proxies/tree.res",
+      "method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+      "source": "res://assets/catalog/models/tree_1.gltf",
+      "source_triangles": 58975,
+      "triangles": 1550,
+      "sha256": "85b4f16420d95c4cef1a6acf37e804fc6b5f3fdceedbfb97a3735610ea799c18"
+    },
+    "TREE_B": {
+      "file": "res://assets/appearance/proxies/tree_b.res",
+      "method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+      "source": "res://assets/catalog/models/tree_b_1.gltf",
+      "source_triangles": 59377,
+      "triangles": 401,
+      "sha256": "4a67f58efff8fb30a45ee6371deaad7dc66ef2cbb667ce6379f269001ab46a27"
+    },
+    "TREE_C": {
+      "file": "res://assets/appearance/proxies/tree_c.res",
+      "method": "Simplified opaque 3D wood/rock plus retained directional alpha crowns; original UVs/normals/material slots",
+      "source": "res://assets/catalog/models/tree_c_1.gltf",
+      "source_triangles": 59113,
+      "triangles": 409,
+      "sha256": "ba7f705296e81aa6e90241802920243a92e317f51c841d8f6b7740c7648f79c3"
+    }
+  },
+  "exported_study": {
+    "fov": 35.1153945922852,
+    "fps_at_capture": 65.0,
+    "instances": 59212,
+    "mode": "woodland-study",
+    "resolution": [
+      1280,
+      720
+    ],
+    "scatter_triangles": 4999998,
+    "sdfgi": true,
+    "source_sha256": "28a6de888d430c16dbece2ee7598d96047b18ed99a73d819fd09fdd4374e42ab",
+    "terrain_triangles": 500000
+  },
+  "native_export": {
+    "resolution": [
+      1280,
+      720
+    ],
+    "flight_frames": 3775,
+    "flight_distributions_ms": {
+      "ecology_upload_ms": {
+        "p50": 2.06200003623962,
+        "p95": 5.76000022888184,
+        "p99": 6.3289999961853
+      },
+      "frame_ms": {
+        "p50": 6.32399988174438,
+        "p95": 17.2679996490479,
+        "p99": 23.3509998321533
+      },
+      "gpu_ms": {
+        "p50": 3.19799995422363,
+        "p95": 6.33699989318848,
+        "p99": 6.69099998474121
+      },
+      "render_cpu_ms": {
+        "p50": 0.794000029563904,
+        "p95": 1.375,
+        "p99": 2.46199989318848
+      },
+      "runtime_update_ms": {
+        "p50": 4.23899984359741,
+        "p95": 6.97900009155273,
+        "p99": 17.8959999084473
+      },
+      "selection_worker_ms": {
+        "p50": 47.5219993591309,
+        "p95": 90.2799987792969,
+        "p99": 108.988998413086
+      },
+      "upload_and_retire_ms": {
+        "p50": 0.529999971389771,
+        "p95": 3.91700005531311,
+        "p99": 4.66300010681152
+      }
+    },
+    "peaks": {
+      "resident_tiles": 527.0,
+      "active_tiles": 384.0,
+      "expanded_scatter_triangles": 11999999.0,
+      "vegetation_instances": 16617.0
+    },
+    "dropped_frames": 0,
+    "engine_errors": false
+  },
+  "pck_sha256": "5db8d22cb2fc86fe6d187b9d7a235be09ddf1029650434c9838ec3123870b673",
+  "limits": [
+    "RTX 5090 development machine; no consumer-GPU or clean-machine qualification.",
+    "Study detail/population are fixed; different native layout and FOV are not a controlled rendering comparison.",
+    "Local SDFGI is not enabled/qualified in the rebased streamer.",
+    "Canopy/card appearance, procedural grass, close debris and moving-view consistency remain open.",
+    "No planetary atmosphere, clouds, animated water, full NPR preset or other-planet visual qualification."
+  ]
+}

@@ -2,11 +2,11 @@
 
 Open Planet Designer is a FOSS planet and landscape project with **Godot as its primary runtime and deployment target**. The goal is photographic terrain and ecosystems that retain their identity from orbit to ground level, with real foreground geometry and configurable detail budgets.
 
-**Current Godot development: 0.2.0-alpha.1.** A native generator now streams real terrain and deterministic vegetation as you fly, with configurable terrain/scatter/instance budgets, camera rebasing, LOD distances, profiling/replay and an exported Windows application. The five frozen Blender review locations remain an optional reference mode. Photographic calibration, complete temporal transitions, planetary atmosphere/clouds, animated water and consumer hardware qualification remain development work. This is an engineering alpha.
+**Current Godot development: 0.2.0-alpha.2 — Earth woodland visual pass.** The app opens a bounded study using the original Blender forest layout, with a shared Earth appearance profile, CC0 pine-litter/moss scans, foliage backlighting, local bounced-light controls and free flight. F2 enters the separate native planet generator. That mode adds denser understory, revised tree representations and shared ground/lighting improvements, while retaining terrain/scatter/instance budgets and camera rebasing. The study's detail is fixed; photographic approval, consistent native-world appearance, temporal transitions and consumer hardware qualification remain open.
 
-[Native Godot guide and checks](docs/GODOT_NATIVE_DEVELOPMENT.md) · [Project instructions](godot/README.md) · [Implementation plan](docs/GODOT_IMPLEMENTATION_PLAN.md) · [Import baseline](docs/GODOT_IMPORT.md) · [AI disclosure](AI_DISCLOSURE.md)
+[Earth woodland visual guide](docs/EARTH_WOODLAND_LOOK.md) · [Native foundations and checks](docs/GODOT_NATIVE_DEVELOPMENT.md) · [Project instructions](godot/README.md) · [Implementation plan](docs/GODOT_IMPLEMENTATION_PLAN.md) · [AI disclosure](AI_DISCLOSURE.md)
 
-The first native implementation batch adds profiling/test export, precise planetary coordinates and shared height/mask providers, then bounded terrain and ecosystem streaming. Next, close the photographic woodland/meadow and temporal LOD gates before expanding atmosphere/clouds, water and biome detail. Blender remains an optional offline authoring/export tool. Eevee/Cycles parity is historical research rather than an active release requirement.
+The first native implementation batch established profiling/export, precise coordinates, shared height/mask providers and bounded streaming. Visual development now takes priority: natural daylight with subtle cinematic color, Earth assets first, and one woodland benchmark before expanding other systems or planets. Blender remains an optional offline authoring/reference tool. Eevee/Cycles parity is historical research rather than an active release requirement.
 
 ## Blender archive
 

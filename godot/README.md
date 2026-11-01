@@ -1,10 +1,10 @@
-# Open Planet Designer — Godot native alpha
+# Open Planet Designer — Godot visual development
 
-The main scene now runs the native streaming terrain/ecosystem alpha in Godot 4.7.2 Forward+. See the [native guide](../docs/GODOT_NATIVE_DEVELOPMENT.md) for controls, budgets, saved resource configuration, tests, export instructions and open limits. Terrain and plants generate as you fly beyond the old camera patches. The original five imported scenes remain a separate reference mode in the full checkout.
+**0.2.0-alpha.2 opens the Earth Woodland Study.** See the [visual guide](../docs/EARTH_WOODLAND_LOOK.md) for the natural-daylight direction, CC0 assets, fixed-detail scope and controls. Press F2 or **Explore native planet** for the streamer. Use `launch.ps1 -Native` to run it directly. The study and native planet have different layouts; matching appearance throughout the planet remains work. The original five imported scenes remain a reference mode in the full checkout.
 
 Godot is the primary deployment target. The [implementation plan](../docs/GODOT_IMPLEMENTATION_PLAN.md) covers the remaining photographic calibration, temporal LOD, atmosphere/clouds, water, designer controls and qualified releases. The native alpha and the preserved Blender reference have different generators/placements; photographic matching is not claimed.
 
-Press **F5** or run `launch.ps1`. Hold RMB to look, use WASD/E/Q to fly, Shift to boost and the wheel to change speed. Home returns to the forest; the location buttons also offer meadow, measured regions and a pole. Expand **Detail budgets** for LOD distances, terrain/scatter/instance limits, shadows and AO. Edit `default_planet.tres` and restart to persist planet settings. **F8** saves a profiling report. The standalone exported build needs its `.pck` beside the executable.
+Press **F5** or run `launch.ps1` for the study. Hold RMB to look, use WASD/E/Q to fly, Shift to boost and the wheel to change speed. Home resets the reference view; H hides the interface. In native mode, **Detail budgets** controls LOD and geometry limits, location buttons select regions, and F8 saves profiling data. Edit `default_planet.tres` to persist planet settings or `earth_woodland.tres` for appearance. The exported app needs its `.pck` beside the executable.
 
 The sections below describe the preserved **frozen import reference**, available with F1 in the full project or `launch.ps1 -Review`. The smaller native source/runtime packages omit that optional reference content.
 

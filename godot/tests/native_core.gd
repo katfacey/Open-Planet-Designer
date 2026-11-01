@@ -133,6 +133,14 @@ func _run() -> void:
 		var world_b := PackedFloat64Array([fine.centre[0]+b.x,fine.centre[1]+b.y,fine.centre[2]+b.z])
 		seam_match=seam_match and Location.distance(world_a,world_b)<0.00001
 	check("coarse_fine_edge_vertices_share_canonical_surface",seam_match)
+	var scan_phase := true
+	for y in range(17):
+		var delta: Vector2=(data.uvs[y*33+32]-fine.uvs[(y*2)*33])*2.0
+		for width in [2.0,1.3,1.8,3.0,26.0,18.0]:
+			for component in [delta.x,delta.y]:
+				var phase := fposmod(component,width)
+				scan_phase=scan_phase and minf(phase,width-phase)<0.0001
+	check("scan_layer_and_moss_phase_match_across_tile_lod_seams",scan_phase)
 	check("measured_regions_loaded",provider.regions.size()==2)
 	var relief := true
 	for region in provider.regions:
@@ -159,6 +167,14 @@ func _run() -> void:
 	settings.tree_reach_m=80; settings.scatter_triangle_budget=100000
 	var unchanged := eco.generate()
 	check("quality_changes_preserve_ecology_candidates",a.ids==unchanged.ids and a.records==unchanged.records)
+	var dense := CellJob.new(); dense.provider=provider; dense.ground=true
+	dense.tile=Location.tile(2,17,70778,72744); dense.tile.key+="/ground"
+	dense.cache_path=folder+"/dense-ground.opdc"
+	if FileAccess.file_exists(dense.cache_path): DirAccess.remove_absolute(dense.cache_path)
+	dense.run(); var dense_ids: PackedStringArray=dense.result.ids.duplicate()
+	var dense_bytes := FileAccess.get_file_as_bytes(dense.cache_path).size()
+	dense.run()
+	check("dense_ground_cell_cache_survives_large_payload",dense.cache_hit and not dense.corrupt_cache and dense_bytes>1000000 and dense.result.ids==dense_ids)
 	var other_settings := Definition.new(); other_settings.seed=43
 	var other_provider := Provider.new(); other_provider.configure(other_settings)
 	check("seed_change_invalidates_provider_identity",other_provider.signature!=provider.signature and other_provider.identity_namespace!=provider.identity_namespace and absf(other_provider.height(Location.direction(2,0.08,0.11))-provider.height(Location.direction(2,0.08,0.11)))>0.01)

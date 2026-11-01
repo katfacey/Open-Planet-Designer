@@ -8,6 +8,7 @@ const Recorder=preload("res://scripts/tools/flight_recorder.gd")
 const Route=preload("res://scripts/navigation/flight_route.gd")
 const Ecosystem=preload("res://scripts/ecology/ecosystem_stream.gd")
 const Collision=preload("res://scripts/navigation/collision_bubble.gd")
+var look: Resource=preload("res://earth_woodland.tres")
 @export var planet_settings: Resource
 var definition: Resource=Definition.new()
 var provider := Provider.new()
@@ -43,6 +44,8 @@ var finished: bool=false
 var ecology := Ecosystem.new()
 
 func _ready() -> void:
+	get_tree().auto_accept_quit=false
+	get_window().close_requested.connect(_request_close)
 	if planet_settings!=null: definition=planet_settings.duplicate(true)
 	for arg in OS.get_cmdline_user_args():
 		if arg=="--benchmark": automated=true
@@ -58,7 +61,7 @@ func _ready() -> void:
 	ground_material=_make_ground()
 	add_child(terrain); terrain.configure(provider,definition,ground_material)
 	add_child(ecology); ecology.configure(provider,definition)
-	_bookmark(2,0.0798,0.11015,2.2)
+	_bookmark(2,0.0798,0.11015,1.75)
 	if automated:
 		var initial := route_position_for_start()
 		position64=initial.position; tangent=Location.frame(initial.direction); pitch=initial.pitch; _camera_transform()
@@ -71,6 +74,7 @@ func route_position_for_start() -> Dictionary:
 	return route.position_at(0.0,provider)
 
 func _build_world() -> void:
+	get_window().title="Open Planet Designer · Native planet"
 	camera=Camera3D.new(); camera.name="FreeFlightCamera"; camera.current=true; camera.fov=65.0; camera.near=0.2; camera.far=20000.0; add_child(camera)
 	sun=DirectionalLight3D.new(); sun.name="Sun"; sun.rotation_degrees=Vector3(-48.0,-30.0,0.0)
 	sun.light_energy=1.7; sun.shadow_enabled=true; sun.directional_shadow_max_distance=definition.shadow_distance_m
@@ -82,14 +86,10 @@ func _build_world() -> void:
 	world.environment.ambient_light_source=Environment.AMBIENT_SOURCE_SKY; world.environment.ambient_light_energy=0.7
 	world.environment.tonemap_mode=Environment.TONE_MAPPER_AGX
 	world.environment.ssao_enabled=true; world.environment.ssao_radius=1.0; add_child(world)
+	look.apply(world.environment,sun,camera)
 
 func _make_ground() -> ShaderMaterial:
-	var material := ShaderMaterial.new(); material.shader=load("res://shaders/native_ground.gdshader")
-	for pair in [["meadow","leafy_grass"],["litter","forrest_ground_01"],["mud","brown_mud_leaves_01"],["rock","rock_boulder_dry"]]:
-		for channel in ["color","roughness","height"]:
-			var path: String="res://assets/catalog/scans/"+pair[1]+"_"+channel+(".jpg" if channel=="color" else ".png")
-			if ResourceLoader.exists(path): material.set_shader_parameter(pair[0]+"_"+("rough" if channel=="roughness" else channel),load(path))
-	return material
+	return look.ground_material()
 
 func _build_interface() -> void:
 	hud=CanvasLayer.new(); add_child(hud)
@@ -101,7 +101,10 @@ func _build_interface() -> void:
 	status=Label.new(); box.add_child(status)
 	var help := Label.new(); help.text="RMB look · WASD fly · E/Q radial up/down · Shift boost · Wheel speed\nHome woodland · O orbit · P route replay · F8 save profile · H interface\nV vegetation · Esc release mouse"+(" · F1 imported references" if ResourceLoader.exists("res://main.tscn") else ""); box.add_child(help)
 	var row := HBoxContainer.new(); box.add_child(row)
-	for item in [["Forest",2,0.0798,0.11015,2.2],["Meadow",2,0.08,0.11,2.2],["Rainier",2,0.32,0.18,600.0],["Canyon",0,0.05,0.3,500.0],["Pole",2,0.0,0.0,2000.0]]:
+	if ResourceLoader.exists("res://assets/appearance/forest_study.scn"):
+		var study := Button.new(); study.text="Woodland visual study"; box.add_child(study)
+		study.pressed.connect(func(): get_tree().change_scene_to_file("res://woodland_study.tscn"))
+	for item in [["Forest",2,0.0798,0.11015,1.75],["Meadow",2,0.08,0.11,1.75],["Rainier",2,0.32,0.18,600.0],["Canyon",0,0.05,0.3,500.0],["Pole",2,0.0,0.0,2000.0]]:
 		var button := Button.new(); button.text=item[0]; row.add_child(button)
 		button.pressed.connect(_bookmark.bind(item[1],item[2],item[3],item[4]))
 	var check := CheckBox.new(); check.text="Terrain clearance + nearby trunk/rock collision"; check.button_pressed=true; box.add_child(check)
@@ -147,7 +150,7 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventKey and event.pressed and not event.echo:
 		match event.keycode:
 			KEY_ESCAPE: Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
-			KEY_HOME: _bookmark(2,0.0798,0.11015,2.2)
+			KEY_HOME: _bookmark(2,0.0798,0.11015,1.75)
 			KEY_O: _bookmark(2,0.08,0.11,2500000.0); speed=100000.0; pitch=-1.55
 			KEY_H: hud.visible=not hud.visible
 			KEY_P: replay=not replay; replay_time=0.0; route.configure("woodland",60.0)
@@ -155,6 +158,8 @@ func _input(event: InputEvent) -> void:
 			KEY_V: ecology.enabled=not ecology.enabled
 			KEY_F1:
 				if ResourceLoader.exists("res://main.tscn"): get_tree().change_scene_to_file("res://main.tscn")
+			KEY_F2:
+				if ResourceLoader.exists("res://assets/appearance/forest_study.scn"): get_tree().change_scene_to_file("res://woodland_study.tscn")
 
 func _process(delta: float) -> void:
 	if finished: return
@@ -217,8 +222,17 @@ func _finish_automated() -> void:
 	if not screenshot_path.is_empty():
 		hud.visible=false; await get_tree().process_frame; await RenderingServer.frame_post_draw
 		get_viewport().get_texture().get_image().save_png(screenshot_path)
-	get_tree().quit()
+	var tree := get_tree()
+	tree.create_timer(0.25).timeout.connect(tree.quit)
+	queue_free()
 
 func _exit_tree() -> void:
 	terrain.shutdown()
 	ecology.shutdown()
+
+func _request_close() -> void:
+	if finished: return
+	finished=true
+	var tree := get_tree()
+	tree.create_timer(0.25).timeout.connect(tree.quit)
+	queue_free()

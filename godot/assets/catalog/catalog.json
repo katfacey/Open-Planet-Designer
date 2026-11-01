@@ -45,6 +45,48 @@
       "triangles": 58,
       "source_glb_sha256": "c692aa339d01370b789633c9f18c7eb1910e1740f5305b031d9891a87cdc85be"
     },
+    "FERN_B_0": {
+      "file": "models/fern_b_0.gltf",
+      "kind": "FERN_B",
+      "level": 0,
+      "triangles": 2384,
+      "source_glb_sha256": "06adcfa8ba06f01b5b50b639ce0ef8b2574ea63810085dc9e9a12fa6460e7579"
+    },
+    "FERN_B_1": {
+      "file": "models/fern_b_1.gltf",
+      "kind": "FERN_B",
+      "level": 1,
+      "triangles": 650,
+      "source_glb_sha256": "cece8a45d2e216d6dd08dbc28f00be2bbfa43ccb26538aadfa88f522f854315a"
+    },
+    "FERN_B_2": {
+      "file": "models/fern_b_2.gltf",
+      "kind": "FERN_B",
+      "level": 2,
+      "triangles": 58,
+      "source_glb_sha256": "7a94287201a4c9868a7e5ed6e79900c6e126f877216d37fe5e999021398ebee0"
+    },
+    "FERN_C_0": {
+      "file": "models/fern_c_0.gltf",
+      "kind": "FERN_C",
+      "level": 0,
+      "triangles": 2248,
+      "source_glb_sha256": "d22cd5c003154e80b1cc79045ca2b6fa2f2a8cb94e29b99d7b7d370d8c060152"
+    },
+    "FERN_C_1": {
+      "file": "models/fern_c_1.gltf",
+      "kind": "FERN_C",
+      "level": 1,
+      "triangles": 650,
+      "source_glb_sha256": "38abab61517ff440f3db47407c45efaa939f0147f4c7a6e70bdbdc33ca2f5576"
+    },
+    "FERN_C_2": {
+      "file": "models/fern_c_2.gltf",
+      "kind": "FERN_C",
+      "level": 2,
+      "triangles": 58,
+      "source_glb_sha256": "56442b8d4a407f7d41b4a24cc6ddc008de54960f5f8f806bf33f34be4423e872"
+    },
     "FIR_0": {
       "file": "models/fir_0.gltf",
       "kind": "FIR",
@@ -129,6 +171,27 @@
       "triangles": 6,
       "source_glb_sha256": "429ad0406840e7ad9f055d92ae8b4035964a414fd2d9c1940795473c7743ad71"
     },
+    "SAPLING_B_0": {
+      "file": "models/sapling_b_0.gltf",
+      "kind": "SAPLING_B",
+      "level": 0,
+      "triangles": 133403,
+      "source_glb_sha256": "8e0f6b2febbae093e442d7af9638c90b3a50491fb822ae1307a3f76a9b9c80ae"
+    },
+    "SAPLING_B_1": {
+      "file": "models/sapling_b_1.gltf",
+      "kind": "SAPLING_B",
+      "level": 1,
+      "triangles": 18000,
+      "source_glb_sha256": "73e8802e5bdfa80525d9e03dbee7303e971885caa25664e2c1fbc0e8ef157726"
+    },
+    "SAPLING_B_2": {
+      "file": "models/sapling_b_2.gltf",
+      "kind": "SAPLING_B",
+      "level": 2,
+      "triangles": 6,
+      "source_glb_sha256": "0311d9aa76f1298766f9a11b806dba5761cbf2b84cd88088d7d65b737552f3d2"
+    },
     "TREE_0": {
       "file": "models/tree_0.gltf",
       "kind": "TREE",
@@ -212,6 +275,27 @@
       "level": 2,
       "triangles": 36,
       "source_glb_sha256": "c1bf7017effc76acc96a83a746ef9128e2327997b519effead3ef7e4771bf1cc"
+    },
+    "WILDGRASS_B_0": {
+      "file": "models/wildgrass_b_0.gltf",
+      "kind": "WILDGRASS_B",
+      "level": 0,
+      "triangles": 1466,
+      "source_glb_sha256": "0674320c5d3bd9c645c8e758e3a4e56bf8c655328284fc5dce3b9f50dad92c9f"
+    },
+    "WILDGRASS_B_1": {
+      "file": "models/wildgrass_b_1.gltf",
+      "kind": "WILDGRASS_B",
+      "level": 1,
+      "triangles": 360,
+      "source_glb_sha256": "a4fe66dcba8245d0a6155e46bd2ae6a9e6b2b7eb90432e40b1effd1c6b2a303c"
+    },
+    "WILDGRASS_B_2": {
+      "file": "models/wildgrass_b_2.gltf",
+      "kind": "WILDGRASS_B",
+      "level": 2,
+      "triangles": 36,
+      "source_glb_sha256": "badeb4d073f60ea8a4aae974b4643bd94000ed1f4b3d563810206789f450f0ec"
     }
   },
   "textures": {
@@ -366,6 +450,30 @@
     "33f7ac2b97bf64e33d037957048faf3a74d813161f1d4eeecd74b56943bebb88": {
       "file": "textures/33f7ac2b97bf64e33d037957048faf3a74d813161f1d4eeecd74b56943bebb88.png",
       "bytes": 206328
+    },
+    "dc328eac200e09af3addb3a0713a101cca4df5b0cabfe28dace209d99dd0a1ee": {
+      "file": "textures/dc328eac200e09af3addb3a0713a101cca4df5b0cabfe28dace209d99dd0a1ee.png",
+      "bytes": 267318
+    },
+    "8cf946832b621c12a35a4f7c9a5ef251b407202da3e9a506f38fe2cdf8aa0108": {
+      "file": "textures/8cf946832b621c12a35a4f7c9a5ef251b407202da3e9a506f38fe2cdf8aa0108.png",
+      "bytes": 239315
+    },
+    "265ade5e14f02ccaa9b1536409f85533eb8b4d15715e0bd9670b1d82cf2214cf": {
+      "file": "textures/265ade5e14f02ccaa9b1536409f85533eb8b4d15715e0bd9670b1d82cf2214cf.png",
+      "bytes": 272389
+    },
+    "73eef3b293009d661cee6a0f2b8a574700eecd0a520d7ffd54bda7841e5acba3": {
+      "file": "textures/73eef3b293009d661cee6a0f2b8a574700eecd0a520d7ffd54bda7841e5acba3.png",
+      "bytes": 246197
+    },
+    "152761373673e57072ee11b73442a09d254c1e9992d4db2f276f91ec23ac8dc6": {
+      "file": "textures/152761373673e57072ee11b73442a09d254c1e9992d4db2f276f91ec23ac8dc6.png",
+      "bytes": 241446
+    },
+    "2cfe02c776e72171fd0faaa3b7274c2e65bdacbc37e98cde2f1ac586e9730d83": {
+      "file": "textures/2cfe02c776e72171fd0faaa3b7274c2e65bdacbc37e98cde2f1ac586e9730d83.png",
+      "bytes": 206924
     },
     "4b79eda7fe8843d71f9289bd0d3897a1b0a7310b1872b390a589a04b510b0597": {
       "file": "textures/4b79eda7fe8843d71f9289bd0d3897a1b0a7310b1872b390a589a04b510b0597.png",

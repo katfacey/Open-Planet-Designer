@@ -1,5 +1,7 @@
 # Native Godot streaming alpha
 
+**Historical 0.2.0-alpha.1 foundation report.** Current development is the [Earth woodland visual pass](EARTH_WOODLAND_LOOK.md), which starts in a bounded study. F2 or `launch.ps1 -Native` opens the native generator. The measurements/defaults below belong to the preserved alpha.1 build; alpha.2 has revised appearance, ecology and budgets.
+
 **0.2.0-alpha.1 · 1 November 2026 · Godot 4.7.2 Forward+ / Windows x86-64**
 
 This implements the first native versions of priorities 1–3: route profiling and an executable export; precise planet coordinates and shared terrain data; bounded terrain/ecosystem generation with distance LOD. It builds on the imported asset library and measured regions, and preserves the five frozen Blender review scenes as an optional reference mode.

@@ -4,11 +4,13 @@ const Location=preload("res://scripts/world/planet_location.gd")
 const CellJob=preload("res://scripts/ecology/cell_job.gd")
 const LayoutJob=preload("res://scripts/ecology/layout_job.gd")
 const DiskCache=preload("res://scripts/streaming/disk_cache.gd")
+var look: Resource=preload("res://earth_woodland.tres")
 var definition: Resource
 var provider: RefCounted
 var origin := PackedFloat64Array([0.0,0.0,0.0])
 var meshes: Dictionary={}
 var triangles: Dictionary={}
+var solid_prototypes: Dictionary={}
 var cells: Dictionary={}
 var wanted: Dictionary={}
 var jobs: Dictionary={}
@@ -40,7 +42,7 @@ var camera_previous := PackedFloat64Array([0.0,0.0,0.0])
 
 func configure(data: RefCounted,settings: Resource) -> void:
 	provider=data; definition=settings
-	cache_folder=ProjectSettings.globalize_path("user://ecology-cache/cells-2/"+(provider.signature+settings.cache_namespace).sha256_text())
+	cache_folder=ProjectSettings.globalize_path("user://ecology-cache/cells-2/"+(provider.signature+provider.identity_namespace+settings.cache_namespace).sha256_text())
 	DirAccess.make_dir_recursive_absolute(cache_folder)
 	await _load_catalogue()
 	catalogue_ready=true
@@ -48,27 +50,41 @@ func configure(data: RefCounted,settings: Resource) -> void:
 func _load_catalogue() -> void:
 	if not FileAccess.file_exists("res://assets/catalog/catalog.json"): push_error("Native asset catalogue is missing"); return
 	var catalogue: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://assets/catalog/catalog.json"))
+	var proxies: Dictionary={}
+	if FileAccess.file_exists("res://assets/appearance/proxies.json"):
+		proxies=JSON.parse_string(FileAccess.get_file_as_string("res://assets/appearance/proxies.json")).proxies
 	for key in catalogue.prototypes:
 		triangles[key]=int(catalogue.prototypes[key].triangles)
 		var path: String="res://assets/catalog/"+catalogue.prototypes[key].file
+		var proxy: Dictionary=proxies.get(catalogue.prototypes[key].kind,{}) if int(catalogue.prototypes[key].level)==2 else {}
+		if not proxy.is_empty(): path=proxy.file; triangles[key]=int(proxy.triangles); solid_prototypes[key]=true
 		ResourceLoader.load_threaded_request(path)
 		while ResourceLoader.load_threaded_get_status(path)==ResourceLoader.THREAD_LOAD_IN_PROGRESS: await get_tree().process_frame
-		var packed := ResourceLoader.load_threaded_get(path) as PackedScene
-		if packed==null: push_error("Cannot load native model "+path); continue
-		var root := packed.instantiate()
-		var source := _find_mesh(root)
-		if source!=null:
-			var mesh := source.mesh.duplicate() as ArrayMesh
+		var resource := ResourceLoader.load_threaded_get(path)
+		var root: Node=null
+		var source: MeshInstance3D=null
+		var mesh: ArrayMesh=null
+		if resource is ArrayMesh: mesh=resource.duplicate()
+		elif resource is PackedScene:
+			root=resource.instantiate(); source=_find_mesh(root)
+			if source!=null: mesh=source.mesh.duplicate()
+		if mesh!=null:
 			for surface in mesh.get_surface_count():
-				var material := source.get_active_material(surface)
-				if material is StandardMaterial3D:
-					material=material.duplicate()
-					if str(key).begins_with("GRASS_"): material.vertex_color_use_as_albedo=true
-					if material.transparency!=BaseMaterial3D.TRANSPARENCY_DISABLED:
-						material.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR; material.alpha_scissor_threshold=0.3; material.cull_mode=BaseMaterial3D.CULL_DISABLED
-					mesh.surface_set_material(surface,material)
+				var material: Material=source.get_active_material(surface) if source!=null else mesh.surface_get_material(surface)
+				mesh.surface_set_material(surface,look.prepare_material(material,catalogue.prototypes[key].kind))
 			meshes[key]=mesh
-		root.free(); await get_tree().process_frame
+		else: push_error("Cannot load native model "+path)
+		if root!=null: root.free()
+		await get_tree().process_frame
+	# Distant crowns retain their original coverage; near proxies add real wood.
+	for kind in proxies:
+		var key: String=str(kind)+"_3"
+		var packed: PackedScene=load("res://assets/catalog/"+catalogue.prototypes[str(kind)+"_2"].file)
+		var instance := packed.instantiate(); var source := _find_mesh(instance)
+		var mesh: ArrayMesh=source.mesh.duplicate()
+		for surface in mesh.get_surface_count(): mesh.surface_set_material(surface,look.prepare_material(source.get_active_material(surface),kind))
+		meshes[key]=mesh; triangles[key]=int(catalogue.prototypes[str(kind)+"_2"].triangles)
+		instance.free()
 
 func _find_mesh(node: Node) -> MeshInstance3D:
 	if node is MeshInstance3D: return node
@@ -108,6 +124,7 @@ func tick(delta: float,camera: PackedFloat64Array) -> void:
 		layout_job=LayoutJob.new(); layout_job.cells=cells.values(); layout_job.camera=camera.duplicate()
 		layout_job.tree_reach=definition.tree_reach_m if enabled else 0.0; layout_job.ground_reach=definition.ground_reach_m if enabled else 0.0
 		layout_job.tree_full=definition.tree_full_detail_m; layout_job.tree_medium=definition.tree_medium_detail_m
+		layout_job.tree_impostor=definition.tree_impostor_start_m
 		layout_job.cover_full=definition.cover_full_detail_m; layout_job.cover_medium=definition.cover_medium_detail_m
 		layout_job.triangle_budget=definition.scatter_triangle_budget; layout_job.instance_budget=definition.instance_budget; layout_job.triangles=triangles.duplicate()
 		layout_task=WorkerThreadPool.add_task(layout_job.run,false,"Planet vegetation LOD layout"); layout_time=0.5
@@ -123,7 +140,7 @@ func tick(delta: float,camera: PackedFloat64Array) -> void:
 		if node==null:
 			node=MultiMeshInstance3D.new(); node.name=str(group.prototype); node.visible=false
 			node.position=Location.local(group.centre,origin); node.set_meta("centre64",group.centre)
-			if group.lod==2: node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			if group.lod>=2 and not solid_prototypes.has(group.prototype): node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 			add_child(node)
 		staged_nodes.append(node); staged_groups[group.key]={"node":node,"multi":multi}
 	if layout_queue.is_empty() and not staged_nodes.is_empty():

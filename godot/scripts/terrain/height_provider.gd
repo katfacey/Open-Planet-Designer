@@ -13,7 +13,7 @@ var region_metadata: Dictionary={}
 
 func configure(definition: Resource) -> void:
 	radius_m=definition.radius_m; seed=definition.seed; sea_level=definition.sea_level_m
-	identity_namespace=definition.planet_id+"/native-1/seed:"+str(seed)
+	identity_namespace=definition.planet_id+"/"+definition.ecology_revision+"/seed:"+str(seed)
 	var source := FileAccess.get_file_as_string(definition.region_manifest) if FileAccess.file_exists(definition.region_manifest) else ""
 	signature=(definition.signature()+source).sha256_text()
 	if source.is_empty(): return

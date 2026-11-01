@@ -6,4 +6,4 @@
 script = ExtResource("1")
 seed = 42
 radius_m = 6371000.0
-generator_revision = "native-2"
+generator_revision = "native-3"

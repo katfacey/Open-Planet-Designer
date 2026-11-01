@@ -14,8 +14,10 @@ static func generate(provider: RefCounted,tile: Dictionary) -> Dictionary:
 	var uvs := PackedVector2Array(); uvs.resize(VERTICES)
 	var custom := PackedFloat32Array(); custom.resize(VERTICES*4)
 	var min_height := INF; var max_height := -INF
-	var phase_x: float=fposmod(centre[0]/2.0,1024.0)
-	var phase_z: float=fposmod(centre[2]/2.0,1024.0)
+	# 234 m is an exact repeat multiple for the 2 / 1.3 / 1.8 / 3 m scans.
+	# Wrapping at an arbitrary UV period introduces seams in rescaled layers.
+	var phase_x: float=fposmod(centre[0],234.0)/2.0
+	var phase_z: float=fposmod(centre[2],234.0)/2.0
 	for y in SIDE:
 		for x in SIDE:
 			var i := y*SIDE+x

@@ -8,6 +8,7 @@ var tree_reach: float
 var ground_reach: float
 var tree_full: float=9.0
 var tree_medium: float=65.0
+var tree_impostor: float=180.0
 var cover_full: float=12.0
 var cover_medium: float=26.0
 var groups: Dictionary={}
@@ -36,19 +37,20 @@ func run() -> void:
 			# Persistent variation spreads transitions across the landscape.
 			var factor: float=0.9+0.2*records[j+14]
 			var lod := 0 if distance<first*factor else (1 if distance<second*factor else 2)
-			candidates.append({"cell":cell,"j":j,"kind":kind,"lod":lod,"distance":distance,"id":cell.ids[i]})
+			if not ground and distance>maxf(second+1.0,tree_impostor)*factor: lod=3
+			candidates.append({"cell":cell,"j":j,"kind":kind,"lod":lod,"max_lod":2 if ground else 3,"distance":distance,"id":cell.ids[i]})
 	candidates.sort_custom(func(a: Dictionary,b: Dictionary): return a.distance<b.distance if a.distance!=b.distance else str(a.id)<str(b.id))
 	budget_culled=maxi(0,candidates.size()-instance_budget)
 	if candidates.size()>instance_budget: candidates.resize(instance_budget)
 	var base := 0
-	for candidate in candidates: base+=_cost(candidate.kind,2)
+	for candidate in candidates: base+=_cost(candidate.kind,candidate.max_lod)
 	while base>triangle_budget and not candidates.is_empty():
-		base-=_cost(candidates.pop_back().kind,2); budget_culled+=1
+		var last: Dictionary=candidates.pop_back(); base-=_cost(last.kind,last.max_lod); budget_culled+=1
 	var remaining := triangle_budget-base
 	for candidate in candidates:
 		var kind: int=candidate.kind; var lod: int=candidate.lod
-		while lod<2 and _cost(kind,lod)-_cost(kind,2)>remaining: lod+=1
-		remaining-=_cost(kind,lod)-_cost(kind,2); expanded_triangles+=_cost(kind,lod)
+		while lod<candidate.max_lod and _cost(kind,lod)-_cost(kind,candidate.max_lod)>remaining: lod+=1
+		remaining-=_cost(kind,lod)-_cost(kind,candidate.max_lod); expanded_triangles+=_cost(kind,lod)
 		if lod!=candidate.lod: downgraded+=1
 		var cell: Dictionary=candidate.cell; var j: int=candidate.j
 		var centre: PackedFloat64Array=cell.centre; var records: PackedFloat64Array=cell.records
@@ -60,4 +62,4 @@ func run() -> void:
 	for group in groups.values(): group.buffer=PackedFloat32Array(group.buffer)
 
 func _cost(kind: int,lod: int) -> int:
-	return int(triangles.get(Cell.KINDS[kind]+"_"+str(lod),1))
+	return int(triangles.get(Cell.KINDS[kind]+"_"+str(lod),triangles.get(Cell.KINDS[kind]+"_2",1)))

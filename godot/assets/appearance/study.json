@@ -1,0 +1,7 @@
+{
+	"instances": 59212,
+	"scatter_triangles": 4999998,
+	"scope": "Fixed original camera populations and terrain; local visual benchmark, not native streaming",
+	"source_sha256": "28a6de888d430c16dbece2ee7598d96047b18ed99a73d819fd09fdd4374e42ab",
+	"terrain_triangles": 500000
+}

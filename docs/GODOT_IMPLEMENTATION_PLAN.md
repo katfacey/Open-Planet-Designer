@@ -141,6 +141,8 @@ Add a small, budgeted collision/clearance bubble around the camera. Start with t
 
 ## 7. M4: close-range photographic benchmark
 
+**Current work: 0.2.0-alpha.2.** Visual development has been brought forward, with natural daylight and subtle cinematic color, CC0 Earth assets, a bounded original-layout woodland study and shared native appearance improvements. See [the visual development report](EARTH_WOODLAND_LOOK.md). Broader framework expansion and other planets are deferred. The full photographic/motion exit gate below remains open.
+
 Finish one coherent woodland/meadow edge before polishing every biome. Review neutral daylight, side/backlight and overcast stills at human/canopy height, plus a moving low pass. Keep a fixed high-detail mode to diagnose materials/lighting separately from LOD. A dark frame or low average pixel error does not pass photographic review.
 
 Ground layers use aligned color/roughness/normal/height channels at physical scale, shared habitat and substrate masks, stable geographic phase, and slope-appropriate projection. Add controlled stochastic repetition reduction without misaligning the maps. Introduce actual clods, gravel, roots and embedded stones where they produce visible parallax/contact; unresolved detail may transfer into normals/roughness. Desert strata and snow are separate habitat/geology work, not recolored meadow material.
